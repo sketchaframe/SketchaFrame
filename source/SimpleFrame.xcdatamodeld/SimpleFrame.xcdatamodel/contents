@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="12B19" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="BoundaryConditions" representedClassName="BoundaryConditions" syncable="YES">
+        <attribute name="node" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="model" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Models" inverseName="boundaryconditions" inverseEntity="Models" syncable="YES"/>
+    </entity>
+    <entity name="Forces" representedClassName="Forces" syncable="YES">
+        <attribute name="magnitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="node" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="xcomp" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="ycomp" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="model" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Models" inverseName="forces" inverseEntity="Models" syncable="YES"/>
+    </entity>
+    <entity name="Lines" representedClassName="Lines" syncable="YES">
+        <attribute name="end" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="model" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Models" inverseName="lines" inverseEntity="Models" syncable="YES"/>
+    </entity>
+    <entity name="Models" representedClassName="Models" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="boundaryconditions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BoundaryConditions" inverseName="model" inverseEntity="BoundaryConditions" syncable="YES"/>
+        <relationship name="forces" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Forces" inverseName="model" inverseEntity="Forces" syncable="YES"/>
+        <relationship name="lines" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lines" inverseName="model" inverseEntity="Lines" syncable="YES"/>
+        <relationship name="nodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Nodes" inverseName="model" inverseEntity="Nodes" syncable="YES"/>
+    </entity>
+    <entity name="Nodes" representedClassName="Nodes" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="y" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="model" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Models" inverseName="nodes" inverseEntity="Models" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="BoundaryConditions" positionX="450" positionY="81" width="128" height="90"/>
+        <element name="Forces" positionX="457" positionY="198" width="128" height="120"/>
+        <element name="Lines" positionX="162" positionY="371" width="128" height="88"/>
+        <element name="Models" positionX="241" positionY="72" width="128" height="135"/>
+        <element name="Nodes" positionX="45" positionY="207" width="128" height="103"/>
+    </elements>
+</model>

@@ -1,0 +1,1070 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		79B7356B15B0EF3E008B8473 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79B7356A15B0EF3E008B8473 /* CoreData.framework */; };
+		820488F2156E1944006803C1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 820488F1156E1944006803C1 /* UIKit.framework */; };
+		820488F4156E1944006803C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 820488F3156E1944006803C1 /* Foundation.framework */; };
+		820488F6156E1944006803C1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 820488F5156E1944006803C1 /* CoreGraphics.framework */; };
+		EC0013571681D0F100882566 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0013561681D0F100882566 /* QuartzCore.framework */; };
+		ECA0B1F3169ECF1800A1362F /* bc3.ai in Resources */ = {isa = PBXBuildFile; fileRef = ECA0B1F2169ECF1800A1362F /* bc3.ai */; };
+		ECA0B1F5169ECFD700A1362F /* Sketch a Frame.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = ECA0B1F4169ECFD700A1362F /* Sketch a Frame.entitlements */; };
+		ECA0B1F7169ED33600A1362F /* bc3.eps in Resources */ = {isa = PBXBuildFile; fileRef = ECA0B1F6169ED33600A1362F /* bc3.eps */; };
+		ECA0B1F9169ED3A300A1362F /* bc3.svg in Resources */ = {isa = PBXBuildFile; fileRef = ECA0B1F8169ED3A300A1362F /* bc3.svg */; };
+		ECBBF39B1695C1060086E5B0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECBBF39A1695C1060086E5B0 /* Accelerate.framework */; };
+		ECBE2AC4169DB23400283FD4 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29F1169DB23400283FD4 /* Default-Portrait@2x~ipad.png */; };
+		ECBE2AC5169DB23400283FD4 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29F2169DB23400283FD4 /* Default-Portrait~ipad.png */; };
+		ECBE2AC6169DB23400283FD4 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29F3169DB23400283FD4 /* icon-72.png */; };
+		ECBE2AC7169DB23400283FD4 /* icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29F4169DB23400283FD4 /* icon-144.png */; };
+		ECBE2AC8169DB23400283FD4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29F5169DB23400283FD4 /* MainStoryboard.storyboard */; };
+		ECBE2ACA169DB23400283FD4 /* 36-toolbox.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29F8169DB23400283FD4 /* 36-toolbox.png */; };
+		ECBE2ACB169DB23400283FD4 /* arrow-big-11.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29F9169DB23400283FD4 /* arrow-big-11.png */; };
+		ECBE2ACC169DB23400283FD4 /* arrow-big-12.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29FA169DB23400283FD4 /* arrow-big-12.png */; };
+		ECBE2ACD169DB23400283FD4 /* arrow-small-15.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29FB169DB23400283FD4 /* arrow-small-15.png */; };
+		ECBE2ACE169DB23400283FD4 /* bc0.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29FC169DB23400283FD4 /* bc0.png */; };
+		ECBE2ACF169DB23400283FD4 /* bc1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29FD169DB23400283FD4 /* bc1.png */; };
+		ECBE2AD0169DB23400283FD4 /* bc2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29FE169DB23400283FD4 /* bc2.png */; };
+		ECBE2AD1169DB23400283FD4 /* BC2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE29FF169DB23400283FD4 /* BC2@2x.png */; };
+		ECBE2AD2169DB23400283FD4 /* bc3.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A00169DB23400283FD4 /* bc3.png */; };
+		ECBE2AD3169DB23400283FD4 /* bc4.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A01169DB23400283FD4 /* bc4.png */; };
+		ECBE2AD4169DB23400283FD4 /* bc5.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A02169DB23400283FD4 /* bc5.png */; };
+		ECBE2AD5169DB23400283FD4 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A03169DB23400283FD4 /* bg.png */; };
+		ECBE2AD6169DB23400283FD4 /* bg0.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A04169DB23400283FD4 /* bg0.png */; };
+		ECBE2AD7169DB23400283FD4 /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A05169DB23400283FD4 /* bg1.png */; };
+		ECBE2AD8169DB23400283FD4 /* bg2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A06169DB23400283FD4 /* bg2.png */; };
+		ECBE2AD9169DB23400283FD4 /* bg3.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A07169DB23400283FD4 /* bg3.png */; };
+		ECBE2ADA169DB23400283FD4 /* bg4.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A08169DB23400283FD4 /* bg4.png */; };
+		ECBE2ADB169DB23400283FD4 /* bg5.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A09169DB23400283FD4 /* bg5.png */; };
+		ECBE2ADC169DB23400283FD4 /* bg6.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A0A169DB23400283FD4 /* bg6.png */; };
+		ECBE2ADD169DB23400283FD4 /* bgload1.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A0B169DB23400283FD4 /* bgload1.png */; };
+		ECBE2ADE169DB23400283FD4 /* bgload2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A0C169DB23400283FD4 /* bgload2.png */; };
+		ECBE2ADF169DB23400283FD4 /* erase.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A0D169DB23400283FD4 /* erase.png */; };
+		ECBE2AE0169DB23400283FD4 /* Eraser-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A0E169DB23400283FD4 /* Eraser-icon.png */; };
+		ECBE2AE1169DB23400283FD4 /* eraser-red.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A0F169DB23400283FD4 /* eraser-red.png */; };
+		ECBE2AE2169DB23400283FD4 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A10169DB23400283FD4 /* first.png */; };
+		ECBE2AE3169DB23400283FD4 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A11169DB23400283FD4 /* first@2x.png */; };
+		ECBE2AE4169DB23400283FD4 /* grid.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A12169DB23400283FD4 /* grid.png */; };
+		ECBE2AE5169DB23400283FD4 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A13169DB23400283FD4 /* info.png */; };
+		ECBE2AE6169DB23400283FD4 /* logo strusoft.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A14169DB23400283FD4 /* logo strusoft.jpeg */; };
+		ECBE2AE7169DB23400283FD4 /* logo_lu.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A15169DB23400283FD4 /* logo_lu.jpeg */; };
+		ECBE2AE8169DB23400283FD4 /* lu-logo2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A16169DB23400283FD4 /* lu-logo2.jpeg */; };
+		ECBE2AE9169DB23400283FD4 /* mathematical-instrument.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A17169DB23400283FD4 /* mathematical-instrument.png */; };
+		ECBE2AEA169DB23400283FD4 /* move.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A18169DB23400283FD4 /* move.png */; };
+		ECBE2AEB169DB23400283FD4 /* moves.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A19169DB23400283FD4 /* moves.png */; };
+		ECBE2AEC169DB23400283FD4 /* ortho.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A1A169DB23400283FD4 /* ortho.png */; };
+		ECBE2AED169DB23400283FD4 /* pen.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A1B169DB23400283FD4 /* pen.png */; };
+		ECBE2AEE169DB23400283FD4 /* Pencil-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A1C169DB23400283FD4 /* Pencil-icon.png */; };
+		ECBE2AEF169DB23400283FD4 /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A1D169DB23400283FD4 /* pencil.png */; };
+		ECBE2AF0169DB23400283FD4 /* penn.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A1E169DB23400283FD4 /* penn.png */; };
+		ECBE2AF1169DB23400283FD4 /* pennan.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A1F169DB23400283FD4 /* pennan.png */; };
+		ECBE2AF2169DB23400283FD4 /* pens.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A20169DB23400283FD4 /* pens.png */; };
+		ECBE2AF3169DB23400283FD4 /* screwdriver.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A21169DB23400283FD4 /* screwdriver.png */; };
+		ECBE2AF4169DB23400283FD4 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A22169DB23400283FD4 /* second.png */; };
+		ECBE2AF5169DB23400283FD4 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A23169DB23400283FD4 /* second@2x.png */; };
+		ECBE2AF6169DB23400283FD4 /* sigma.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A24169DB23400283FD4 /* sigma.png */; };
+		ECBE2AF7169DB23400283FD4 /* sigma2.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A25169DB23400283FD4 /* sigma2.png */; };
+		ECBE2AF8169DB23400283FD4 /* StruSoft logo.eps in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A26169DB23400283FD4 /* StruSoft logo.eps */; };
+		ECBE2AF9169DB23400283FD4 /* StruSoft logo_hires.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A27169DB23400283FD4 /* StruSoft logo_hires.png */; };
+		ECBE2AFA169DB23400283FD4 /* strusoftlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A28169DB23400283FD4 /* strusoftlogo.png */; };
+		ECBE2AFB169DB23400283FD4 /* warningBG.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A29169DB23400283FD4 /* warningBG.png */; };
+		ECBE2AFC169DB23400283FD4 /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2A2A169DB23400283FD4 /* write.png */; };
+		ECBE2B5E169DB72200283FD4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECBE2B5A169DB72200283FD4 /* libTestFlight.a */; };
+		ECBE2B5F169DB72200283FD4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2B5B169DB72200283FD4 /* README.md */; };
+		ECBE2B60169DB72200283FD4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = ECBE2B5C169DB72200283FD4 /* release_notes.md */; };
+		ECBE2B62169DB82200283FD4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ECBE2B61169DB82200283FD4 /* libz.dylib */; };
+		ECBE2BE6169DBB2A00283FD4 /* AboutViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A2D169DB23400283FD4 /* AboutViewController.mm */; };
+		ECBE2BE7169DBB2A00283FD4 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A2E169DB23400283FD4 /* AppDelegate.mm */; };
+		ECBE2BE8169DBB2A00283FD4 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A2F169DB23400283FD4 /* Base.cpp */; };
+		ECBE2BE9169DBB2A00283FD4 /* BoundaryConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A30169DB23400283FD4 /* BoundaryConditions.m */; };
+		ECBE2BEA169DBB2A00283FD4 /* ColorbarView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A31169DB23400283FD4 /* ColorbarView.mm */; };
+		ECBE2BEB169DBB2A00283FD4 /* ColorCode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A32169DB23400283FD4 /* ColorCode.cpp */; };
+		ECBE2BEC169DBB2A00283FD4 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A35169DB23400283FD4 /* CoreDataTableViewController.m */; };
+		ECBE2BED169DBB2A00283FD4 /* DBManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A36169DB23400283FD4 /* DBManager.mm */; };
+		ECBE2BEE169DBB2A00283FD4 /* Fem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A37169DB23400283FD4 /* Fem.cpp */; };
+		ECBE2BEF169DBB2A00283FD4 /* Forces.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A38169DB23400283FD4 /* Forces.m */; };
+		ECBE2BF0169DBB2A00283FD4 /* Geom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A39169DB23400283FD4 /* Geom.cpp */; };
+		ECBE2BF1169DBB2A00283FD4 /* GeometryView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3A169DB23400283FD4 /* GeometryView.mm */; };
+		ECBE2BF2169DBB2A00283FD4 /* GeometryViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3B169DB23400283FD4 /* GeometryViewController.mm */; };
+		ECBE2BF3169DBB2A00283FD4 /* HelpViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3C169DB23400283FD4 /* HelpViewController.mm */; };
+		ECBE2BF4169DBB2A00283FD4 /* Lines.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3D169DB23400283FD4 /* Lines.m */; };
+		ECBE2BF5169DBB2A00283FD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3E169DB23400283FD4 /* main.m */; };
+		ECBE2BF6169DBB2A00283FD4 /* MenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3F169DB23400283FD4 /* MenuViewController.mm */; };
+		ECBE2BF7169DBB2A00283FD4 /* ModelExistsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A40169DB23400283FD4 /* ModelExistsViewController.mm */; };
+		ECBE2BF8169DBB2A00283FD4 /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A41169DB23400283FD4 /* Models.m */; };
+		ECBE2BF9169DBB2A00283FD4 /* Nodes.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A42169DB23400283FD4 /* Nodes.m */; };
+		ECBE2BFA169DBB2A00283FD4 /* OpenTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A43169DB23400283FD4 /* OpenTableViewController.mm */; };
+		ECBE2BFB169DBB2A00283FD4 /* OpenViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A44169DB23400283FD4 /* OpenViewController.mm */; };
+		ECBE2BFC169DBB2A00283FD4 /* RedundancyView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A45169DB23400283FD4 /* RedundancyView.mm */; };
+		ECBE2BFD169DBB2A00283FD4 /* SaveAsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A46169DB23400283FD4 /* SaveAsViewController.mm */; };
+		ECBE2BFE169DBB2A00283FD4 /* Vec2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A47169DB23400283FD4 /* Vec2d.cpp */; };
+		ECBE2BFF169DBB2A00283FD4 /* WriteCoreData.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A48169DB23400283FD4 /* WriteCoreData.mm */; };
+		ECBE2C00169DBB2A00283FD4 /* calfem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A4A169DB23400283FD4 /* calfem.cpp */; };
+		ECBE2C21169DBB9B00283FD4 /* bandmat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A4D169DB23400283FD4 /* bandmat.cpp */; };
+		ECBE2C22169DBB9B00283FD4 /* cholesky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A4E169DB23400283FD4 /* cholesky.cpp */; };
+		ECBE2C23169DBB9B00283FD4 /* evalue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A51169DB23400283FD4 /* evalue.cpp */; };
+		ECBE2C24169DBB9B00283FD4 /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A52169DB23400283FD4 /* fft.cpp */; };
+		ECBE2C25169DBB9B00283FD4 /* hholder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A53169DB23400283FD4 /* hholder.cpp */; };
+		ECBE2C26169DBB9B00283FD4 /* jacobi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A55169DB23400283FD4 /* jacobi.cpp */; };
+		ECBE2C27169DBB9B00283FD4 /* myexcept.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A56169DB23400283FD4 /* myexcept.cpp */; };
+		ECBE2C28169DBB9B00283FD4 /* newfft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A58169DB23400283FD4 /* newfft.cpp */; };
+		ECBE2C29169DBB9B00283FD4 /* newmat1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A5A169DB23400283FD4 /* newmat1.cpp */; };
+		ECBE2C2A169DBB9B00283FD4 /* newmat2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A5B169DB23400283FD4 /* newmat2.cpp */; };
+		ECBE2C2B169DBB9B00283FD4 /* newmat3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A5C169DB23400283FD4 /* newmat3.cpp */; };
+		ECBE2C2C169DBB9B00283FD4 /* newmat4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A5D169DB23400283FD4 /* newmat4.cpp */; };
+		ECBE2C2D169DBB9B00283FD4 /* newmat5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A5E169DB23400283FD4 /* newmat5.cpp */; };
+		ECBE2C2E169DBB9B00283FD4 /* newmat6.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A5F169DB23400283FD4 /* newmat6.cpp */; };
+		ECBE2C2F169DBB9B00283FD4 /* newmat7.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A60169DB23400283FD4 /* newmat7.cpp */; };
+		ECBE2C30169DBB9B00283FD4 /* newmat8.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A61169DB23400283FD4 /* newmat8.cpp */; };
+		ECBE2C31169DBB9B00283FD4 /* newmat9.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A62169DB23400283FD4 /* newmat9.cpp */; };
+		ECBE2C32169DBB9B00283FD4 /* newmatex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A64169DB23400283FD4 /* newmatex.cpp */; };
+		ECBE2C33169DBB9B00283FD4 /* newmatnl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A66169DB23400283FD4 /* newmatnl.cpp */; };
+		ECBE2C34169DBB9B00283FD4 /* newmatrm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A69169DB23400283FD4 /* newmatrm.cpp */; };
+		ECBE2C35169DBB9B00283FD4 /* nm_misc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A6B169DB23400283FD4 /* nm_misc.cpp */; };
+		ECBE2C37169DBB9B00283FD4 /* solution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A6E169DB23400283FD4 /* solution.cpp */; };
+		ECBE2C38169DBB9B00283FD4 /* sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A70169DB23400283FD4 /* sort.cpp */; };
+		ECBE2C39169DBB9B00283FD4 /* submat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A71169DB23400283FD4 /* submat.cpp */; };
+		ECBE2C3A169DBB9B00283FD4 /* svd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A72169DB23400283FD4 /* svd.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		79B7356C15B0FC71008B8473 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC8E9085169581B70086B07D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		79B7356A15B0EF3E008B8473 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		820488ED156E1944006803C1 /* Sketch a Frame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sketch a Frame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		820488F1156E1944006803C1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		820488F3156E1944006803C1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		820488F5156E1944006803C1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8204891A156E1944006803C1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		EC0013561681D0F100882566 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ECA0B1F2169ECF1800A1362F /* bc3.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bc3.ai; sourceTree = "<group>"; };
+		ECA0B1F4169ECFD700A1362F /* Sketch a Frame.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sketch a Frame.entitlements"; sourceTree = "<group>"; };
+		ECA0B1F6169ED33600A1362F /* bc3.eps */ = {isa = PBXFileReference; lastKnownFileType = file; path = bc3.eps; sourceTree = "<group>"; };
+		ECA0B1F8169ED3A300A1362F /* bc3.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = bc3.svg; sourceTree = "<group>"; };
+		ECBBF39A1695C1060086E5B0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		ECBE29F1169DB23400283FD4 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		ECBE29F2169DB23400283FD4 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		ECBE29F3169DB23400283FD4 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
+		ECBE29F4169DB23400283FD4 /* icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-144.png"; sourceTree = "<group>"; };
+		ECBE29F5169DB23400283FD4 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		ECBE29F6169DB23400283FD4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		ECBE29F8169DB23400283FD4 /* 36-toolbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "36-toolbox.png"; sourceTree = "<group>"; };
+		ECBE29F9169DB23400283FD4 /* arrow-big-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-big-11.png"; sourceTree = "<group>"; };
+		ECBE29FA169DB23400283FD4 /* arrow-big-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-big-12.png"; sourceTree = "<group>"; };
+		ECBE29FB169DB23400283FD4 /* arrow-small-15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-small-15.png"; sourceTree = "<group>"; };
+		ECBE29FC169DB23400283FD4 /* bc0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bc0.png; sourceTree = "<group>"; };
+		ECBE29FD169DB23400283FD4 /* bc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bc1.png; sourceTree = "<group>"; };
+		ECBE29FE169DB23400283FD4 /* bc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bc2.png; sourceTree = "<group>"; };
+		ECBE29FF169DB23400283FD4 /* BC2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BC2@2x.png"; sourceTree = "<group>"; };
+		ECBE2A00169DB23400283FD4 /* bc3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bc3.png; sourceTree = "<group>"; };
+		ECBE2A01169DB23400283FD4 /* bc4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bc4.png; sourceTree = "<group>"; };
+		ECBE2A02169DB23400283FD4 /* bc5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bc5.png; sourceTree = "<group>"; };
+		ECBE2A03169DB23400283FD4 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		ECBE2A04169DB23400283FD4 /* bg0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg0.png; sourceTree = "<group>"; };
+		ECBE2A05169DB23400283FD4 /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
+		ECBE2A06169DB23400283FD4 /* bg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg2.png; sourceTree = "<group>"; };
+		ECBE2A07169DB23400283FD4 /* bg3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg3.png; sourceTree = "<group>"; };
+		ECBE2A08169DB23400283FD4 /* bg4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg4.png; sourceTree = "<group>"; };
+		ECBE2A09169DB23400283FD4 /* bg5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg5.png; sourceTree = "<group>"; };
+		ECBE2A0A169DB23400283FD4 /* bg6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg6.png; sourceTree = "<group>"; };
+		ECBE2A0B169DB23400283FD4 /* bgload1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgload1.png; sourceTree = "<group>"; };
+		ECBE2A0C169DB23400283FD4 /* bgload2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgload2.png; sourceTree = "<group>"; };
+		ECBE2A0D169DB23400283FD4 /* erase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erase.png; sourceTree = "<group>"; };
+		ECBE2A0E169DB23400283FD4 /* Eraser-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Eraser-icon.png"; sourceTree = "<group>"; };
+		ECBE2A0F169DB23400283FD4 /* eraser-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eraser-red.png"; sourceTree = "<group>"; };
+		ECBE2A10169DB23400283FD4 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		ECBE2A11169DB23400283FD4 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		ECBE2A12169DB23400283FD4 /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
+		ECBE2A13169DB23400283FD4 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		ECBE2A14169DB23400283FD4 /* logo strusoft.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "logo strusoft.jpeg"; sourceTree = "<group>"; };
+		ECBE2A15169DB23400283FD4 /* logo_lu.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo_lu.jpeg; sourceTree = "<group>"; };
+		ECBE2A16169DB23400283FD4 /* lu-logo2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lu-logo2.jpeg"; sourceTree = "<group>"; };
+		ECBE2A17169DB23400283FD4 /* mathematical-instrument.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mathematical-instrument.png"; sourceTree = "<group>"; };
+		ECBE2A18169DB23400283FD4 /* move.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = move.png; sourceTree = "<group>"; };
+		ECBE2A19169DB23400283FD4 /* moves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moves.png; sourceTree = "<group>"; };
+		ECBE2A1A169DB23400283FD4 /* ortho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ortho.png; sourceTree = "<group>"; };
+		ECBE2A1B169DB23400283FD4 /* pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pen.png; sourceTree = "<group>"; };
+		ECBE2A1C169DB23400283FD4 /* Pencil-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pencil-icon.png"; sourceTree = "<group>"; };
+		ECBE2A1D169DB23400283FD4 /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
+		ECBE2A1E169DB23400283FD4 /* penn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penn.png; sourceTree = "<group>"; };
+		ECBE2A1F169DB23400283FD4 /* pennan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pennan.png; sourceTree = "<group>"; };
+		ECBE2A20169DB23400283FD4 /* pens.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pens.png; sourceTree = "<group>"; };
+		ECBE2A21169DB23400283FD4 /* screwdriver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screwdriver.png; sourceTree = "<group>"; };
+		ECBE2A22169DB23400283FD4 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		ECBE2A23169DB23400283FD4 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		ECBE2A24169DB23400283FD4 /* sigma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sigma.png; sourceTree = "<group>"; };
+		ECBE2A25169DB23400283FD4 /* sigma2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sigma2.png; sourceTree = "<group>"; };
+		ECBE2A26169DB23400283FD4 /* StruSoft logo.eps */ = {isa = PBXFileReference; lastKnownFileType = file; path = "StruSoft logo.eps"; sourceTree = "<group>"; };
+		ECBE2A27169DB23400283FD4 /* StruSoft logo_hires.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StruSoft logo_hires.png"; sourceTree = "<group>"; };
+		ECBE2A28169DB23400283FD4 /* strusoftlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strusoftlogo.png; sourceTree = "<group>"; };
+		ECBE2A29169DB23400283FD4 /* warningBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warningBG.png; sourceTree = "<group>"; };
+		ECBE2A2A169DB23400283FD4 /* write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write.png; sourceTree = "<group>"; };
+		ECBE2A2D169DB23400283FD4 /* AboutViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AboutViewController.mm; sourceTree = "<group>"; };
+		ECBE2A2E169DB23400283FD4 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		ECBE2A2F169DB23400283FD4 /* Base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
+		ECBE2A30169DB23400283FD4 /* BoundaryConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundaryConditions.m; sourceTree = "<group>"; };
+		ECBE2A31169DB23400283FD4 /* ColorbarView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ColorbarView.mm; sourceTree = "<group>"; };
+		ECBE2A32169DB23400283FD4 /* ColorCode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorCode.cpp; sourceTree = "<group>"; };
+		ECBE2A35169DB23400283FD4 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		ECBE2A36169DB23400283FD4 /* DBManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DBManager.mm; sourceTree = "<group>"; };
+		ECBE2A37169DB23400283FD4 /* Fem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fem.cpp; sourceTree = "<group>"; };
+		ECBE2A38169DB23400283FD4 /* Forces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Forces.m; sourceTree = "<group>"; };
+		ECBE2A39169DB23400283FD4 /* Geom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Geom.cpp; sourceTree = "<group>"; };
+		ECBE2A3A169DB23400283FD4 /* GeometryView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GeometryView.mm; sourceTree = "<group>"; };
+		ECBE2A3B169DB23400283FD4 /* GeometryViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GeometryViewController.mm; sourceTree = "<group>"; };
+		ECBE2A3C169DB23400283FD4 /* HelpViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HelpViewController.mm; sourceTree = "<group>"; };
+		ECBE2A3D169DB23400283FD4 /* Lines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lines.m; sourceTree = "<group>"; };
+		ECBE2A3E169DB23400283FD4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ECBE2A3F169DB23400283FD4 /* MenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MenuViewController.mm; sourceTree = "<group>"; };
+		ECBE2A40169DB23400283FD4 /* ModelExistsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ModelExistsViewController.mm; sourceTree = "<group>"; };
+		ECBE2A41169DB23400283FD4 /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
+		ECBE2A42169DB23400283FD4 /* Nodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nodes.m; sourceTree = "<group>"; };
+		ECBE2A43169DB23400283FD4 /* OpenTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenTableViewController.mm; sourceTree = "<group>"; };
+		ECBE2A44169DB23400283FD4 /* OpenViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenViewController.mm; sourceTree = "<group>"; };
+		ECBE2A45169DB23400283FD4 /* RedundancyView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RedundancyView.mm; sourceTree = "<group>"; };
+		ECBE2A46169DB23400283FD4 /* SaveAsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SaveAsViewController.mm; sourceTree = "<group>"; };
+		ECBE2A47169DB23400283FD4 /* Vec2d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vec2d.cpp; sourceTree = "<group>"; };
+		ECBE2A48169DB23400283FD4 /* WriteCoreData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WriteCoreData.mm; sourceTree = "<group>"; };
+		ECBE2A4A169DB23400283FD4 /* calfem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = calfem.cpp; sourceTree = "<group>"; };
+		ECBE2A4B169DB23400283FD4 /* calfem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calfem.h; sourceTree = "<group>"; };
+		ECBE2A4D169DB23400283FD4 /* bandmat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bandmat.cpp; sourceTree = "<group>"; };
+		ECBE2A4E169DB23400283FD4 /* cholesky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cholesky.cpp; sourceTree = "<group>"; };
+		ECBE2A4F169DB23400283FD4 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		ECBE2A50169DB23400283FD4 /* controlw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controlw.h; sourceTree = "<group>"; };
+		ECBE2A51169DB23400283FD4 /* evalue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = evalue.cpp; sourceTree = "<group>"; };
+		ECBE2A52169DB23400283FD4 /* fft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fft.cpp; sourceTree = "<group>"; };
+		ECBE2A53169DB23400283FD4 /* hholder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hholder.cpp; sourceTree = "<group>"; };
+		ECBE2A54169DB23400283FD4 /* include.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = include.h; sourceTree = "<group>"; };
+		ECBE2A55169DB23400283FD4 /* jacobi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jacobi.cpp; sourceTree = "<group>"; };
+		ECBE2A56169DB23400283FD4 /* myexcept.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = myexcept.cpp; sourceTree = "<group>"; };
+		ECBE2A57169DB23400283FD4 /* myexcept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myexcept.h; sourceTree = "<group>"; };
+		ECBE2A58169DB23400283FD4 /* newfft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newfft.cpp; sourceTree = "<group>"; };
+		ECBE2A59169DB23400283FD4 /* newmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmat.h; sourceTree = "<group>"; };
+		ECBE2A5A169DB23400283FD4 /* newmat1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat1.cpp; sourceTree = "<group>"; };
+		ECBE2A5B169DB23400283FD4 /* newmat2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat2.cpp; sourceTree = "<group>"; };
+		ECBE2A5C169DB23400283FD4 /* newmat3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat3.cpp; sourceTree = "<group>"; };
+		ECBE2A5D169DB23400283FD4 /* newmat4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat4.cpp; sourceTree = "<group>"; };
+		ECBE2A5E169DB23400283FD4 /* newmat5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat5.cpp; sourceTree = "<group>"; };
+		ECBE2A5F169DB23400283FD4 /* newmat6.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat6.cpp; sourceTree = "<group>"; };
+		ECBE2A60169DB23400283FD4 /* newmat7.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat7.cpp; sourceTree = "<group>"; };
+		ECBE2A61169DB23400283FD4 /* newmat8.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat8.cpp; sourceTree = "<group>"; };
+		ECBE2A62169DB23400283FD4 /* newmat9.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat9.cpp; sourceTree = "<group>"; };
+		ECBE2A63169DB23400283FD4 /* newmatap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmatap.h; sourceTree = "<group>"; };
+		ECBE2A64169DB23400283FD4 /* newmatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmatex.cpp; sourceTree = "<group>"; };
+		ECBE2A65169DB23400283FD4 /* newmatio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmatio.h; sourceTree = "<group>"; };
+		ECBE2A66169DB23400283FD4 /* newmatnl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmatnl.cpp; sourceTree = "<group>"; };
+		ECBE2A67169DB23400283FD4 /* newmatnl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmatnl.h; sourceTree = "<group>"; };
+		ECBE2A68169DB23400283FD4 /* newmatrc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmatrc.h; sourceTree = "<group>"; };
+		ECBE2A69169DB23400283FD4 /* newmatrm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmatrm.cpp; sourceTree = "<group>"; };
+		ECBE2A6A169DB23400283FD4 /* newmatrm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmatrm.h; sourceTree = "<group>"; };
+		ECBE2A6B169DB23400283FD4 /* nm_misc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nm_misc.cpp; sourceTree = "<group>"; };
+		ECBE2A6C169DB23400283FD4 /* precisio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = precisio.h; sourceTree = "<group>"; };
+		ECBE2A6D169DB23400283FD4 /* sl_ex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sl_ex.cpp; sourceTree = "<group>"; };
+		ECBE2A6E169DB23400283FD4 /* solution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = solution.cpp; sourceTree = "<group>"; };
+		ECBE2A6F169DB23400283FD4 /* solution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = solution.h; sourceTree = "<group>"; };
+		ECBE2A70169DB23400283FD4 /* sort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sort.cpp; sourceTree = "<group>"; };
+		ECBE2A71169DB23400283FD4 /* submat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = submat.cpp; sourceTree = "<group>"; };
+		ECBE2A72169DB23400283FD4 /* svd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = svd.cpp; sourceTree = "<group>"; };
+		ECBE2A73169DB23400283FD4 /* tmt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmt.h; sourceTree = "<group>"; };
+		ECBE2A75169DB23400283FD4 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		ECBE2A76169DB23400283FD4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		ECBE2A77169DB23400283FD4 /* Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
+		ECBE2A78169DB23400283FD4 /* BoundaryConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoundaryConditions.h; sourceTree = "<group>"; };
+		ECBE2A79169DB23400283FD4 /* ColorbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorbarView.h; sourceTree = "<group>"; };
+		ECBE2A7A169DB23400283FD4 /* ColorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCode.h; sourceTree = "<group>"; };
+		ECBE2A7B169DB23400283FD4 /* CommonDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefs.h; sourceTree = "<group>"; };
+		ECBE2A7E169DB23400283FD4 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		ECBE2A7F169DB23400283FD4 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		ECBE2A80169DB23400283FD4 /* Fem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fem.h; sourceTree = "<group>"; };
+		ECBE2A81169DB23400283FD4 /* Forces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forces.h; sourceTree = "<group>"; };
+		ECBE2A82169DB23400283FD4 /* Geom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geom.h; sourceTree = "<group>"; };
+		ECBE2A83169DB23400283FD4 /* GeometryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryView.h; sourceTree = "<group>"; };
+		ECBE2A84169DB23400283FD4 /* GeometryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryViewController.h; sourceTree = "<group>"; };
+		ECBE2A85169DB23400283FD4 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		ECBE2A86169DB23400283FD4 /* Lines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lines.h; sourceTree = "<group>"; };
+		ECBE2A87169DB23400283FD4 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		ECBE2A88169DB23400283FD4 /* ModelExistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelExistsViewController.h; sourceTree = "<group>"; };
+		ECBE2A89169DB23400283FD4 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
+		ECBE2A8A169DB23400283FD4 /* Nodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nodes.h; sourceTree = "<group>"; };
+		ECBE2A8B169DB23400283FD4 /* OpenTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTableViewController.h; sourceTree = "<group>"; };
+		ECBE2A8C169DB23400283FD4 /* OpenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenViewController.h; sourceTree = "<group>"; };
+		ECBE2A8D169DB23400283FD4 /* Pointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pointer.h; sourceTree = "<group>"; };
+		ECBE2A8E169DB23400283FD4 /* RedundancyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedundancyView.h; sourceTree = "<group>"; };
+		ECBE2A8F169DB23400283FD4 /* SaveAsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveAsViewController.h; sourceTree = "<group>"; };
+		ECBE2A90169DB23400283FD4 /* Vec2d.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vec2d.h; sourceTree = "<group>"; };
+		ECBE2A91169DB23400283FD4 /* WriteCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteCoreData.h; sourceTree = "<group>"; };
+		ECBE2A92169DB23400283FD4 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		ECBE2A94169DB23400283FD4 /* bandmat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bandmat.cpp; sourceTree = "<group>"; };
+		ECBE2A95169DB23400283FD4 /* cholesky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cholesky.cpp; sourceTree = "<group>"; };
+		ECBE2A96169DB23400283FD4 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
+		ECBE2A97169DB23400283FD4 /* controlw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = controlw.h; sourceTree = "<group>"; };
+		ECBE2A98169DB23400283FD4 /* evalue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = evalue.cpp; sourceTree = "<group>"; };
+		ECBE2A99169DB23400283FD4 /* fft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fft.cpp; sourceTree = "<group>"; };
+		ECBE2A9A169DB23400283FD4 /* hholder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hholder.cpp; sourceTree = "<group>"; };
+		ECBE2A9B169DB23400283FD4 /* include.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = include.h; sourceTree = "<group>"; };
+		ECBE2A9C169DB23400283FD4 /* jacobi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jacobi.cpp; sourceTree = "<group>"; };
+		ECBE2A9D169DB23400283FD4 /* myexcept.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = myexcept.cpp; sourceTree = "<group>"; };
+		ECBE2A9E169DB23400283FD4 /* myexcept.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myexcept.h; sourceTree = "<group>"; };
+		ECBE2A9F169DB23400283FD4 /* newfft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newfft.cpp; sourceTree = "<group>"; };
+		ECBE2AA0169DB23400283FD4 /* newmat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmat.h; sourceTree = "<group>"; };
+		ECBE2AA1169DB23400283FD4 /* newmat1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat1.cpp; sourceTree = "<group>"; };
+		ECBE2AA2169DB23400283FD4 /* newmat2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat2.cpp; sourceTree = "<group>"; };
+		ECBE2AA3169DB23400283FD4 /* newmat3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat3.cpp; sourceTree = "<group>"; };
+		ECBE2AA4169DB23400283FD4 /* newmat4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat4.cpp; sourceTree = "<group>"; };
+		ECBE2AA5169DB23400283FD4 /* newmat5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat5.cpp; sourceTree = "<group>"; };
+		ECBE2AA6169DB23400283FD4 /* newmat6.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat6.cpp; sourceTree = "<group>"; };
+		ECBE2AA7169DB23400283FD4 /* newmat7.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat7.cpp; sourceTree = "<group>"; };
+		ECBE2AA8169DB23400283FD4 /* newmat8.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat8.cpp; sourceTree = "<group>"; };
+		ECBE2AA9169DB23400283FD4 /* newmat9.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmat9.cpp; sourceTree = "<group>"; };
+		ECBE2AAA169DB23400283FD4 /* newmatap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmatap.h; sourceTree = "<group>"; };
+		ECBE2AAB169DB23400283FD4 /* newmatex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmatex.cpp; sourceTree = "<group>"; };
+		ECBE2AAC169DB23400283FD4 /* newmatio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmatio.h; sourceTree = "<group>"; };
+		ECBE2AAD169DB23400283FD4 /* newmatnl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmatnl.cpp; sourceTree = "<group>"; };
+		ECBE2AAE169DB23400283FD4 /* newmatnl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmatnl.h; sourceTree = "<group>"; };
+		ECBE2AAF169DB23400283FD4 /* newmatrc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmatrc.h; sourceTree = "<group>"; };
+		ECBE2AB0169DB23400283FD4 /* newmatrm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = newmatrm.cpp; sourceTree = "<group>"; };
+		ECBE2AB1169DB23400283FD4 /* newmatrm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newmatrm.h; sourceTree = "<group>"; };
+		ECBE2AB2169DB23400283FD4 /* nm_misc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nm_misc.cpp; sourceTree = "<group>"; };
+		ECBE2AB3169DB23400283FD4 /* precisio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = precisio.h; sourceTree = "<group>"; };
+		ECBE2AB4169DB23400283FD4 /* solution.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = solution.cpp; sourceTree = "<group>"; };
+		ECBE2AB5169DB23400283FD4 /* solution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = solution.h; sourceTree = "<group>"; };
+		ECBE2AB6169DB23400283FD4 /* sort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sort.cpp; sourceTree = "<group>"; };
+		ECBE2AB7169DB23400283FD4 /* submat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = submat.cpp; sourceTree = "<group>"; };
+		ECBE2AB8169DB23400283FD4 /* svd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = svd.cpp; sourceTree = "<group>"; };
+		ECBE2AB9169DB23400283FD4 /* tmt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmt.h; sourceTree = "<group>"; };
+		ECBE2ABA169DB23400283FD4 /* Property List.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Property List.plist"; sourceTree = "<group>"; };
+		ECBE2ABC169DB23400283FD4 /* SimpleFrame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleFrame.xcdatamodel; sourceTree = "<group>"; };
+		ECBE2B5A169DB72200283FD4 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		ECBE2B5B169DB72200283FD4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		ECBE2B5C169DB72200283FD4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		ECBE2B5D169DB72200283FD4 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		ECBE2B61169DB82200283FD4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		820488EA156E1944006803C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECBE2B62169DB82200283FD4 /* libz.dylib in Frameworks */,
+				ECBBF39B1695C1060086E5B0 /* Accelerate.framework in Frameworks */,
+				EC0013571681D0F100882566 /* QuartzCore.framework in Frameworks */,
+				79B7356B15B0EF3E008B8473 /* CoreData.framework in Frameworks */,
+				820488F2156E1944006803C1 /* UIKit.framework in Frameworks */,
+				820488F4156E1944006803C1 /* Foundation.framework in Frameworks */,
+				820488F6156E1944006803C1 /* CoreGraphics.framework in Frameworks */,
+				ECBE2B5E169DB72200283FD4 /* libTestFlight.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		820488E2156E1943006803C1 = {
+			isa = PBXGroup;
+			children = (
+				ECA0B1F4169ECFD700A1362F /* Sketch a Frame.entitlements */,
+				ECBE29F1169DB23400283FD4 /* Default-Portrait@2x~ipad.png */,
+				ECBE29F2169DB23400283FD4 /* Default-Portrait~ipad.png */,
+				ECBE29F3169DB23400283FD4 /* icon-72.png */,
+				ECBE29F4169DB23400283FD4 /* icon-144.png */,
+				ECBE29F5169DB23400283FD4 /* MainStoryboard.storyboard */,
+				ECBE29F6169DB23400283FD4 /* README.md */,
+				ECBE29F7169DB23400283FD4 /* resources */,
+				ECBE2A2B169DB23400283FD4 /* source */,
+				820488F0156E1944006803C1 /* Frameworks */,
+				820488EE156E1944006803C1 /* Products */,
+				ECBE2B59169DB72200283FD4 /* TestFlightSDK1.1 */,
+			);
+			sourceTree = "<group>";
+		};
+		820488EE156E1944006803C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				820488ED156E1944006803C1 /* Sketch a Frame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		820488F0156E1944006803C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECBE2B61169DB82200283FD4 /* libz.dylib */,
+				ECBBF39A1695C1060086E5B0 /* Accelerate.framework */,
+				EC0013561681D0F100882566 /* QuartzCore.framework */,
+				79B7356A15B0EF3E008B8473 /* CoreData.framework */,
+				820488F1156E1944006803C1 /* UIKit.framework */,
+				820488F3156E1944006803C1 /* Foundation.framework */,
+				820488F5156E1944006803C1 /* CoreGraphics.framework */,
+				8204891A156E1944006803C1 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECBE29F7169DB23400283FD4 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				ECA0B1F2169ECF1800A1362F /* bc3.ai */,
+				ECA0B1F8169ED3A300A1362F /* bc3.svg */,
+				ECA0B1F6169ED33600A1362F /* bc3.eps */,
+				ECBE29F8169DB23400283FD4 /* 36-toolbox.png */,
+				ECBE29F9169DB23400283FD4 /* arrow-big-11.png */,
+				ECBE29FA169DB23400283FD4 /* arrow-big-12.png */,
+				ECBE29FB169DB23400283FD4 /* arrow-small-15.png */,
+				ECBE29FC169DB23400283FD4 /* bc0.png */,
+				ECBE29FD169DB23400283FD4 /* bc1.png */,
+				ECBE29FE169DB23400283FD4 /* bc2.png */,
+				ECBE29FF169DB23400283FD4 /* BC2@2x.png */,
+				ECBE2A00169DB23400283FD4 /* bc3.png */,
+				ECBE2A01169DB23400283FD4 /* bc4.png */,
+				ECBE2A02169DB23400283FD4 /* bc5.png */,
+				ECBE2A03169DB23400283FD4 /* bg.png */,
+				ECBE2A04169DB23400283FD4 /* bg0.png */,
+				ECBE2A05169DB23400283FD4 /* bg1.png */,
+				ECBE2A06169DB23400283FD4 /* bg2.png */,
+				ECBE2A07169DB23400283FD4 /* bg3.png */,
+				ECBE2A08169DB23400283FD4 /* bg4.png */,
+				ECBE2A09169DB23400283FD4 /* bg5.png */,
+				ECBE2A0A169DB23400283FD4 /* bg6.png */,
+				ECBE2A0B169DB23400283FD4 /* bgload1.png */,
+				ECBE2A0C169DB23400283FD4 /* bgload2.png */,
+				ECBE2A0D169DB23400283FD4 /* erase.png */,
+				ECBE2A0E169DB23400283FD4 /* Eraser-icon.png */,
+				ECBE2A0F169DB23400283FD4 /* eraser-red.png */,
+				ECBE2A10169DB23400283FD4 /* first.png */,
+				ECBE2A11169DB23400283FD4 /* first@2x.png */,
+				ECBE2A12169DB23400283FD4 /* grid.png */,
+				ECBE2A13169DB23400283FD4 /* info.png */,
+				ECBE2A14169DB23400283FD4 /* logo strusoft.jpeg */,
+				ECBE2A15169DB23400283FD4 /* logo_lu.jpeg */,
+				ECBE2A16169DB23400283FD4 /* lu-logo2.jpeg */,
+				ECBE2A17169DB23400283FD4 /* mathematical-instrument.png */,
+				ECBE2A18169DB23400283FD4 /* move.png */,
+				ECBE2A19169DB23400283FD4 /* moves.png */,
+				ECBE2A1A169DB23400283FD4 /* ortho.png */,
+				ECBE2A1B169DB23400283FD4 /* pen.png */,
+				ECBE2A1C169DB23400283FD4 /* Pencil-icon.png */,
+				ECBE2A1D169DB23400283FD4 /* pencil.png */,
+				ECBE2A1E169DB23400283FD4 /* penn.png */,
+				ECBE2A1F169DB23400283FD4 /* pennan.png */,
+				ECBE2A20169DB23400283FD4 /* pens.png */,
+				ECBE2A21169DB23400283FD4 /* screwdriver.png */,
+				ECBE2A22169DB23400283FD4 /* second.png */,
+				ECBE2A23169DB23400283FD4 /* second@2x.png */,
+				ECBE2A24169DB23400283FD4 /* sigma.png */,
+				ECBE2A25169DB23400283FD4 /* sigma2.png */,
+				ECBE2A26169DB23400283FD4 /* StruSoft logo.eps */,
+				ECBE2A27169DB23400283FD4 /* StruSoft logo_hires.png */,
+				ECBE2A28169DB23400283FD4 /* strusoftlogo.png */,
+				ECBE2A29169DB23400283FD4 /* warningBG.png */,
+				ECBE2A2A169DB23400283FD4 /* write.png */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		ECBE2A2B169DB23400283FD4 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				ECBE2A2C169DB23400283FD4 /* bodies */,
+				ECBE2A49169DB23400283FD4 /* calfemcxx_source */,
+				ECBE2A74169DB23400283FD4 /* headers */,
+				ECBE2A93169DB23400283FD4 /* newmat_source */,
+				ECBE2ABA169DB23400283FD4 /* Property List.plist */,
+				ECBE2A92169DB23400283FD4 /* InfoPlist.strings */,
+				ECBE2ABB169DB23400283FD4 /* SimpleFrame.xcdatamodeld */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		ECBE2A2C169DB23400283FD4 /* bodies */ = {
+			isa = PBXGroup;
+			children = (
+				ECBE2A2D169DB23400283FD4 /* AboutViewController.mm */,
+				ECBE2A2E169DB23400283FD4 /* AppDelegate.mm */,
+				ECBE2A2F169DB23400283FD4 /* Base.cpp */,
+				ECBE2A30169DB23400283FD4 /* BoundaryConditions.m */,
+				ECBE2A31169DB23400283FD4 /* ColorbarView.mm */,
+				ECBE2A32169DB23400283FD4 /* ColorCode.cpp */,
+				ECBE2A35169DB23400283FD4 /* CoreDataTableViewController.m */,
+				ECBE2A36169DB23400283FD4 /* DBManager.mm */,
+				ECBE2A37169DB23400283FD4 /* Fem.cpp */,
+				ECBE2A38169DB23400283FD4 /* Forces.m */,
+				ECBE2A39169DB23400283FD4 /* Geom.cpp */,
+				ECBE2A3A169DB23400283FD4 /* GeometryView.mm */,
+				ECBE2A3B169DB23400283FD4 /* GeometryViewController.mm */,
+				ECBE2A3C169DB23400283FD4 /* HelpViewController.mm */,
+				ECBE2A3D169DB23400283FD4 /* Lines.m */,
+				ECBE2A3E169DB23400283FD4 /* main.m */,
+				ECBE2A3F169DB23400283FD4 /* MenuViewController.mm */,
+				ECBE2A40169DB23400283FD4 /* ModelExistsViewController.mm */,
+				ECBE2A41169DB23400283FD4 /* Models.m */,
+				ECBE2A42169DB23400283FD4 /* Nodes.m */,
+				ECBE2A43169DB23400283FD4 /* OpenTableViewController.mm */,
+				ECBE2A44169DB23400283FD4 /* OpenViewController.mm */,
+				ECBE2A45169DB23400283FD4 /* RedundancyView.mm */,
+				ECBE2A46169DB23400283FD4 /* SaveAsViewController.mm */,
+				ECBE2A47169DB23400283FD4 /* Vec2d.cpp */,
+				ECBE2A48169DB23400283FD4 /* WriteCoreData.mm */,
+			);
+			path = bodies;
+			sourceTree = "<group>";
+		};
+		ECBE2A49169DB23400283FD4 /* calfemcxx_source */ = {
+			isa = PBXGroup;
+			children = (
+				ECBE2A4A169DB23400283FD4 /* calfem.cpp */,
+				ECBE2A4B169DB23400283FD4 /* calfem.h */,
+				ECBE2A4C169DB23400283FD4 /* newmat */,
+			);
+			path = calfemcxx_source;
+			sourceTree = "<group>";
+		};
+		ECBE2A4C169DB23400283FD4 /* newmat */ = {
+			isa = PBXGroup;
+			children = (
+				ECBE2A4D169DB23400283FD4 /* bandmat.cpp */,
+				ECBE2A4E169DB23400283FD4 /* cholesky.cpp */,
+				ECBE2A4F169DB23400283FD4 /* CMakeLists.txt */,
+				ECBE2A50169DB23400283FD4 /* controlw.h */,
+				ECBE2A51169DB23400283FD4 /* evalue.cpp */,
+				ECBE2A52169DB23400283FD4 /* fft.cpp */,
+				ECBE2A53169DB23400283FD4 /* hholder.cpp */,
+				ECBE2A54169DB23400283FD4 /* include.h */,
+				ECBE2A55169DB23400283FD4 /* jacobi.cpp */,
+				ECBE2A56169DB23400283FD4 /* myexcept.cpp */,
+				ECBE2A57169DB23400283FD4 /* myexcept.h */,
+				ECBE2A58169DB23400283FD4 /* newfft.cpp */,
+				ECBE2A59169DB23400283FD4 /* newmat.h */,
+				ECBE2A5A169DB23400283FD4 /* newmat1.cpp */,
+				ECBE2A5B169DB23400283FD4 /* newmat2.cpp */,
+				ECBE2A5C169DB23400283FD4 /* newmat3.cpp */,
+				ECBE2A5D169DB23400283FD4 /* newmat4.cpp */,
+				ECBE2A5E169DB23400283FD4 /* newmat5.cpp */,
+				ECBE2A5F169DB23400283FD4 /* newmat6.cpp */,
+				ECBE2A60169DB23400283FD4 /* newmat7.cpp */,
+				ECBE2A61169DB23400283FD4 /* newmat8.cpp */,
+				ECBE2A62169DB23400283FD4 /* newmat9.cpp */,
+				ECBE2A63169DB23400283FD4 /* newmatap.h */,
+				ECBE2A64169DB23400283FD4 /* newmatex.cpp */,
+				ECBE2A65169DB23400283FD4 /* newmatio.h */,
+				ECBE2A66169DB23400283FD4 /* newmatnl.cpp */,
+				ECBE2A67169DB23400283FD4 /* newmatnl.h */,
+				ECBE2A68169DB23400283FD4 /* newmatrc.h */,
+				ECBE2A69169DB23400283FD4 /* newmatrm.cpp */,
+				ECBE2A6A169DB23400283FD4 /* newmatrm.h */,
+				ECBE2A6B169DB23400283FD4 /* nm_misc.cpp */,
+				ECBE2A6C169DB23400283FD4 /* precisio.h */,
+				ECBE2A6D169DB23400283FD4 /* sl_ex.cpp */,
+				ECBE2A6E169DB23400283FD4 /* solution.cpp */,
+				ECBE2A6F169DB23400283FD4 /* solution.h */,
+				ECBE2A70169DB23400283FD4 /* sort.cpp */,
+				ECBE2A71169DB23400283FD4 /* submat.cpp */,
+				ECBE2A72169DB23400283FD4 /* svd.cpp */,
+				ECBE2A73169DB23400283FD4 /* tmt.h */,
+			);
+			path = newmat;
+			sourceTree = "<group>";
+		};
+		ECBE2A74169DB23400283FD4 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				ECBE2A75169DB23400283FD4 /* AboutViewController.h */,
+				ECBE2A76169DB23400283FD4 /* AppDelegate.h */,
+				ECBE2A77169DB23400283FD4 /* Base.h */,
+				ECBE2A78169DB23400283FD4 /* BoundaryConditions.h */,
+				ECBE2A79169DB23400283FD4 /* ColorbarView.h */,
+				ECBE2A7A169DB23400283FD4 /* ColorCode.h */,
+				ECBE2A7B169DB23400283FD4 /* CommonDefs.h */,
+				ECBE2A7E169DB23400283FD4 /* CoreDataTableViewController.h */,
+				ECBE2A7F169DB23400283FD4 /* DBManager.h */,
+				ECBE2A80169DB23400283FD4 /* Fem.h */,
+				ECBE2A81169DB23400283FD4 /* Forces.h */,
+				ECBE2A82169DB23400283FD4 /* Geom.h */,
+				ECBE2A83169DB23400283FD4 /* GeometryView.h */,
+				ECBE2A84169DB23400283FD4 /* GeometryViewController.h */,
+				ECBE2A85169DB23400283FD4 /* HelpViewController.h */,
+				ECBE2A86169DB23400283FD4 /* Lines.h */,
+				ECBE2A87169DB23400283FD4 /* MenuViewController.h */,
+				ECBE2A88169DB23400283FD4 /* ModelExistsViewController.h */,
+				ECBE2A89169DB23400283FD4 /* Models.h */,
+				ECBE2A8A169DB23400283FD4 /* Nodes.h */,
+				ECBE2A8B169DB23400283FD4 /* OpenTableViewController.h */,
+				ECBE2A8C169DB23400283FD4 /* OpenViewController.h */,
+				ECBE2A8D169DB23400283FD4 /* Pointer.h */,
+				ECBE2A8E169DB23400283FD4 /* RedundancyView.h */,
+				ECBE2A8F169DB23400283FD4 /* SaveAsViewController.h */,
+				ECBE2A90169DB23400283FD4 /* Vec2d.h */,
+				ECBE2A91169DB23400283FD4 /* WriteCoreData.h */,
+			);
+			path = headers;
+			sourceTree = "<group>";
+		};
+		ECBE2A93169DB23400283FD4 /* newmat_source */ = {
+			isa = PBXGroup;
+			children = (
+				ECBE2A94169DB23400283FD4 /* bandmat.cpp */,
+				ECBE2A95169DB23400283FD4 /* cholesky.cpp */,
+				ECBE2A96169DB23400283FD4 /* CMakeLists.txt */,
+				ECBE2A97169DB23400283FD4 /* controlw.h */,
+				ECBE2A98169DB23400283FD4 /* evalue.cpp */,
+				ECBE2A99169DB23400283FD4 /* fft.cpp */,
+				ECBE2A9A169DB23400283FD4 /* hholder.cpp */,
+				ECBE2A9B169DB23400283FD4 /* include.h */,
+				ECBE2A9C169DB23400283FD4 /* jacobi.cpp */,
+				ECBE2A9D169DB23400283FD4 /* myexcept.cpp */,
+				ECBE2A9E169DB23400283FD4 /* myexcept.h */,
+				ECBE2A9F169DB23400283FD4 /* newfft.cpp */,
+				ECBE2AA0169DB23400283FD4 /* newmat.h */,
+				ECBE2AA1169DB23400283FD4 /* newmat1.cpp */,
+				ECBE2AA2169DB23400283FD4 /* newmat2.cpp */,
+				ECBE2AA3169DB23400283FD4 /* newmat3.cpp */,
+				ECBE2AA4169DB23400283FD4 /* newmat4.cpp */,
+				ECBE2AA5169DB23400283FD4 /* newmat5.cpp */,
+				ECBE2AA6169DB23400283FD4 /* newmat6.cpp */,
+				ECBE2AA7169DB23400283FD4 /* newmat7.cpp */,
+				ECBE2AA8169DB23400283FD4 /* newmat8.cpp */,
+				ECBE2AA9169DB23400283FD4 /* newmat9.cpp */,
+				ECBE2AAA169DB23400283FD4 /* newmatap.h */,
+				ECBE2AAB169DB23400283FD4 /* newmatex.cpp */,
+				ECBE2AAC169DB23400283FD4 /* newmatio.h */,
+				ECBE2AAD169DB23400283FD4 /* newmatnl.cpp */,
+				ECBE2AAE169DB23400283FD4 /* newmatnl.h */,
+				ECBE2AAF169DB23400283FD4 /* newmatrc.h */,
+				ECBE2AB0169DB23400283FD4 /* newmatrm.cpp */,
+				ECBE2AB1169DB23400283FD4 /* newmatrm.h */,
+				ECBE2AB2169DB23400283FD4 /* nm_misc.cpp */,
+				ECBE2AB3169DB23400283FD4 /* precisio.h */,
+				ECBE2AB4169DB23400283FD4 /* solution.cpp */,
+				ECBE2AB5169DB23400283FD4 /* solution.h */,
+				ECBE2AB6169DB23400283FD4 /* sort.cpp */,
+				ECBE2AB7169DB23400283FD4 /* submat.cpp */,
+				ECBE2AB8169DB23400283FD4 /* svd.cpp */,
+				ECBE2AB9169DB23400283FD4 /* tmt.h */,
+			);
+			path = newmat_source;
+			sourceTree = "<group>";
+		};
+		ECBE2B59169DB72200283FD4 /* TestFlightSDK1.1 */ = {
+			isa = PBXGroup;
+			children = (
+				ECBE2B5A169DB72200283FD4 /* libTestFlight.a */,
+				ECBE2B5B169DB72200283FD4 /* README.md */,
+				ECBE2B5C169DB72200283FD4 /* release_notes.md */,
+				ECBE2B5D169DB72200283FD4 /* TestFlight.h */,
+			);
+			path = TestFlightSDK1.1;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		820488EC156E1944006803C1 /* Sketch a Frame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8204892B156E1944006803C1 /* Build configuration list for PBXNativeTarget "Sketch a Frame" */;
+			buildPhases = (
+				820488E9156E1944006803C1 /* Sources */,
+				820488EA156E1944006803C1 /* Frameworks */,
+				820488EB156E1944006803C1 /* Resources */,
+				EC8E9085169581B70086B07D /* CopyFiles */,
+			);
+			buildRules = (
+				79B7356C15B0FC71008B8473 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = "Sketch a Frame";
+			productName = SimpleFrame;
+			productReference = 820488ED156E1944006803C1 /* Sketch a Frame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		820488E4156E1943006803C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Lund University";
+			};
+			buildConfigurationList = 820488E7156E1943006803C1 /* Build configuration list for PBXProject "Sketch a Frame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 820488E2156E1943006803C1;
+			productRefGroup = 820488EE156E1944006803C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				820488EC156E1944006803C1 /* Sketch a Frame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		820488EB156E1944006803C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECBE2AC4169DB23400283FD4 /* Default-Portrait@2x~ipad.png in Resources */,
+				ECBE2AC5169DB23400283FD4 /* Default-Portrait~ipad.png in Resources */,
+				ECBE2AC6169DB23400283FD4 /* icon-72.png in Resources */,
+				ECBE2AC7169DB23400283FD4 /* icon-144.png in Resources */,
+				ECBE2AC8169DB23400283FD4 /* MainStoryboard.storyboard in Resources */,
+				ECBE2ACA169DB23400283FD4 /* 36-toolbox.png in Resources */,
+				ECBE2ACB169DB23400283FD4 /* arrow-big-11.png in Resources */,
+				ECBE2ACC169DB23400283FD4 /* arrow-big-12.png in Resources */,
+				ECBE2ACD169DB23400283FD4 /* arrow-small-15.png in Resources */,
+				ECBE2ACE169DB23400283FD4 /* bc0.png in Resources */,
+				ECBE2ACF169DB23400283FD4 /* bc1.png in Resources */,
+				ECBE2AD0169DB23400283FD4 /* bc2.png in Resources */,
+				ECBE2AD1169DB23400283FD4 /* BC2@2x.png in Resources */,
+				ECBE2AD2169DB23400283FD4 /* bc3.png in Resources */,
+				ECBE2AD3169DB23400283FD4 /* bc4.png in Resources */,
+				ECBE2AD4169DB23400283FD4 /* bc5.png in Resources */,
+				ECBE2AD5169DB23400283FD4 /* bg.png in Resources */,
+				ECBE2AD6169DB23400283FD4 /* bg0.png in Resources */,
+				ECBE2AD7169DB23400283FD4 /* bg1.png in Resources */,
+				ECBE2AD8169DB23400283FD4 /* bg2.png in Resources */,
+				ECBE2AD9169DB23400283FD4 /* bg3.png in Resources */,
+				ECBE2ADA169DB23400283FD4 /* bg4.png in Resources */,
+				ECBE2ADB169DB23400283FD4 /* bg5.png in Resources */,
+				ECBE2ADC169DB23400283FD4 /* bg6.png in Resources */,
+				ECBE2ADD169DB23400283FD4 /* bgload1.png in Resources */,
+				ECBE2ADE169DB23400283FD4 /* bgload2.png in Resources */,
+				ECBE2ADF169DB23400283FD4 /* erase.png in Resources */,
+				ECBE2AE0169DB23400283FD4 /* Eraser-icon.png in Resources */,
+				ECBE2AE1169DB23400283FD4 /* eraser-red.png in Resources */,
+				ECBE2AE2169DB23400283FD4 /* first.png in Resources */,
+				ECBE2AE3169DB23400283FD4 /* first@2x.png in Resources */,
+				ECBE2AE4169DB23400283FD4 /* grid.png in Resources */,
+				ECBE2AE5169DB23400283FD4 /* info.png in Resources */,
+				ECBE2AE6169DB23400283FD4 /* logo strusoft.jpeg in Resources */,
+				ECBE2AE7169DB23400283FD4 /* logo_lu.jpeg in Resources */,
+				ECBE2AE8169DB23400283FD4 /* lu-logo2.jpeg in Resources */,
+				ECBE2AE9169DB23400283FD4 /* mathematical-instrument.png in Resources */,
+				ECBE2AEA169DB23400283FD4 /* move.png in Resources */,
+				ECBE2AEB169DB23400283FD4 /* moves.png in Resources */,
+				ECBE2AEC169DB23400283FD4 /* ortho.png in Resources */,
+				ECBE2AED169DB23400283FD4 /* pen.png in Resources */,
+				ECBE2AEE169DB23400283FD4 /* Pencil-icon.png in Resources */,
+				ECBE2AEF169DB23400283FD4 /* pencil.png in Resources */,
+				ECBE2AF0169DB23400283FD4 /* penn.png in Resources */,
+				ECBE2AF1169DB23400283FD4 /* pennan.png in Resources */,
+				ECBE2AF2169DB23400283FD4 /* pens.png in Resources */,
+				ECBE2AF3169DB23400283FD4 /* screwdriver.png in Resources */,
+				ECBE2AF4169DB23400283FD4 /* second.png in Resources */,
+				ECBE2AF5169DB23400283FD4 /* second@2x.png in Resources */,
+				ECBE2AF6169DB23400283FD4 /* sigma.png in Resources */,
+				ECBE2AF7169DB23400283FD4 /* sigma2.png in Resources */,
+				ECBE2AF8169DB23400283FD4 /* StruSoft logo.eps in Resources */,
+				ECBE2AF9169DB23400283FD4 /* StruSoft logo_hires.png in Resources */,
+				ECBE2AFA169DB23400283FD4 /* strusoftlogo.png in Resources */,
+				ECBE2AFB169DB23400283FD4 /* warningBG.png in Resources */,
+				ECBE2AFC169DB23400283FD4 /* write.png in Resources */,
+				ECBE2B5F169DB72200283FD4 /* README.md in Resources */,
+				ECBE2B60169DB72200283FD4 /* release_notes.md in Resources */,
+				ECA0B1F3169ECF1800A1362F /* bc3.ai in Resources */,
+				ECA0B1F5169ECFD700A1362F /* Sketch a Frame.entitlements in Resources */,
+				ECA0B1F7169ED33600A1362F /* bc3.eps in Resources */,
+				ECA0B1F9169ED3A300A1362F /* bc3.svg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		820488E9156E1944006803C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECBE2C21169DBB9B00283FD4 /* bandmat.cpp in Sources */,
+				ECBE2C22169DBB9B00283FD4 /* cholesky.cpp in Sources */,
+				ECBE2C23169DBB9B00283FD4 /* evalue.cpp in Sources */,
+				ECBE2C24169DBB9B00283FD4 /* fft.cpp in Sources */,
+				ECBE2C25169DBB9B00283FD4 /* hholder.cpp in Sources */,
+				ECBE2C26169DBB9B00283FD4 /* jacobi.cpp in Sources */,
+				ECBE2C27169DBB9B00283FD4 /* myexcept.cpp in Sources */,
+				ECBE2C28169DBB9B00283FD4 /* newfft.cpp in Sources */,
+				ECBE2C29169DBB9B00283FD4 /* newmat1.cpp in Sources */,
+				ECBE2C2A169DBB9B00283FD4 /* newmat2.cpp in Sources */,
+				ECBE2C2B169DBB9B00283FD4 /* newmat3.cpp in Sources */,
+				ECBE2C2C169DBB9B00283FD4 /* newmat4.cpp in Sources */,
+				ECBE2C2D169DBB9B00283FD4 /* newmat5.cpp in Sources */,
+				ECBE2C2E169DBB9B00283FD4 /* newmat6.cpp in Sources */,
+				ECBE2C2F169DBB9B00283FD4 /* newmat7.cpp in Sources */,
+				ECBE2C30169DBB9B00283FD4 /* newmat8.cpp in Sources */,
+				ECBE2C31169DBB9B00283FD4 /* newmat9.cpp in Sources */,
+				ECBE2C32169DBB9B00283FD4 /* newmatex.cpp in Sources */,
+				ECBE2C33169DBB9B00283FD4 /* newmatnl.cpp in Sources */,
+				ECBE2C34169DBB9B00283FD4 /* newmatrm.cpp in Sources */,
+				ECBE2C35169DBB9B00283FD4 /* nm_misc.cpp in Sources */,
+				ECBE2C37169DBB9B00283FD4 /* solution.cpp in Sources */,
+				ECBE2C38169DBB9B00283FD4 /* sort.cpp in Sources */,
+				ECBE2C39169DBB9B00283FD4 /* submat.cpp in Sources */,
+				ECBE2C3A169DBB9B00283FD4 /* svd.cpp in Sources */,
+				ECBE2BE6169DBB2A00283FD4 /* AboutViewController.mm in Sources */,
+				ECBE2BE7169DBB2A00283FD4 /* AppDelegate.mm in Sources */,
+				ECBE2BE8169DBB2A00283FD4 /* Base.cpp in Sources */,
+				ECBE2BE9169DBB2A00283FD4 /* BoundaryConditions.m in Sources */,
+				ECBE2BEA169DBB2A00283FD4 /* ColorbarView.mm in Sources */,
+				ECBE2BEB169DBB2A00283FD4 /* ColorCode.cpp in Sources */,
+				ECBE2BEC169DBB2A00283FD4 /* CoreDataTableViewController.m in Sources */,
+				ECBE2BED169DBB2A00283FD4 /* DBManager.mm in Sources */,
+				ECBE2BEE169DBB2A00283FD4 /* Fem.cpp in Sources */,
+				ECBE2BEF169DBB2A00283FD4 /* Forces.m in Sources */,
+				ECBE2BF0169DBB2A00283FD4 /* Geom.cpp in Sources */,
+				ECBE2BF1169DBB2A00283FD4 /* GeometryView.mm in Sources */,
+				ECBE2BF2169DBB2A00283FD4 /* GeometryViewController.mm in Sources */,
+				ECBE2BF3169DBB2A00283FD4 /* HelpViewController.mm in Sources */,
+				ECBE2BF4169DBB2A00283FD4 /* Lines.m in Sources */,
+				ECBE2BF5169DBB2A00283FD4 /* main.m in Sources */,
+				ECBE2BF6169DBB2A00283FD4 /* MenuViewController.mm in Sources */,
+				ECBE2BF7169DBB2A00283FD4 /* ModelExistsViewController.mm in Sources */,
+				ECBE2BF8169DBB2A00283FD4 /* Models.m in Sources */,
+				ECBE2BF9169DBB2A00283FD4 /* Nodes.m in Sources */,
+				ECBE2BFA169DBB2A00283FD4 /* OpenTableViewController.mm in Sources */,
+				ECBE2BFB169DBB2A00283FD4 /* OpenViewController.mm in Sources */,
+				ECBE2BFC169DBB2A00283FD4 /* RedundancyView.mm in Sources */,
+				ECBE2BFD169DBB2A00283FD4 /* SaveAsViewController.mm in Sources */,
+				ECBE2BFE169DBB2A00283FD4 /* Vec2d.cpp in Sources */,
+				ECBE2BFF169DBB2A00283FD4 /* WriteCoreData.mm in Sources */,
+				ECBE2C00169DBB2A00283FD4 /* calfem.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		79457B91160A1B41000CBF3B /* Distrubution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jonas Lindemann (TX6M3Q2QTK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jonas Lindemann (TX6M3Q2QTK)";
+				COMPRESS_PNG_FILES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				New_Setting = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "9ABDD298-200E-4535-9EBB-E3DEE84DCA63";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9ABDD298-200E-4535-9EBB-E3DEE84DCA63";
+				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s i386 x86_64";
+			};
+			name = Distrubution;
+		};
+		79457B92160A1B41000CBF3B /* Distrubution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Sketch a Frame.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sketch a Frame-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Sketch a Frame-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TestFlightSDK1.1\"",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "Sketch a Frame";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distrubution;
+		};
+		82048929156E1944006803C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jonas Lindemann (TX6M3Q2QTK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jonas Lindemann (TX6M3Q2QTK)";
+				COMPRESS_PNG_FILES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				New_Setting = "";
+				ONLY_ACTIVE_ARCH = NO;
+				PROVISIONING_PROFILE = "9ABDD298-200E-4535-9EBB-E3DEE84DCA63";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9ABDD298-200E-4535-9EBB-E3DEE84DCA63";
+				SDKROOT = iphoneos;
+				STRIP_INSTALLED_PRODUCT = NO;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "armv7 armv7s i386 x86_64";
+			};
+			name = Debug;
+		};
+		8204892A156E1944006803C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jonas Lindemann (TX6M3Q2QTK)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jonas Lindemann (TX6M3Q2QTK)";
+				COMPRESS_PNG_FILES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				New_Setting = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "9ABDD298-200E-4535-9EBB-E3DEE84DCA63";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9ABDD298-200E-4535-9EBB-E3DEE84DCA63";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				STRIP_INSTALLED_PRODUCT = NO;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s i386 x86_64";
+			};
+			name = Release;
+		};
+		8204892C156E1944006803C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Sketch a Frame.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sketch a Frame-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Sketch a Frame-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TestFlightSDK1.1\"",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "Sketch a Frame";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8204892D156E1944006803C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_ENTITLEMENTS = "Sketch a Frame.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sketch a Frame-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Sketch a Frame-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TestFlightSDK1.1\"",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "Sketch a Frame";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		820488E7156E1943006803C1 /* Build configuration list for PBXProject "Sketch a Frame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82048929156E1944006803C1 /* Debug */,
+				8204892A156E1944006803C1 /* Release */,
+				79457B91160A1B41000CBF3B /* Distrubution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8204892B156E1944006803C1 /* Build configuration list for PBXNativeTarget "Sketch a Frame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8204892C156E1944006803C1 /* Debug */,
+				8204892D156E1944006803C1 /* Release */,
+				79457B92160A1B41000CBF3B /* Distrubution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ECBE2ABB169DB23400283FD4 /* SimpleFrame.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ECBE2ABC169DB23400283FD4 /* SimpleFrame.xcdatamodel */,
+			);
+			currentVersion = ECBE2ABC169DB23400283FD4 /* SimpleFrame.xcdatamodel */;
+			path = SimpleFrame.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 820488E4156E1943006803C1 /* Project object */;
+}
