@@ -47,11 +47,13 @@
 @property (assign, nonatomic) SaveAsViewController *saveAsViewController;
 @property (assign, nonatomic) UIPopoverController *saveAsPopOverController;
 @property (assign, nonatomic) UIPopoverController *openPopOverController;
+@property (assign, nonatomic) UIPopoverController *examplesPopOverController;
 
 @property (retain, nonatomic) IBOutlet UITabBarItem *tabBarOutlet;
 
 - (IBAction)saveButton:(id)sender;
 - (IBAction)openButton:(id)sender;
+- (IBAction)examplesButton:(id)sender;
 
 @property (retain, nonatomic) IBOutlet UIButton *gridButtonOutlet;
 - (IBAction)gridButton:(id)sender;

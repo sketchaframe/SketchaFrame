@@ -129,6 +129,7 @@
 		ECBE2C38169DBB9B00283FD4 /* sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A70169DB23400283FD4 /* sort.cpp */; };
 		ECBE2C39169DBB9B00283FD4 /* submat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A71169DB23400283FD4 /* submat.cpp */; };
 		ECBE2C3A169DBB9B00283FD4 /* svd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A72169DB23400283FD4 /* svd.cpp */; };
+		ECCA5ACD16A464440080FA2E /* ExamplesTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECCA5ACC16A464440080FA2E /* ExamplesTableViewController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -364,6 +365,8 @@
 		ECBE2B5C169DB72200283FD4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		ECBE2B5D169DB72200283FD4 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		ECBE2B61169DB82200283FD4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		ECCA5ACB16A464440080FA2E /* ExamplesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExamplesTableViewController.h; path = ../bodies/ExamplesTableViewController.h; sourceTree = "<group>"; };
+		ECCA5ACC16A464440080FA2E /* ExamplesTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ExamplesTableViewController.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,6 +515,7 @@
 				ECBE2A32169DB23400283FD4 /* ColorCode.cpp */,
 				ECBE2A35169DB23400283FD4 /* CoreDataTableViewController.m */,
 				ECBE2A36169DB23400283FD4 /* DBManager.mm */,
+				ECCA5ACC16A464440080FA2E /* ExamplesTableViewController.mm */,
 				ECBE2A37169DB23400283FD4 /* Fem.cpp */,
 				ECBE2A38169DB23400283FD4 /* Forces.m */,
 				ECBE2A39169DB23400283FD4 /* Geom.cpp */,
@@ -593,6 +597,7 @@
 		ECBE2A74169DB23400283FD4 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				ECCA5ACB16A464440080FA2E /* ExamplesTableViewController.h */,
 				ECBE2A75169DB23400283FD4 /* AboutViewController.h */,
 				ECBE2A76169DB23400283FD4 /* AppDelegate.h */,
 				ECBE2A77169DB23400283FD4 /* Base.h */,
@@ -857,6 +862,7 @@
 				ECBE2BFE169DBB2A00283FD4 /* Vec2d.cpp in Sources */,
 				ECBE2BFF169DBB2A00283FD4 /* WriteCoreData.mm in Sources */,
 				ECBE2C00169DBB2A00283FD4 /* calfem.cpp in Sources */,
+				ECCA5ACD16A464440080FA2E /* ExamplesTableViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

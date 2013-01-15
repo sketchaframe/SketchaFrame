@@ -322,6 +322,55 @@ void CFemModel::print()
     this->printLines();
 }
 
+void CFemModel::printCode()
+{
+
+    vector<CFemNodePtr>::iterator it;
+    int idx = 0;
+    
+    for (it=m_nodes.begin(); it!=m_nodes.end(); it++)
+    {
+        CFemNode* node = (*it);
+        
+        cout << "femModel->addNode(" << node->getX() << ", " << node->getY() << ");" << endl;
+        
+        idx++;
+    }
+    
+    vector<CLinePtr>::iterator itLine;
+    idx = 0;
+    
+    for (itLine=m_lines.begin(); itLine!=m_lines.end(); itLine++)
+    {
+        
+        cout << "femModel->addLine(" << ((*itLine)->getNode0())->getEnumerate() << "," << (*itLine)->getNode1()->getEnumerate() << ");" << endl;
+        
+        idx++;
+    }
+
+    vector<CFemNodePtr>::iterator itBC;
+    idx = 0;
+    
+    for (itBC=m_nodes.begin(); itBC!=m_nodes.end(); itBC++)
+    {
+        CFemNode* node = (*itBC);
+        
+        
+        if (node->getBCCount() > 0)
+        {
+            cout << "femModel->addBC(" << node->getEnumerate() << ", " << node->getBC(0)->getType() << ");" << endl;
+        }
+        
+        if (node->getForceCount() > 0)
+        {
+            cout << "femModel->addForce(" << node->getEnumerate() << " ," << node->getForce(0)->getMagnitude() << "," << node->getForce(0)->getCompX() << "," << node->getForce(0)->getCompY() << ");" << endl;
+        }
+        
+        idx++;
+    }
+}
+
+
 void CFemModel::addNode(double x, double y)
 {
     m_nodes.push_back(CFemNodePtr(new CFemNode(x, y)));
@@ -639,7 +688,7 @@ int CFemModel::findAction(double x, double y, int distSetting, int &type)
         // See if there's a closer distance to an action point
         // Make sure node has a force for this to run
         if ((*it)->getForceCount() > 0) {
-            std::cout << "GOT FORCE NODE" << std::endl;
+            
             
             double tempDist=0;
             int start_x = (*it)->getX();
@@ -1278,6 +1327,7 @@ void CRedundancyBrain::calculateRedundancy()
     
     if (!model->checkUnconnectedNodes())
         this->getBarMekanism();
+
     
     s=model->lineCount()-2*model->nodeCount()+model->nodeCount()*2-freeDOFs.size();
     
@@ -1414,8 +1464,7 @@ int CRedundancyBrain::getBarMekanism()
         calfem::assem(Topo, tempK, Ke);
         
     }
-    
-    
+   
     //Find Bar freedofs
     freeDOFs.clear();
     for (int i=0; i<=model->nodeCount()-1; i++)
@@ -1431,7 +1480,7 @@ int CRedundancyBrain::getBarMekanism()
             {
                 freeDOFs.push_back(i*2+1);
             }
-            if (model->getNode(i)->getBC(0)->getType() == 5)
+            if (model->getNode(i)->getBC(0)->getType() == 4)
             {
                 freeDOFs.push_back(i*2+0);
                 freeDOFs.push_back(i*2+1);
@@ -1456,21 +1505,26 @@ int CRedundancyBrain::getBarMekanism()
     
     int matrixSize = sqrt(KReduced.size());
     
-    SymmetricMatrix KSymm(matrixSize);
-    KSymm << KReduced;
-    
-    DiagonalMatrix eigen(sqrt(KSymm.size()));
-    EigenValues(KSymm, eigen);
-    
-    
-    int degree=0;
-    for (int i=1; i<=eigen.size(); i++)
+    if (matrixSize>0)
     {
-        if (eigen(i)<1e-8)
-            degree++;
+        SymmetricMatrix KSymm(matrixSize);
+        KSymm << KReduced;
+        
+        DiagonalMatrix eigen(sqrt(KSymm.size()));
+        EigenValues(KSymm, eigen);
+        
+        
+        int degree=0;
+        for (int i=1; i<=eigen.size(); i++)
+        {
+            if (eigen(i)<1e-8)
+                degree++;
+        }
+        m=degree;
+        
     }
-    m=degree;
-    return degree;
+    
+    return m;
 }
 
 

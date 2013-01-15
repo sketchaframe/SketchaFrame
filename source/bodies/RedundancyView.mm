@@ -754,11 +754,7 @@ static GeometryView *_sharedInstance;
                 bc=0;
             
             NSString *fileName = [[@"bc" stringByAppendingFormat:@"%d", bc] stringByAppendingString:@".png"];
-            
-            if (bc==3)
-            {
-                fileName = @"bc3.svg";
-            }
+
             
             int imageSize = 84;
             CGRect myImageRect = CGRectMake(sx-imageSize/2,sy-imageSize/2,imageSize,imageSize);

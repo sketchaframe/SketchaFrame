@@ -17,6 +17,7 @@
 @interface WriteCoreData : NSObject
 +(void)saveModelToCore:(UIManagedDocument *)document;
 +(void)readModel:(Models *) model:(UIManagedDocument *)document;
++(void)readExample:(int) exampleID;
 @property (assign, nonatomic) UIManagedDocument *terminateDatabase;
 @end
 

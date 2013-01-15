@@ -159,4 +159,230 @@
     
 }
 
++(void)readExample:(int) exampleID
+{
+    GeometryView *myGeo = [GeometryView sharedInstance];
+    CFemModelPtr femModel = [myGeo getFemModel];
+    
+    femModel->clear();
+    
+    if (exampleID==0)
+    {
+        //Frame
+        femModel->addNode(130, 583);
+        femModel->addNode(130, 973);
+        femModel->addNode(650, 973);
+        femModel->addNode(650, 583);
+        femModel->addNode(390, 973);
+        femModel->addLine(0,1);
+        femModel->addLine(2,3);
+        femModel->addLine(1,4);
+        femModel->addLine(4,2);
+        femModel->addBC(0, 1);
+        femModel->addBC(1, 4);
+        femModel->addBC(2, 4);
+        femModel->addBC(3, 1);
+        femModel->addBC(4, 4);
+        femModel->addForce(4 ,130,0,1);
+    }
+    
+    if (exampleID==1)
+    {
+        
+        //FEM assignment
+        femModel->addNode(130, 973);
+        femModel->addNode(260, 973);
+        femModel->addNode(390, 973);
+        femModel->addNode(520, 973);
+        femModel->addNode(650, 843);
+        femModel->addNode(130, 843);
+        femModel->addNode(260, 843);
+        femModel->addNode(390, 843);
+        femModel->addNode(520, 843);
+        femModel->addLine(0,1);
+        femModel->addLine(1,2);
+        femModel->addLine(2,3);
+        femModel->addLine(3,4);
+        femModel->addLine(5,6);
+        femModel->addLine(6,7);
+        femModel->addLine(7,8);
+        femModel->addLine(8,4);
+        femModel->addLine(1,6);
+        femModel->addLine(1,7);
+        femModel->addLine(7,2);
+        femModel->addLine(2,8);
+        femModel->addLine(8,3);
+        femModel->addLine(6,0);
+        femModel->addBC(0, 1);
+        femModel->addForce(4 ,130,0,1);
+        femModel->addBC(5, 1);
+    }
+    
+    if (exampleID == 2)
+    {
+        //Big frame
+        femModel->addNode(130, 518);
+        femModel->addNode(130, 648);
+        femModel->addNode(130, 778);
+        femModel->addNode(130, 908);
+        femModel->addNode(130, 1038);
+        femModel->addNode(260, 1038);
+        femModel->addNode(390, 1038);
+        femModel->addNode(520, 1038);
+        femModel->addNode(260, 908);
+        femModel->addNode(260, 778);
+        femModel->addNode(260, 648);
+        femModel->addNode(260, 518);
+        femModel->addNode(390, 908);
+        femModel->addNode(390, 778);
+        femModel->addNode(390, 648);
+        femModel->addNode(390, 518);
+        femModel->addNode(519, 901.5);
+        femModel->addNode(520, 778);
+        femModel->addNode(520, 648);
+        femModel->addNode(520, 518);
+        femModel->addLine(0,1);
+        femModel->addLine(0,10);
+        femModel->addLine(1,9);
+        femModel->addLine(1,2);
+        femModel->addLine(1,10);
+        femModel->addLine(2,3);
+        femModel->addLine(2,9);
+        femModel->addLine(2,8);
+        femModel->addLine(3,4);
+        femModel->addLine(3,8);
+        femModel->addLine(3,5);
+        femModel->addLine(4,5);
+        femModel->addLine(5,6);
+        femModel->addLine(5,8);
+        femModel->addLine(6,12);
+        femModel->addLine(6,7);
+        femModel->addLine(7,16);
+        femModel->addLine(8,12);
+        femModel->addLine(8,9);
+        femModel->addLine(9,13);
+        femModel->addLine(9,10);
+        femModel->addLine(10,14);
+        femModel->addLine(10,11);
+        femModel->addLine(11,1);
+        femModel->addLine(12,13);
+        femModel->addLine(12,16);
+        femModel->addLine(13,14);
+        femModel->addLine(13,17);
+        femModel->addLine(14,15);
+        femModel->addLine(14,18);
+        femModel->addLine(16,17);
+        femModel->addLine(17,18);
+        femModel->addLine(18,19);
+        femModel->addBC(0, 1);
+        femModel->addForce(7 ,183.848,0.707107,0.707107);
+        femModel->addBC(11, 1);
+        femModel->addBC(15, 1);
+        femModel->addBC(19, 1);
+    }
+    
+    if (exampleID==3)
+    {
+        //Bridge
+        femModel->addNode(65, 648);
+        femModel->addNode(715, 631.5);
+        femModel->addNode(65, 713);
+        femModel->addNode(130, 778);
+        femModel->addNode(130, 713);
+        femModel->addNode(195, 843);
+        femModel->addNode(195, 778);
+        femModel->addNode(325, 908);
+        femModel->addNode(325, 843);
+        femModel->addNode(650, 713);
+        femModel->addNode(650, 778);
+        femModel->addNode(585, 778);
+        femModel->addNode(585, 843);
+        femModel->addNode(455, 843);
+        femModel->addNode(455, 908);
+        femModel->addNode(715, 713);
+        femModel->addNode(390, 843);
+        femModel->addNode(388.5, 908);
+        femModel->addLine(0,2);
+        femModel->addLine(2,3);
+        femModel->addLine(0,4);
+        femModel->addLine(3,5);
+        femModel->addLine(4,6);
+        femModel->addLine(5,7);
+        femModel->addLine(6,8);
+        femModel->addLine(1,9);
+        femModel->addLine(10,12);
+        femModel->addLine(11,13);
+        femModel->addLine(12,14);
+        femModel->addLine(0,3);
+        femModel->addLine(3,6);
+        femModel->addLine(6,7);
+        femModel->addLine(13,12);
+        femModel->addLine(2,4);
+        femModel->addLine(4,5);
+        femModel->addLine(5,8);
+        femModel->addLine(14,11);
+        femModel->addLine(11,10);
+        femModel->addLine(1,15);
+        femModel->addLine(15,10);
+        femModel->addLine(9,11);
+        femModel->addLine(1,10);
+        femModel->addLine(15,9);
+        femModel->addLine(9,12);
+        femModel->addLine(8,16);
+        femModel->addLine(16,13);
+        femModel->addLine(7,17);
+        femModel->addLine(17,14);
+        femModel->addLine(13,17);
+        femModel->addLine(17,8);
+        femModel->addLine(7,16);
+        femModel->addLine(16,14);
+        femModel->addLine(8,7);
+        femModel->addLine(13,14);
+        femModel->addLine(16,17);
+        femModel->addLine(6,5);
+        femModel->addLine(4,3);
+        femModel->addLine(9,10);
+        femModel->addLine(11,12);
+        femModel->addBC(0, 1);
+        femModel->addBC(1, 1);
+        femModel->addForce(17 ,211.005,0.00710883,0.999975);
+
+    }
+    
+    if (exampleID == 4)
+    {
+        
+        //Spring
+        femModel->addNode(325, 778);
+        femModel->addNode(325, 843);
+        femModel->addNode(260, 843);
+        femModel->addNode(260, 713);
+        femModel->addNode(390, 713);
+        femModel->addNode(386, 908);
+        femModel->addNode(195, 908);
+        femModel->addNode(195, 648);
+        femModel->addNode(455, 648);
+        femModel->addLine(0,1);
+        femModel->addLine(1,2);
+        femModel->addLine(2,3);
+        femModel->addLine(3,4);
+        femModel->addLine(4,5);
+        femModel->addLine(5,6);
+        femModel->addLine(6,7);
+        femModel->addLine(7,8);
+        femModel->addBC(0, 0);
+        femModel->addBC(1, 4);
+        femModel->addBC(2, 4);
+        femModel->addBC(3, 4);
+        femModel->addBC(4, 4);
+        femModel->addBC(5, 4);
+        femModel->addBC(6, 4);
+        femModel->addBC(7, 4);
+        femModel->addForce(8 ,130,0,1);
+    }
+    
+    femModel->enumerateLines(1);
+    femModel->enumerateDofs(1);
+}
+
 @end

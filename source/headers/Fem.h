@@ -168,6 +168,7 @@ public:
     void printNodes();
     void printLines();
     void print();
+    void printCode();
     
     void clearNodes();
     void clearLines();

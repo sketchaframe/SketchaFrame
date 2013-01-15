@@ -33,6 +33,7 @@
 @synthesize saveAsViewController;
 @synthesize saveAsPopOverController;
 @synthesize openPopOverController;
+@synthesize examplesPopOverController;
 @synthesize tabBarOutlet;
 @synthesize myGeo;
 @synthesize questionButton;
@@ -385,6 +386,9 @@
     } else if (popoverController == saveAsPopOverController) {
         saveAsPopOverController = nil;
         [saveAsPopOverController release];
+    } else if (popoverController == examplesPopOverController) {
+        examplesPopOverController = nil;
+        [examplesPopOverController release];
     }
 }
 
@@ -403,6 +407,14 @@
             [saveAsPopOverController dismissPopoverAnimated:YES];
             saveAsPopOverController = nil;
         }
+    if (examplesPopOverController != nil)
+    {
+        if ([examplesPopOverController isPopoverVisible])
+        {
+            [examplesPopOverController dismissPopoverAnimated:YES];
+            examplesPopOverController = nil;
+        }
+    }
 
 }
 
@@ -429,10 +441,18 @@
         saveAsViewController.modelDatabase = self.modelDatabase;
         saveAsPopOverController = [(UIStoryboardPopoverSegue*)segue popoverController];
         saveAsPopOverController.delegate = self;
-}
+    } else if ([segue.identifier isEqualToString:@"Examples"]) {
+        [self closePopups];
+        NSArray *temp = [[segue destinationViewController] childViewControllers];
+        examplesPopOverController = [temp objectAtIndex:0];
+        examplesPopOverController.delegate = self;
+        examplesPopOverController = [(UIStoryboardPopoverSegue*)segue popoverController];
+        examplesPopOverController.delegate = self;
+    }
+
 }
 
--(void)openModel:(OpenTableViewController *)sender
+-(void)openModel:(id)sender
 {
     [myGeo setFirstDraw:NO];
     [myGeo setFirstRelease:NO];
@@ -442,6 +462,38 @@
     [self.geometryView setNeedsDisplay];
     [myGeo setFirstDraw:NO];
     [myGeo setFirstRelease:NO];
+    
+    
+    
+    if (femModel->drawRedundancy())
+    {
+        bool beamConstrainsExists = false;
+        for (int i=0; i<femModel->nodeCount(); i++)
+        {
+            if (femModel->getNode(i)->getBCCount() > 0)
+            {
+                if (femModel->getNode(i)->getBC(0)->getType() == 0 || femModel->getNode(i)->getBC(0)->getType() == 4)
+                {
+                    beamConstrainsExists = true;
+                }
+            }
+        }
+        
+        if (beamConstrainsExists)
+        {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Beam constrains exists"
+                                                           message: @"Beam constrains are not supported for the redundancy tool and will therefore be translated into bar constraints."
+                                                          delegate: self
+                                                 cancelButtonTitle:nil
+                                                 otherButtonTitles:@"OK",nil];
+            
+            
+            [alert show];
+            
+            
+        }
+    }
+
  
 }
 
@@ -481,6 +533,17 @@
         openPopOverController = nil;
     } else {
         [self performSegueWithIdentifier:@"Open Model List" sender:self];
+    }
+}
+
+- (IBAction)examplesButton:(id)sender {
+    femModel->printCode();
+    if (examplesPopOverController !=nil)
+    {
+        [self closePopups];
+        examplesPopOverController = nil;
+    } else {
+        [self performSegueWithIdentifier:@"Examples" sender:self];
     }
 }
 
