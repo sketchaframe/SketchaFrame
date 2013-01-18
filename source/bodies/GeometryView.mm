@@ -407,8 +407,8 @@ static GeometryView *_sharedInstance;
             geometryUpdated = YES;
         
         
-        
         [self setNeedsDisplay];
+        [[NSNotificationCenter defaultCenter] postNotificationName: kUndo object: nil];
         
     } else if (sender.state == UIGestureRecognizerStateCancelled ||	sender.state == UIGestureRecognizerStateFailed) {
         
@@ -478,7 +478,6 @@ static GeometryView *_sharedInstance;
 {
     if (sender.state == UIGestureRecognizerStateEnded)
     {
-        
         lastTap = [sender locationInView:self];
         double x, y;
         
@@ -579,6 +578,7 @@ static GeometryView *_sharedInstance;
             [myGeo setFirstRelease:NO];
         
         [self setNeedsDisplay];
+        [[NSNotificationCenter defaultCenter] postNotificationName: kUndo object: nil];
         
     }
 }

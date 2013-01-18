@@ -63,7 +63,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nbW-dT-5yJ">
-                                        <rect key="frame" x="69" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="56" y="8" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
@@ -124,7 +124,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="K7P-wi-UIk">
-                                        <rect key="frame" x="349" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="381" y="7" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                         <state key="normal" backgroundImage="bgload1.png">
@@ -138,8 +138,24 @@
                                             <action selector="ToolButton:" destination="9eq-gl-OgU" eventType="touchUpInside" id="zhG-ds-LmO"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9RP-md-MF5">
+                                        <rect key="frame" x="108" y="9" width="52" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" title="Move" image="arrow-small-09.png" backgroundImage="bg0.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="undoButton:" destination="9eq-gl-OgU" eventType="touchUpInside" id="Ud5-OY-OCz"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e89-J1-89Z">
-                                        <rect key="frame" x="409" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="432" y="8" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" size="button"/>
                                         <state key="normal" backgroundImage="bg1.png">
@@ -154,7 +170,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KbU-0f-TRI">
-                                        <rect key="frame" x="9" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="2" y="8" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
@@ -170,7 +186,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jIv-3H-K5F">
-                                        <rect key="frame" x="129" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="198" y="8" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -216,7 +232,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1sv-17-3sH">
-                                        <rect key="frame" x="189" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="239" y="8" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
@@ -232,7 +248,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YeK-tp-JTx">
-                                        <rect key="frame" x="249" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="283" y="8" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
@@ -248,7 +264,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Z2H-HR-vpw">
-                                        <rect key="frame" x="298" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="331" y="8" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                         <state key="normal" title="?" backgroundImage="bg0.png">
@@ -262,6 +278,22 @@
                                             <segue destination="kb3-vd-XDx" kind="popover" popoverAnchorView="Z2H-HR-vpw" id="cpI-yx-jLM">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vKA-Oo-BlD">
+                                        <rect key="frame" x="151" y="7" width="52" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" title="Move" image="redo.png" backgroundImage="bg0.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="redoButton:" destination="9eq-gl-OgU" eventType="touchUpInside" id="fY6-mJ-fbX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -286,6 +318,9 @@
                         <outlet property="button4" destination="xh4-Lh-X5S" id="xwg-rj-Wuf"/>
                         <outlet property="button5" destination="Jha-bk-O74" id="A8Q-Ea-hnG"/>
                         <outlet property="button6" destination="ESt-6z-jXb" id="PV9-Xq-ikD"/>
+                        <outlet property="buttonMenuView" destination="hJR-2J-Tly" id="0xP-Om-Z91"/>
+                        <outlet property="buttonRedo" destination="vKA-Oo-BlD" id="eLD-in-LJl"/>
+                        <outlet property="buttonUndo" destination="9RP-md-MF5" id="ZkS-fP-Pl8"/>
                         <outlet property="geometryView" destination="2qC-tN-Gwp" id="dvA-wi-H4Z"/>
                         <outlet property="gridButtonOutlet" destination="1sv-17-3sH" id="454-rJ-aaC"/>
                         <outlet property="orthoButtonOutlet" destination="YeK-tp-JTx" id="MVb-R9-z5c"/>
@@ -1062,7 +1097,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6Jy-jN-pKQ">
-                                        <rect key="frame" x="189" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="205" y="8" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
@@ -1110,6 +1145,40 @@
                                             </segue>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RW2-cN-s0H">
+                                        <rect key="frame" x="103" y="13" width="52" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" title="Move" image="arrow-small-09.png" backgroundImage="bg0.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="undoButton:" destination="9eq-gl-OgU" eventType="touchUpInside" id="Fgj-Kn-rGh"/>
+                                            <action selector="undoButton:" destination="36V-20-wQK" eventType="touchUpInside" id="zdn-5b-zjY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tWx-Rb-vt0">
+                                        <rect key="frame" x="172" y="13" width="52" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" title="Move" image="redo.png" backgroundImage="bg0.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="redoButton:" destination="36V-20-wQK" eventType="touchUpInside" id="Ia5-2X-0gi"/>
+                                            <action selector="redoButton:" destination="9eq-gl-OgU" eventType="touchUpInside" id="YCW-sk-Bmm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             </view>
@@ -1132,6 +1201,9 @@
                         <outlet property="button4" destination="pVG-Im-zmH" id="95L-lL-iwO"/>
                         <outlet property="button5" destination="87n-Su-hJO" id="1ls-au-e9j"/>
                         <outlet property="button6" destination="bNL-hH-rP1" id="Qd1-8o-lLp"/>
+                        <outlet property="buttonMenuView" destination="YhH-wu-gvU" id="edJ-OY-9ZN"/>
+                        <outlet property="buttonRedo" destination="tWx-Rb-vt0" id="IcW-fi-yz7"/>
+                        <outlet property="buttonUndo" destination="RW2-cN-s0H" id="GKT-v0-kil"/>
                         <outlet property="geometryView" destination="InK-lM-dcz" id="4S9-no-JLP"/>
                         <outlet property="gridButtonOutlet" destination="6Jy-jN-pKQ" id="j23-Px-NjB"/>
                         <outlet property="orthoButtonOutlet" destination="a6F-8U-aLi" id="2SW-qm-PeO"/>
@@ -1212,7 +1284,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6Pz-GJ-byJ">
-                                        <rect key="frame" x="63" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="44" y="8" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
@@ -1319,7 +1391,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tbi-bm-Eyh">
-                                        <rect key="frame" x="121" y="9" width="52" height="52"/>
+                                        <rect key="frame" x="161" y="6" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -1365,7 +1437,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BYU-FP-eHe">
-                                        <rect key="frame" x="178" y="8" width="52" height="52"/>
+                                        <rect key="frame" x="204" y="6" width="52" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
@@ -1394,6 +1466,40 @@
                                         </state>
                                         <connections>
                                             <action selector="orthoButton:" destination="ieB-d3-GYx" eventType="touchUpInside" id="10W-XY-x9c"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4Db-rs-95Y">
+                                        <rect key="frame" x="78" y="10" width="52" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" title="Move" image="arrow-small-09.png" backgroundImage="bg0.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="undoButton:" destination="ieB-d3-GYx" eventType="touchUpInside" id="67C-ll-GMR"/>
+                                            <action selector="undoButton:" destination="9eq-gl-OgU" eventType="touchUpInside" id="V74-FD-c10"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Tnh-3L-Bq7">
+                                        <rect key="frame" x="123" y="0.0" width="52" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" title="Move" image="redo.png" backgroundImage="bg0.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="redoButton:" destination="9eq-gl-OgU" eventType="touchUpInside" id="bqb-Ha-0ER"/>
+                                            <action selector="redoButton:" destination="ieB-d3-GYx" eventType="touchUpInside" id="cTO-zI-KTs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gcT-1J-Aq5">
@@ -1435,6 +1541,9 @@
                         <outlet property="button4" destination="ugZ-Eu-1kc" id="Nek-qV-ZQr"/>
                         <outlet property="button5" destination="hvI-yo-xtF" id="x5R-2p-2yt"/>
                         <outlet property="button6" destination="qEh-iA-8zE" id="7SG-cV-0sT"/>
+                        <outlet property="buttonMenuView" destination="lbU-Jl-PpK" id="rTm-hD-sRS"/>
+                        <outlet property="buttonRedo" destination="Tnh-3L-Bq7" id="4mU-Fa-P0i"/>
+                        <outlet property="buttonUndo" destination="4Db-rs-95Y" id="6e3-Dh-Yr2"/>
                         <outlet property="geometryView" destination="EEE-JR-DBn" id="YCU-ts-AOU"/>
                         <outlet property="gridButtonOutlet" destination="BYU-FP-eHe" id="DwP-5L-lvw"/>
                         <outlet property="orthoButtonOutlet" destination="SeE-kz-bkr" id="ZVn-bF-gZK"/>
@@ -1705,6 +1814,40 @@
                                             <action selector="orthoButton:" destination="98e-Yi-zEZ" eventType="touchUpInside" id="2fR-D6-yGW"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EmR-EZ-dOw">
+                                        <rect key="frame" x="309" y="10" width="52" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" title="Move" image="arrow-small-09.png" backgroundImage="bg0.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="undoButton:" destination="9eq-gl-OgU" eventType="touchUpInside" id="aOx-dO-jyw"/>
+                                            <action selector="undoButton:" destination="98e-Yi-zEZ" eventType="touchUpInside" id="jOG-wc-vDl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iIm-wX-LfM">
+                                        <rect key="frame" x="369" y="8" width="52" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" title="Move" image="redo.png" backgroundImage="bg0.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="redoButton:" destination="9eq-gl-OgU" eventType="touchUpInside" id="Rla-Ta-565"/>
+                                            <action selector="redoButton:" destination="98e-Yi-zEZ" eventType="touchUpInside" id="vkH-qC-7TJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             </view>
@@ -1724,6 +1867,9 @@
                         <outlet property="button3" destination="n8h-ye-ivb" id="kpS-FB-4ry"/>
                         <outlet property="button4" destination="hih-cJ-OBN" id="PcK-5K-qaV"/>
                         <outlet property="button6" destination="qV6-32-Zsz" id="uMu-Nz-iMw"/>
+                        <outlet property="buttonMenuView" destination="AUJ-uY-Cyt" id="Lca-c7-ONu"/>
+                        <outlet property="buttonRedo" destination="iIm-wX-LfM" id="BlX-Gj-MOZ"/>
+                        <outlet property="buttonUndo" destination="EmR-EZ-dOw" id="Sp5-Mi-Nc9"/>
                         <outlet property="geometryView" destination="AS0-FL-0yo" id="6up-QC-IrE"/>
                         <outlet property="gridButtonOutlet" destination="g3q-Ku-ee7" id="Jso-G6-8Wz"/>
                         <outlet property="orthoButtonOutlet" destination="uAM-bO-jp6" id="Cdx-9S-ROL"/>
@@ -1889,6 +2035,7 @@
         <image name="Pencil-icon.png" width="128" height="128"/>
         <image name="StruSoft logo_hires.png" width="4314" height="1587"/>
         <image name="arrow-big-12.png" width="30" height="30"/>
+        <image name="arrow-small-09.png" width="30" height="30"/>
         <image name="bg0.png" width="52" height="52"/>
         <image name="bg1.png" width="52" height="52"/>
         <image name="bg2.png" width="52" height="52"/>
@@ -1903,6 +2050,7 @@
         <image name="mathematical-instrument.png" width="30" height="30"/>
         <image name="moves.png" width="32" height="32"/>
         <image name="ortho.png" width="52" height="52"/>
+        <image name="redo.png" width="30" height="30"/>
         <image name="sigma2.png" width="32" height="32"/>
         <image name="write.png" width="30" height="30"/>
     </resources>
@@ -1937,7 +2085,10 @@
                 <relationship kind="action" name="infoButton:"/>
                 <relationship kind="action" name="openButton:"/>
                 <relationship kind="action" name="orthoButton:"/>
+                <relationship kind="action" name="redoButton:"/>
                 <relationship kind="action" name="saveButton:"/>
+                <relationship kind="action" name="undoButton:"/>
+                <relationship kind="action" name="updateUndoModel:"/>
                 <relationship kind="outlet" name="button1" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="button100" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="button11" candidateClass="UIButton"/>
@@ -1948,6 +2099,9 @@
                 <relationship kind="outlet" name="button4" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="button5" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="button6" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonMenuView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="buttonRedo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonUndo" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="geometryView" candidateClass="GeometryView"/>
                 <relationship kind="outlet" name="gridButtonOutlet" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="orthoButtonOutlet" candidateClass="UIButton"/>
@@ -1986,8 +2140,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="shU-uU-IW3"/>
-        <segue reference="UNg-tQ-hDa"/>
-        <segue reference="AdJ-bG-Agh"/>
+        <segue reference="1tb-7v-qiN"/>
+        <segue reference="uXa-5u-atN"/>
+        <segue reference="c2e-Kh-YQo"/>
     </inferredMetricsTieBreakers>
 </document>

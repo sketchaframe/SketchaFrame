@@ -37,23 +37,28 @@
 @synthesize tabBarOutlet;
 @synthesize myGeo;
 @synthesize questionButton;
+@synthesize buttonUndo;
+@synthesize undoModelList;
+@synthesize redoModelList;
+@synthesize buttonRedo;
+@synthesize buttonMenuView;
 
 
 
-//Refresh view
--(void)viewWillAppear:(BOOL)animated { 
+-(void)viewWillAppear:(BOOL)animated {
+    //Refresh view
 	[self.geometryView setNeedsDisplay];
     [self updateButtonStatus];
     [self.geometryView setNeedsDisplay];
     
     
-    //Make sure buttons are placed correct
-
-    
+    //Make sure buttons are placed very nicly
     vector<UIButton *> buttonList;
     buttonList.push_back(button22);
     buttonList.push_back(button100);
     buttonList.push_back(button23);
+    buttonList.push_back(buttonUndo);
+    buttonList.push_back(buttonRedo);
     buttonList.push_back(gridButtonOutlet);
     buttonList.push_back(orthoButtonOutlet);
     buttonList.push_back(questionButton);
@@ -65,17 +70,44 @@
     buttonList.push_back(button4);
     buttonList.push_back(button6);
 
-    int buttonWidth = button22.frame.size.width;
-    int buttonHeight = button22.frame.size.height;
-    int space = (768-buttonWidth*buttonList.size())/(buttonList.size()+1);
+
+
+    int buttonWidth = 45;
+    int buttonHeight = 45;
+    int numberofSpaces= 2;
+    int nrOfSmallSpaceinSpace=7;
     
+    int space = (768-buttonWidth*buttonList.size())/(buttonList.size()+1+numberofSpaces*nrOfSmallSpaceinSpace);
+    
+    buttonMenuView.frame = CGRectMake(0,44,768,buttonHeight+2*space);
+    
+    int xLocation=space;
     for (int i=0;i<buttonList.size();i++)
-    {
-        buttonList[i].frame = CGRectMake(space+i*(buttonWidth+space),7,buttonWidth,buttonHeight);
+    {        
+        if (i == 5 || i==8)
+        {
+            xLocation+=space*nrOfSmallSpaceinSpace;
+        }
+        
+        buttonList[i].frame = CGRectMake(xLocation,space,buttonWidth,buttonHeight);
+        xLocation+=buttonWidth+space;
     }
     
+    cout << button11.frame.size.height;
+
     
+    //Make sure the undo/redo buttons are correctly enabled
+    if (undoModelList.size()>1)
+        buttonUndo.enabled = true;
+    else
+        buttonUndo.enabled = false;
+
+    if (redoModelList.size()>0)
+        buttonRedo.enabled = true;
+    else
+        buttonRedo.enabled = false;
     
+   
     if (femModel->drawRedundancy())
     {
         bool beamConstrainsExists = false;
@@ -195,14 +227,12 @@
     }
 }
 
-
 -(void)setModelDatabase:(UIManagedDocument *)modelDatabase
 {
     if (_modelDatabase != modelDatabase)
         _modelDatabase = modelDatabase;
     [self userDocument:_modelDatabase];
 }
-
 
 - (void)viewDidLoad
 
@@ -244,14 +274,23 @@
     
     //Allocate database and delegate it out to popovers
     if (!self.modelDatabase) {
-        //NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        //url = [url URLByAppendingPathComponent:@"DefaultDB"];
         self.modelDatabase = [DBManager database];
     }
     
     [self updateButtonStatus];
     [self.geometryView setNeedsDisplay];
+    
+    //Notification center
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUndoModel:) name:kUndo object:nil];
  
+    //Push back empty model as first undo
+    if (undoModelList.size() == 0)
+    {
+        CFemModelPtr undoModel = new CFemModel;
+        *undoModel = femModel;
+        
+        undoModelList.push_back(undoModel);
+    }
 }
 
 
@@ -276,6 +315,9 @@
     [self setGridButtonOutlet:nil];
     [self setOrthoButtonOutlet:nil];
     [self setQuestionButton:nil];
+    [self setButtonUndo:nil];
+    [self setButtonRedo:nil];
+    [self setButtonMenuView:nil];
     [super viewDidUnload];
     
 
@@ -285,6 +327,9 @@
 {
 	return NO;
 }
+
+
+
 
 
 - (void)dealloc {
@@ -303,6 +348,9 @@
     [gridButtonOutlet release];
     [orthoButtonOutlet release];
     [questionButton release];
+    [buttonUndo release];
+    [buttonRedo release];
+    [buttonMenuView release];
     [super dealloc];
 }
 
@@ -369,6 +417,8 @@
     [self.geometryView setNeedsDisplay];
     [myGeo setFirstDraw:YES];
     [myGeo setFirstRelease:YES];
+    
+    [self performSelector:(@selector(updateUndoModel:))];
 }
 
 - (IBAction)feedback:(id)sender {
@@ -493,7 +543,8 @@
             
         }
     }
-
+    
+    [self performSelector:(@selector(updateUndoModel:))];
  
 }
 
@@ -545,6 +596,78 @@
     } else {
         [self performSegueWithIdentifier:@"Examples" sender:self];
     }
+}
+
+- (IBAction)updateUndoModel:(id)sender {
+
+    if (!femModel->compareModelWith(undoModelList[undoModelList.size()-1]))
+    {
+        CFemModelPtr undoModel = new CFemModel;
+        *undoModel = femModel;
+        
+        undoModelList.push_back(undoModel);
+        buttonUndo.enabled = true;
+    }
+    
+    //Empty redo list when changes are made
+    for (int i=0;i<redoModelList.size();i++)
+    {
+        redoModelList.erase(redoModelList.begin()+i);
+    }
+    
+    //Limit number of undo steps
+    if (undoModelList.size() > 100)
+    {
+        undoModelList.erase(undoModelList.begin());
+    }
+    
+    buttonRedo.enabled=false;
+}
+
+- (IBAction)undoButton:(id)sender {
+    buttonRedo.enabled = true;
+    CFemModelPtr redoModel = new CFemModel;
+    *redoModel = femModel;
+    
+    redoModelList.push_back(redoModel);
+    
+    if (undoModelList.size() > 0)
+    {
+        *femModel = undoModelList[undoModelList.size()-2];
+        
+        undoModelList.erase(undoModelList.end());
+        [myGeo setNeedsRescale:YES];
+        [self.geometryView setNeedsDisplay];
+    }
+    if (undoModelList.size() == 1)
+    {
+        buttonUndo.enabled = false;
+    }
+    
+}
+
+- (IBAction)redoButton:(id)sender {
+    
+    //Read latest redo model
+    if (redoModelList.size() > 0)
+    {
+        *femModel = redoModelList[redoModelList.size()-1];        
+        redoModelList.erase(redoModelList.end());
+        [myGeo setNeedsRescale:YES];
+        [self.geometryView setNeedsDisplay];
+    }
+    
+    if (redoModelList.size() == 0)
+    {
+        buttonRedo.enabled=false;
+    }
+
+    CFemModelPtr undoModel = new CFemModel;
+    *undoModel = femModel;
+
+    undoModelList.push_back(undoModel);
+    buttonUndo.enabled = true;
+
 }
 
 - (IBAction)gridButton:(id)sender {

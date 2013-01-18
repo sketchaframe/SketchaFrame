@@ -252,12 +252,107 @@ CFemModel::CFemModel()
     m_drawModes[3] = false;
     m_drawModes[4] = false;
     m_drawModes[5] = false;
+    
+    redundancyBrain = new CRedundancyBrain(this);
+    calfemBrain = new CCalfemBrain(this);
+    
+}
+
+CFemModel::CFemModel(CFemModelPtr const &ref)
+{
+    cout << "Copy function not imlemented, use assign" << endl;
+}
+
+CFemModel &CFemModel::operator=(const CFemModelPtr &other)
+{
+    this->clear();
+    CFemModelPtr ref = other;
+    
+    for (int i=0; i<ref->nodeCount(); i++)
+    {
+        this->addNode(other->getNode(i)->getX(), ref->getNode(i)->getY());
+        
+        if (ref->getNode(i)->getBCCount() > 0)
+        {
+            this->addBC(i, ref->getNode(i)->getBC(0)->getType());
+        }
+        
+        if (ref->getNode(i)->getForceCount() >  0)
+        {
+            this->addForce(i, ref->getNode(i)->getForce(0)->getMagnitude(), ref->getNode(i)->getForce(0)->getCompX(), ref->getNode(i)->getForce(0)->getCompY());
+        }
+    }
+    
+    this->enumerateNodes(0);
+    for (int i=0; i<ref->lineCount(); i++)
+    {
+        this->addLine(ref->getLine(i)->getNode0()->getEnumerate(), ref->getLine(i)->getNode1()->getEnumerate());
+    }
+    
+    this->enumerateLines(0);
+    return *this;
 }
 
 CFemModel::~CFemModel()
 {
     
 }
+
+
+bool CFemModel::compareModelWith(CFemModelPtr model)
+{
+    
+    model->enumerateNodes(0);
+    this->enumerateNodes(0);
+    
+
+    if (this->lineCount()!=model->lineCount())
+        return false;
+    if (this->nodeCount()!=model->nodeCount())
+        return false;
+    for (int i=0; i<this->nodeCount();i++)
+    {
+     
+        if (this->getNode(i)->getX()!= model->getNode(i)->getX())
+            return false;
+        if (this->getNode(i)->getY()!= model->getNode(i)->getY())
+            return false;
+        if (this->getNode(i)->getBCCount() != model->getNode(i)->getBCCount())
+            return false;
+        
+        //Compare BC
+        if (this->getNode(i)->getBCCount() > 0)
+        {
+            if (this->getNode(i)->getBC(0)->getType() != model->getNode(i)->getBC(0)->getType())
+                return false;
+        }
+        
+        //Compare forces
+        if (this->getNode(i)->getForceCount() != model->getNode(i)->getForceCount())
+            return false;
+        if (this->getNode(i)->getForceCount() > 0)
+        {
+            if (this->getNode(i)->getForce(0)->getMagnitude() != model->getNode(i)->getForce(0)->getMagnitude())
+                return false;
+            if (this->getNode(i)->getForce(0)->getCompX() != model->getNode(i)->getForce(0)->getCompX())
+                return false;
+            if (this->getNode(i)->getForce(0)->getCompY() != model->getNode(i)->getForce(0)->getCompY())
+                return false;
+        }
+    }
+    
+    for (int i=0; i<this->lineCount(); i++)
+    {
+        if (this->getLine(i)->getNode0()->getEnumerate() != model->getLine(i)->getNode0()->getEnumerate())
+            return false;
+        if (this->getLine(i)->getNode1()->getEnumerate() != model->getLine(i)->getNode1()->getEnumerate())
+            return false;
+    }
+    
+    return true;
+    
+}
+
 
 
 void CFemModel::printNodes()
@@ -898,8 +993,6 @@ void CFemModel::addLine(int idx0, int idx1)
 
 void CFemModel::clearNodes()
 {
-    std::cout << "clear nodes";
-    
     std::vector<CFemNodePtr>::iterator it;
     
     for (it=m_nodes.begin(); it!=m_nodes.end(); )
@@ -1108,9 +1201,7 @@ CCalfemBrain* CFemModel::getCalfemBrain(CFemModel* model)
 
 bool CFemModel::calculate(bool geometryUpdated, bool doStaticAnalysis)
 {
-    this->getCalfemBrain(this);
     return calfemBrain->femCalculations(geometryUpdated, doStaticAnalysis);
-    
 }
 
 CRedundancyBrain* CFemModel::getRedundancyBrain(CFemModel *model)

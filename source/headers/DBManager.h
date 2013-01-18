@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Fem.h"
 
 @interface DBManager : NSObject
 + (UIManagedDocument*) database;
+
 @end

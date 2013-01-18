@@ -381,8 +381,8 @@
         femModel->addForce(8 ,130,0,1);
     }
     
-    femModel->enumerateLines(1);
-    femModel->enumerateDofs(1);
+    femModel->enumerateLines(0);
+    femModel->enumerateDofs(0);
 }
 
 @end

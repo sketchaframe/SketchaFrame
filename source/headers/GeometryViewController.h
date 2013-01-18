@@ -18,11 +18,15 @@
 #import "HelpViewController.h"
 #import "DBManager.h"
 
+#define kUndo @"kUndo"
+
 
 @interface GeometryViewController : UIViewController <UIGestureRecognizerDelegate, UIScrollViewDelegate,UIPopoverControllerDelegate>{
     CFemModelPtr femModel;
     GeometryView *geometryView;
     IBOutlet UIScrollView *scroll;
+    NSMutableArray *redomodelListArray;
+    
 }
 
 - (IBAction)ToolButton:(id)sender;
@@ -40,6 +44,8 @@
 @property (retain, nonatomic) IBOutlet UIButton *button23;
 @property (retain, nonatomic) IBOutlet UIButton *button100;
 @property (retain, nonatomic) IBOutlet UIButton *questionButton;
+@property (retain, nonatomic) IBOutlet UIButton *buttonUndo;
+@property (retain, nonatomic) IBOutlet UIButton *buttonRedo;
 
 @property (assign, nonatomic) IBOutlet GeometryView *geometryView;
 @property (retain, nonatomic) UIManagedDocument *modelDatabase;
@@ -50,16 +56,22 @@
 @property (assign, nonatomic) UIPopoverController *examplesPopOverController;
 
 @property (retain, nonatomic) IBOutlet UITabBarItem *tabBarOutlet;
+@property (retain, nonatomic) IBOutlet UIView *buttonMenuView;
+
 
 - (IBAction)saveButton:(id)sender;
 - (IBAction)openButton:(id)sender;
 - (IBAction)examplesButton:(id)sender;
+- (IBAction)undoButton:(id)sender;
+- (IBAction)redoButton:(id)sender;
 
 @property (retain, nonatomic) IBOutlet UIButton *gridButtonOutlet;
 - (IBAction)gridButton:(id)sender;
 
 
 @property (retain, nonatomic) IBOutlet UIButton *orthoButtonOutlet;
+@property (assign, nonatomic) vector<CFemModelPtr> undoModelList;
+@property (assign, nonatomic) vector<CFemModelPtr> redoModelList;
 - (IBAction)orthoButton:(id)sender;
 - (IBAction)infoButton:(id)sender;
 

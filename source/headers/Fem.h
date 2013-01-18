@@ -155,6 +155,10 @@ private:
 public:
     CFemModel();
     virtual ~CFemModel();
+    CFemModel(CFemModelPtr const &copy);
+    CFemModel &operator=(const CFemModelPtr &assign);
+    
+    bool compareModelWith(CFemModelPtr model);
     
     void addNode(double x, double y);
     void removeNode(double x, double y);
