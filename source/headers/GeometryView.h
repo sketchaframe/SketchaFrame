@@ -48,6 +48,8 @@
 + (GeometryView *) sharedInstance;
 - (CFemModelPtr) getFemModel;
 - (CViewPortPtr) getworldViewport;
+- (vector<CFemModelPtr>*) getUndoModelList;
+- (vector<CFemModelPtr>*) getRedoModelList;
 
 @property (nonatomic, assign) id delegate;
 @property int toolMode;
@@ -56,6 +58,8 @@
 @property bool firstSwipe;
 @property bool needsRescale;
 @property bool notFirstTimeViewShow;
+@property vector<CFemModelPtr> *undoModelList;
+@property vector<CFemModelPtr> *redoModelList;
 
 -(void)startAnimation;
 

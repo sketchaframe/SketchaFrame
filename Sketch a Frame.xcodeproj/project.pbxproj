@@ -12,6 +12,7 @@
 		820488F4156E1944006803C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 820488F3156E1944006803C1 /* Foundation.framework */; };
 		820488F6156E1944006803C1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 820488F5156E1944006803C1 /* CoreGraphics.framework */; };
 		EC0013571681D0F100882566 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0013561681D0F100882566 /* QuartzCore.framework */; };
+		EC95E40516AFDDAC0066EE39 /* SwipeView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC95E40416AFDDAC0066EE39 /* SwipeView.mm */; };
 		ECA0B1F3169ECF1800A1362F /* bc3.ai in Resources */ = {isa = PBXBuildFile; fileRef = ECA0B1F2169ECF1800A1362F /* bc3.ai */; };
 		ECA0B1F5169ECFD700A1362F /* Sketch a Frame.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = ECA0B1F4169ECFD700A1362F /* Sketch a Frame.entitlements */; };
 		ECA0B1F7169ED33600A1362F /* bc3.eps in Resources */ = {isa = PBXBuildFile; fileRef = ECA0B1F6169ED33600A1362F /* bc3.eps */; };
@@ -166,6 +167,8 @@
 		820488F5156E1944006803C1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		8204891A156E1944006803C1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		EC0013561681D0F100882566 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EC95E40316AFDDAC0066EE39 /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipeView.h; path = ../bodies/SwipeView.h; sourceTree = "<group>"; };
+		EC95E40416AFDDAC0066EE39 /* SwipeView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SwipeView.mm; sourceTree = "<group>"; };
 		ECA0B1F2169ECF1800A1362F /* bc3.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bc3.ai; sourceTree = "<group>"; };
 		ECA0B1F4169ECFD700A1362F /* Sketch a Frame.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Sketch a Frame.entitlements"; sourceTree = "<group>"; };
 		ECA0B1F6169ED33600A1362F /* bc3.eps */ = {isa = PBXFileReference; lastKnownFileType = file; path = bc3.eps; sourceTree = "<group>"; };
@@ -516,6 +519,7 @@
 		ECBE2A2C169DB23400283FD4 /* bodies */ = {
 			isa = PBXGroup;
 			children = (
+				EC95E40416AFDDAC0066EE39 /* SwipeView.mm */,
 				ECBE2A2D169DB23400283FD4 /* AboutViewController.mm */,
 				ECBE2A2E169DB23400283FD4 /* AppDelegate.mm */,
 				ECBE2A2F169DB23400283FD4 /* Base.cpp */,
@@ -607,6 +611,7 @@
 		ECBE2A74169DB23400283FD4 /* headers */ = {
 			isa = PBXGroup;
 			children = (
+				EC95E40316AFDDAC0066EE39 /* SwipeView.h */,
 				ECCA5AD516A80D540080FA2E /* ModelFunctions.h */,
 				ECCA5ACB16A464440080FA2E /* ExamplesTableViewController.h */,
 				ECBE2A75169DB23400283FD4 /* AboutViewController.h */,
@@ -877,6 +882,7 @@
 				ECBE2C00169DBB2A00283FD4 /* calfem.cpp in Sources */,
 				ECCA5ACD16A464440080FA2E /* ExamplesTableViewController.mm in Sources */,
 				ECCA5AD716A80D540080FA2E /* ModelFunctions.m in Sources */,
+				EC95E40516AFDDAC0066EE39 /* SwipeView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,12 +21,11 @@
 #define kUndo @"kUndo"
 
 
-@interface GeometryViewController : UIViewController <UIGestureRecognizerDelegate, UIScrollViewDelegate,UIPopoverControllerDelegate>{
+@interface GeometryViewController : UIViewController <UIGestureRecognizerDelegate, UIScrollViewDelegate,UIPopoverControllerDelegate, UIAlertViewDelegate>{
     CFemModelPtr femModel;
     GeometryView *geometryView;
     IBOutlet UIScrollView *scroll;
-    NSMutableArray *redomodelListArray;
-    
+
 }
 
 - (IBAction)ToolButton:(id)sender;
@@ -70,8 +69,8 @@
 
 
 @property (retain, nonatomic) IBOutlet UIButton *orthoButtonOutlet;
-@property (assign, nonatomic) vector<CFemModelPtr> undoModelList;
-@property (assign, nonatomic) vector<CFemModelPtr> redoModelList;
+@property (assign, nonatomic) vector<CFemModelPtr> *undoModelList;
+@property (assign, nonatomic) vector<CFemModelPtr> *redoModelList;
 - (IBAction)orthoButton:(id)sender;
 - (IBAction)infoButton:(id)sender;
 

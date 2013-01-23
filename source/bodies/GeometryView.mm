@@ -8,6 +8,8 @@
 
 #import "GeometryViewController.h"
 #import "GeometryView.h"
+#import "ColorbarView.h"
+#import "SwipeView.h"
 
 @interface GeometryView ()
 @property (retain) GeometryView *myGeo;
@@ -22,6 +24,8 @@ static GeometryView *_sharedInstance;
 @synthesize firstRelease;
 @synthesize needsRescale;
 @synthesize notFirstTimeViewShow;
+@synthesize undoModelList;
+@synthesize redoModelList;
 
 + (GeometryView *) sharedInstance
 {
@@ -38,6 +42,20 @@ static GeometryView *_sharedInstance;
     if (!shareFemModel)
         shareFemModel = new CFemModel();
 	return shareFemModel;
+}
+
+- (vector<CFemModelPtr>*) getUndoModelList;
+{
+    if (!undoModelList)
+        undoModelList = new vector<CFemModelPtr>;
+    return [self undoModelList];
+}
+
+- (vector<CFemModelPtr>*) getRedoModelList;
+{
+    if (!redoModelList)
+        redoModelList = new vector<CFemModelPtr>;
+    return [self redoModelList];
 }
 
 
@@ -115,6 +133,10 @@ static GeometryView *_sharedInstance;
         
         prevDefScaleValue=0;
         prevMomScaleValue=0;
+        
+        //Add a view on top of the other for the swipe lines
+         SwipeView *swipeView = [[SwipeView alloc] initWithFrame:self.frame];
+        [self addSubview:swipeView];
         
     }
     return self;

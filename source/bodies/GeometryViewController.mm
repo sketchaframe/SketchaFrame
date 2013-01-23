@@ -50,7 +50,7 @@
 	[self.geometryView setNeedsDisplay];
     [self updateButtonStatus];
     [self.geometryView setNeedsDisplay];
-    
+
     
     //Make sure buttons are placed very nicly
     vector<UIButton *> buttonList;
@@ -93,19 +93,26 @@
         xLocation+=buttonWidth+space;
     }
     
-    cout << button11.frame.size.height;
-
+    
+    
     
     //Make sure the undo/redo buttons are correctly enabled
-    if (undoModelList.size()>1)
+    if (undoModelList->size()>1)
         buttonUndo.enabled = true;
     else
         buttonUndo.enabled = false;
 
-    if (redoModelList.size()>0)
+    if (redoModelList->size()>0)
         buttonRedo.enabled = true;
     else
         buttonRedo.enabled = false;
+    
+    
+    //Place the geometryview correct
+    //geometryView.frame = CGRectMake(0, buttonHeight+2*space+44, 768, 1024-buttonHeight-2*space-44-49);
+    scroll.frame = CGRectMake(0, buttonHeight+2*space+44, 920, 1024-buttonHeight-2*space-44-49);
+
+    
     
    
     if (femModel->drawRedundancy())
@@ -242,6 +249,10 @@
     femModel->setScale(100);
     femModel->setMomentScale(10000);
     
+    undoModelList = [myGeo getUndoModelList];
+    redoModelList = [myGeo getRedoModelList];
+
+    
     //If first time showing the view set toolmode 22 (draw)
     if ([myGeo toolMode] < 1)
     {
@@ -284,14 +295,17 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUndoModel:) name:kUndo object:nil];
  
     //Push back empty model as first undo
-    if (undoModelList.size() == 0)
+    if (undoModelList->size() == 0)
     {
         CFemModelPtr undoModel = new CFemModel;
         *undoModel = femModel;
         
-        undoModelList.push_back(undoModel);
+        undoModelList->push_back(undoModel);
     }
+    
+    
 }
+
 
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
@@ -412,13 +426,41 @@
 
 
 - (IBAction)clearButton:(id)sender {
-    femModel->clear();
-    femModel->calculate(YES, YES);
-    [self.geometryView setNeedsDisplay];
-    [myGeo setFirstDraw:YES];
-    [myGeo setFirstRelease:YES];
     
-    [self performSelector:(@selector(updateUndoModel:))];
+    if (femModel->nodeCount()>0)
+    {
+    // open a alert with an OK and cancel button
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Clear" message:@"All unsaved changes will be lost. Are you sure?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+                          [alert show];
+                          [alert release];
+    }
+}
+
+- (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    // the user clicked one of the OK/Cancel buttons
+    if (buttonIndex == 0)
+    {
+        NSLog(@"Cancel clear model");
+    }
+    else
+    {
+        NSLog(@"Clear model");
+        femModel->clear();
+        femModel->calculate(YES, YES);
+        [self.geometryView setNeedsDisplay];
+        [myGeo setFirstDraw:YES];
+        [myGeo setFirstRelease:YES];
+        
+        undoModelList->clear();
+        redoModelList->clear();
+        
+        //Push back empty undo model
+        CFemModelPtr undoModel = new CFemModel;
+        *undoModel = femModel;
+        
+        undoModelList->push_back(undoModel);
+        buttonUndo.enabled=false;
+    }
 }
 
 - (IBAction)feedback:(id)sender {
@@ -543,8 +585,19 @@
             
         }
     }
+
+    undoModelList->clear();
+    redoModelList->clear();
+
+    //Push back undo model
+    CFemModelPtr undoModel = new CFemModel;
+    *undoModel = femModel;
     
-    [self performSelector:(@selector(updateUndoModel:))];
+    undoModelList->push_back(undoModel);
+    buttonUndo.enabled=false;
+    buttonRedo.enabled=false;
+    
+    
  
 }
 
@@ -600,28 +653,35 @@
 
 - (IBAction)updateUndoModel:(id)sender {
 
-    if (!femModel->compareModelWith(undoModelList[undoModelList.size()-1]))
+    if (!femModel->compareModelWith(undoModelList->data()[undoModelList->size()-1]))
     {
         CFemModelPtr undoModel = new CFemModel;
         *undoModel = femModel;
         
-        undoModelList.push_back(undoModel);
+        undoModelList->push_back(undoModel);
         buttonUndo.enabled = true;
     }
     
     //Empty redo list when changes are made
-    for (int i=0;i<redoModelList.size();i++)
-    {
-        redoModelList.erase(redoModelList.begin()+i);
-    }
+    redoModelList->clear();
     
     //Limit number of undo steps
-    if (undoModelList.size() > 100)
+    if (undoModelList->size() > 100)
     {
-        undoModelList.erase(undoModelList.begin());
+        undoModelList->erase(undoModelList->begin());
     }
     
-    buttonRedo.enabled=false;
+    
+    if (undoModelList->size()>1)
+        buttonUndo.enabled = true;
+    else
+        buttonUndo.enabled = false;
+    
+    if (redoModelList->size()>0)
+        buttonRedo.enabled = true;
+    else
+        buttonRedo.enabled = false;
+    
 }
 
 - (IBAction)undoButton:(id)sender {
@@ -629,35 +689,37 @@
     CFemModelPtr redoModel = new CFemModel;
     *redoModel = femModel;
     
-    redoModelList.push_back(redoModel);
+    redoModelList->push_back(redoModel);
     
-    if (undoModelList.size() > 0)
+    if (undoModelList->size() > 0)
     {
-        *femModel = undoModelList[undoModelList.size()-2];
+        *femModel = undoModelList->data()[undoModelList->size()-2];
         
-        undoModelList.erase(undoModelList.end());
+        undoModelList->erase(undoModelList->end());
         [myGeo setNeedsRescale:YES];
         [self.geometryView setNeedsDisplay];
     }
-    if (undoModelList.size() == 1)
+    if (undoModelList->size() == 1)
     {
         buttonUndo.enabled = false;
     }
+    
+    //cout << "Redo count: " << redoModelList->size() << " Undo: " << undoModelList->size() << endl;
     
 }
 
 - (IBAction)redoButton:(id)sender {
     
     //Read latest redo model
-    if (redoModelList.size() > 0)
+    if (redoModelList->size() > 0)
     {
-        *femModel = redoModelList[redoModelList.size()-1];        
-        redoModelList.erase(redoModelList.end());
+        *femModel = redoModelList->data()[redoModelList->size()-1];
+        redoModelList->erase(redoModelList->end());
         [myGeo setNeedsRescale:YES];
         [self.geometryView setNeedsDisplay];
     }
     
-    if (redoModelList.size() == 0)
+    if (redoModelList->size() == 0)
     {
         buttonRedo.enabled=false;
     }
@@ -665,9 +727,10 @@
     CFemModelPtr undoModel = new CFemModel;
     *undoModel = femModel;
 
-    undoModelList.push_back(undoModel);
+    undoModelList->push_back(undoModel);
     buttonUndo.enabled = true;
 
+        cout << "Redo count: " << redoModelList->size() << " Undo: " << undoModelList->size() << endl;
 }
 
 - (IBAction)gridButton:(id)sender {

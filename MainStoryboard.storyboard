@@ -1158,8 +1158,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="undoButton:" destination="9eq-gl-OgU" eventType="touchUpInside" id="Fgj-Kn-rGh"/>
-                                            <action selector="undoButton:" destination="36V-20-wQK" eventType="touchUpInside" id="zdn-5b-zjY"/>
+                                            <action selector="undoButton:" destination="36V-20-wQK" eventType="touchUpInside" id="VQg-Qa-vUT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tWx-Rb-vt0">
@@ -1203,7 +1202,7 @@
                         <outlet property="button6" destination="bNL-hH-rP1" id="Qd1-8o-lLp"/>
                         <outlet property="buttonMenuView" destination="YhH-wu-gvU" id="edJ-OY-9ZN"/>
                         <outlet property="buttonRedo" destination="tWx-Rb-vt0" id="IcW-fi-yz7"/>
-                        <outlet property="buttonUndo" destination="RW2-cN-s0H" id="GKT-v0-kil"/>
+                        <outlet property="buttonUndo" destination="RW2-cN-s0H" id="Ic3-lJ-h6c"/>
                         <outlet property="geometryView" destination="InK-lM-dcz" id="4S9-no-JLP"/>
                         <outlet property="gridButtonOutlet" destination="6Jy-jN-pKQ" id="j23-Px-NjB"/>
                         <outlet property="orthoButtonOutlet" destination="a6F-8U-aLi" id="2SW-qm-PeO"/>
@@ -2140,8 +2139,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1tb-7v-qiN"/>
-        <segue reference="uXa-5u-atN"/>
-        <segue reference="c2e-Kh-YQo"/>
+        <segue reference="wCa-6d-Wyw"/>
+        <segue reference="ubA-Ci-hNJ"/>
+        <segue reference="RFt-rD-Cbm"/>
     </inferredMetricsTieBreakers>
 </document>
