@@ -9,7 +9,7 @@
 #import "GeometryViewController.h"
 #import "GeometryView.h"
 #import "ColorbarView.h"
-#import "SwipeView.h"
+
 
 @interface GeometryView ()
 @property (retain) GeometryView *myGeo;
@@ -135,8 +135,9 @@ static GeometryView *_sharedInstance;
         prevMomScaleValue=0;
         
         //Add a view on top of the other for the swipe lines
-         SwipeView *swipeView = [[SwipeView alloc] initWithFrame:self.frame];
+        swipeView = [[SwipeView alloc] initWithFrame:self.frame];
         [self addSubview:swipeView];
+
         
     }
     return self;
@@ -151,7 +152,6 @@ static GeometryView *_sharedInstance;
         
         geometryUpdated = YES;
         firstTap = [sender locationInView:self];
-        swipeLine = NO;
         panning = YES;
         
         playType=0;
@@ -260,9 +260,7 @@ static GeometryView *_sharedInstance;
         double x, y;
         worldViewport->toWorld(lastTap.x, lastTap.y, x, y);
         
-        if ([myGeo toolMode] == 22) {
-            swipeLine = YES;
-        }
+
         
         if ([myGeo toolMode] == 100)
         {
@@ -356,10 +354,15 @@ static GeometryView *_sharedInstance;
             }
         }
         
-        [self setNeedsDisplay];
+        if ([myGeo toolMode] == 22) {
+            [swipeView swipeLine:&firstTap :&lastTap];
+        } else {
+            [self setNeedsDisplay];
+        }
         
         
     } else if (sender.state == UIGestureRecognizerStateEnded) {
+        [swipeView hide];
         geometryUpdated=YES;
         panning = NO;
         switch ([myGeo toolMode]) {
@@ -418,8 +421,7 @@ static GeometryView *_sharedInstance;
         }
         
         [self reScale];
-        swipeLine = NO;
-        
+
         calculated = femModel->calculate(YES, YES);
         
         if (calculated)
@@ -1059,68 +1061,6 @@ static GeometryView *_sharedInstance;
     CGContextStrokePath(context);
     CGContextSetAlpha(context, 0.7);
     
-    //Draw unfinished line
-    if (swipeLine)
-    {
-        
-        worldViewport->toWorld(firstTap.x,firstTap.y,sx,sy);
-        int startNodeId = femModel->findNode(sx, sy, snapDistance);
-        if (startNodeId<9999) {
-            
-            CNodePtr startNode = femModel->getNode(startNodeId);
-            worldViewport->toScreen(startNode, sx, sy);
-            worldViewport->toScreen(lastTap.x,lastTap.y, sx2, sy2);
-            int endNodeId = femModel->findNode(sx2, sy2, snapDistance);
-            
-            //Snap to end point
-            CGContextMoveToPoint(context, sx, sy);
-            if (endNodeId < 9999 && endNodeId != startNodeId) {
-                CNodePtr endNode = femModel->getNode(endNodeId);
-                worldViewport->toScreen(endNode, sx2, sy2);
-                CGContextAddLineToPoint( context, sx2,sy2);
-            } else {
-                double lineX, lineY;
-                int lineID = femModel->findLineExtended(sx2, sy2, snapDistance, lineX, lineY);
-                worldViewport->toScreen(lineX, lineY, lineX, lineY);
-                
-                if (lineID < 9999) //Snap to line and draw node
-                {
-                    CGContextAddLineToPoint( context, lineX,lineY);
-                    
-                    int imageSize = 84;
-                    CGRect myImageRect = CGRectMake(lineX-imageSize/2,lineY-imageSize/2,imageSize,imageSize);
-                    UIImageView *myImage = [[UIImageView alloc] initWithFrame:myImageRect];
-                    [myImage setImage:[UIImage imageNamed:@"bc0.png"]];
-                    myImage.alpha = 1;
-                    myImage.tag = 1;
-                    [self addSubview:myImage];
-                    [myImage release];
-                }
-                
-                else if (femModel->showGrid())
-                {
-                    double gridX=0,gridY=0;
-                    if (femModel->foundGrid(lastTap.x,lastTap.y,0.2,gridX, gridY))
-                    {
-                        
-                        if (gridX > 0)
-                            lastTap.x=gridX;
-                        if (gridY > 0)
-                            lastTap.y=gridY;
-                    }
-                    
-                    CGContextAddLineToPoint( context, lastTap.x,lastTap.y);
-                }
-                
-                else
-                    CGContextAddLineToPoint( context, lastTap.x,lastTap.y);
-            }
-            
-        }
-    }
-    
-    
-    CGContextStrokePath(context);
     
     for (i=0; i<femModel->nodeCount(); i++)
     {

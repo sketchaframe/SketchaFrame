@@ -10,16 +10,19 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SwipeView.h"
 
 @interface GeometryView : UIView 
 {
+    SwipeView *swipeView;
+    
     CGPoint lastTap; 
     CGPoint firstTap;    
     CFemModelPtr femModel;
     CFemModelPtr shareFemModel;
     CViewPortPtr worldViewport;
     CViewPortPtr share_worldViewport;    
-    bool swipeLine;
+
     int snapDistance;
     bool geometryUpdated;
     bool calculated;
