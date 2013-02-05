@@ -7,7 +7,9 @@
 //
 
 #import "GeometryViewController.h"
-
+#import "XMLParser.h"
+#import "GenerateXMLData.h"
+#import "DrawImages.h"
 
 @interface  GeometryViewController() <OpenTableViewControllerDelegate, SaveAsViewControllerDelegate>
 @property (retain) GeometryView *myGeo;
@@ -143,6 +145,7 @@
 
         }
     }
+    [self.geometryView setNeedsDisplay];
 }
 
 - (void)updateButtonStatus
@@ -293,6 +296,7 @@
     
     //Notification center
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateUndoModel:) name:kUndo object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(openXMLURL:) name:@"openXMLURL" object:nil];
  
     //Push back empty model as first undo
     if (undoModelList->size() == 0)
@@ -305,8 +309,6 @@
     
     
 }
-
-
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.geometryView;
@@ -342,10 +344,6 @@
 	return NO;
 }
 
-
-
-
-
 - (void)dealloc {
     [scroll release];
     [button1 release];
@@ -367,8 +365,6 @@
     [buttonMenuView release];
     [super dealloc];
 }
-
-
 
 - (IBAction)ToolButton:(id)sender {
     UIButton *btn = (UIButton*)sender;
@@ -422,8 +418,6 @@
     }
 
 }
-
-
 
 - (IBAction)clearButton:(id)sender {
     
@@ -543,6 +537,145 @@
     }
 
 }
+
+-(void)openXML:(NSString *)fileName
+{
+    NSLog(@"Clear model");
+    femModel->clear();
+    femModel->calculate(YES, YES);
+    [self.geometryView setNeedsDisplay];
+    [myGeo setFirstDraw:YES];
+    [myGeo setFirstRelease:YES];
+    
+    undoModelList->clear();
+    redoModelList->clear();
+    
+    //Push back empty undo model
+    CFemModelPtr undoModel = new CFemModel;
+    *undoModel = femModel;
+    
+    undoModelList->push_back(undoModel);
+    buttonUndo.enabled=false;
+    
+    
+    NSString* path = [[NSBundle mainBundle] pathForResource:[fileName stringByDeletingPathExtension] ofType:@"safx" inDirectory:@"examples"];
+	NSURL *url = [NSURL fileURLWithPath:path];
+	NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    
+	XMLParser *theDelegate = [[XMLParser alloc] initXMLParser];
+	[xmlParser setDelegate:theDelegate];
+	[xmlParser parse];
+}
+
+- (IBAction)openMail:(id)sender
+{
+    if (femModel->nodeCount() == 0)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"You can not share a blank model!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
+        [alert show];
+        [alert release];
+         
+    } else if (!femModel->calculate(YES, YES))
+    {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                            message:@"Model must be complete!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles: nil];
+            [alert show];
+            [alert release];
+    
+    } else {
+        if ([MFMailComposeViewController canSendMail])
+        {
+            
+            MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+            mailer.mailComposeDelegate = self;
+            [mailer setSubject:@"Sketch a Frame model"];
+            NSArray *toRecipients = [NSArray arrayWithObjects:nil];
+            [mailer setToRecipients:toRecipients];
+            
+            NSData *modelXMLData = [GenerateXMLData getDataModel];
+            
+            
+            //femModel->calculate(YES, YES);
+            femModel->calculateRedundancy();
+            femModel->calculate(YES, YES);
+            
+            UIImage *deformationImage = [DrawImages drawDeformations];
+            NSData *imageData = UIImagePNGRepresentation(deformationImage);
+            
+            UIImage *tensionImage = [DrawImages drawTensions];
+            NSData *tensionImageData = UIImagePNGRepresentation(tensionImage);
+
+            UIImage *normImage = [DrawImages drawNormMom];
+            NSData *normImageData = UIImagePNGRepresentation(normImage);
+            
+            [mailer addAttachmentData:modelXMLData mimeType:@"sketchaframe/safx" fileName:@"Model"];
+            [mailer addAttachmentData:imageData mimeType:@"image/png" fileName:@"deformations"];
+            [mailer addAttachmentData:tensionImageData mimeType:@"image/png" fileName:@"tensions"];
+            [mailer addAttachmentData:normImageData mimeType:@"image/png" fileName:@"normalmoment"];
+
+            if (femModel->getRedundancyBrain(femModel)->getm() == 0)
+            {
+                UIImage *redundancyImage = [DrawImages drawRedundancy];
+                NSData *redundancyImageData = UIImagePNGRepresentation(redundancyImage);
+            
+                [mailer addAttachmentData:redundancyImageData mimeType:@"image/png" fileName:@"redundancy"];
+            }
+            
+            NSString *emailBody = @"I want to share a Sketch a Frame model with you. <br> <br> Sketch a frame is free and: <br><a href=\"https://itunes.apple.com/se/app/sketch-a-frame/id563527046?mt=8&uo=4\" target=\"itunes_store\"><img src=\"http://r.mzstatic.com/images/web/linkmaker/badge_appstore-lrg.gif\" alt=\"Sketch a Frame - Lunds universitet\" style=\"border: 0;\"/></a><br><br> Here is a preview of the model and the results:";
+            [mailer setMessageBody:emailBody isHTML:YES];
+            mailer.modalPresentationStyle = UIModalPresentationFormSheet;
+            
+            [self presentModalViewController:mailer animated:YES];
+            
+            mailer.view.superview.frame = CGRectMake(0, 0, 100, 1000);
+            mailer.view.superview.center = self.view.center;
+            
+            [mailer release];
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+                                                            message:@"Your device doesn't support the composer sheet"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles: nil];
+            [alert show];
+            [alert release];
+        }
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+            break;
+        default:
+            NSLog(@"Mail not sent.");
+            break;
+    }
+    // Remove the mail view
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 
 -(void)openModel:(id)sender
 {
@@ -682,6 +815,39 @@
     else
         buttonRedo.enabled = false;
     
+}
+
+- (void)openXMLURL:(NSNotification *)notification
+{
+    
+    NSLog(@"Clear model");
+    femModel->clear();
+    femModel->calculate(YES, YES);
+    [self.geometryView setNeedsDisplay];
+    [myGeo setFirstDraw:YES];
+    [myGeo setFirstRelease:YES];
+    
+    undoModelList->clear();
+    redoModelList->clear();
+    
+    //Push back empty undo model
+    CFemModelPtr undoModel = new CFemModel;
+    *undoModel = femModel;
+    
+    undoModelList->push_back(undoModel);
+    buttonUndo.enabled=false;
+    
+    
+    //Recieve url here
+    NSURL *url = [[notification userInfo] valueForKey:@"index"];
+    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    
+	XMLParser *theDelegate = [[XMLParser alloc] initXMLParser];
+	[xmlParser setDelegate:theDelegate];
+	[xmlParser parse];
+    
+    
+    [self.geometryView setNeedsDisplay];
 }
 
 - (IBAction)undoButton:(id)sender {

@@ -29,8 +29,7 @@ public:
     void getCoord(double& x, double& y);
     double getX();
     double getY();
-    double getBC2();
-    
+    double getBC2();    
     
     int enumerate(int idx);
     int getEnumerate();
@@ -43,10 +42,13 @@ class CResults : public CBase {
 private:
     double m_displacements_x[20];
     double m_displacements_y[20];
+    
     double m_mekanismEnd_x[20];
     double m_mekanismEnd_y[20];
+    
     double m_mekanismStart_x[20];
     double m_mekanismStart_y[20];
+    
     double m_nForce;
     double m_mForce[2];
     double m_tension[2];

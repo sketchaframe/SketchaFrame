@@ -420,6 +420,8 @@ void CFemModel::print()
 void CFemModel::printCode()
 {
 
+    cout << "<model>" << endl;
+
     vector<CFemNodePtr>::iterator it;
     int idx = 0;
     
@@ -427,7 +429,7 @@ void CFemModel::printCode()
     {
         CFemNode* node = (*it);
         
-        cout << "femModel->addNode(" << node->getX() << ", " << node->getY() << ");" << endl;
+        cout << "<node x=\"" << node->getX() << "\" y=\"" << node->getY() << "\">" << endl;
         
         idx++;
     }
@@ -438,7 +440,7 @@ void CFemModel::printCode()
     for (itLine=m_lines.begin(); itLine!=m_lines.end(); itLine++)
     {
         
-        cout << "femModel->addLine(" << ((*itLine)->getNode0())->getEnumerate() << "," << (*itLine)->getNode1()->getEnumerate() << ");" << endl;
+        cout << "<line start=\"" << ((*itLine)->getNode0())->getEnumerate() << "\" end=\"" << (*itLine)->getNode1()->getEnumerate() << "\">" << endl;
         
         idx++;
     }
@@ -453,16 +455,18 @@ void CFemModel::printCode()
         
         if (node->getBCCount() > 0)
         {
-            cout << "femModel->addBC(" << node->getEnumerate() << ", " << node->getBC(0)->getType() << ");" << endl;
+            cout << "<bc nodeID=\"" << node->getEnumerate() << "\" type=\"" << node->getBC(0)->getType() << "\">" << endl;
         }
         
         if (node->getForceCount() > 0)
         {
-            cout << "femModel->addForce(" << node->getEnumerate() << " ," << node->getForce(0)->getMagnitude() << "," << node->getForce(0)->getCompX() << "," << node->getForce(0)->getCompY() << ");" << endl;
+            cout << "<force nodeID=\"" << node->getEnumerate() << "\" magnitude=\"" << node->getForce(0)->getMagnitude() << "\" xcomp=\"" << node->getForce(0)->getCompX() << "\" ycomp=\"" << node->getForce(0)->getCompY() << "\">" << endl;
         }
         
         idx++;
     }
+    
+        cout << "</model>";
 }
 
 
@@ -789,7 +793,7 @@ int CFemModel::findAction(double x, double y, int distSetting, int &type)
             int start_x = (*it)->getX();
             int start_y = (*it)->getY();
             int end_x = (*it)->getX()+(*it)->getForce(0)->getCompX()*(*it)->getForce(0)->getMagnitude();
-            int end_y =(*it)->getY()+(*it)->getForce(0)->getCompY()*(*it)->getForce(0)->getMagnitude();
+            int end_y =(*it)->getY()-(*it)->getForce(0)->getCompY()*(*it)->getForce(0)->getMagnitude();
             
             float l2 = pow(end_x - start_x,2.0) + pow(end_y - start_y,2.0);
             float t = ((x-start_x)*(end_x-start_x)+(y-start_y)*(end_y-start_y))/l2;
@@ -881,7 +885,7 @@ int CFemModel::findLine(double x, double y, int distSetting)
 
 bool CFemModel::foundGrid(double x,double y,double snapDistance,double &gridX,double &gridY)
 {
-    int space = 65;
+    int space = 72;
     int nrX = x/space;
     int nrY = y/space;
     
@@ -1701,6 +1705,7 @@ void CCalfemBrain::getStiffnessMatrix()
     //cout << "freedofs size: " <<freeDOFs.size();
     
     //Reducing the stiffness matrix
+
     for (int i=0; i<=freeDOFs.size()-1; i++)
     {
         for (int j=0; j<=freeDOFs.size()-1; j++)
@@ -1836,7 +1841,7 @@ void CCalfemBrain::setConstraints()
         {
             
             f((i-1)*3+1)=-model->getNode(i-1)->getForce(0)->getCompX() * model->getNode(i-1)->getForce(0)->getMagnitude()/100;
-            f((i-1)*3+2)=-model->getNode(i-1)->getForce(0)->getCompY() * model->getNode(i-1)->getForce(0)->getMagnitude()/100;
+            f((i-1)*3+2)=-model->getNode(i-1)->getForce(0)->getCompY() * -model->getNode(i-1)->getForce(0)->getMagnitude()/100;
         }
     }
     
@@ -2088,6 +2093,7 @@ bool CCalfemBrain::femCalculations(bool geometryUpdated, bool doStaticAnalysis)
             {
                 getStiffnessMatrix();
             }
+            
             
             if (doStaticAnalysis || model->getDegreeOfMechanism() == -1)
                 staticAnalysisOK = staticAnalysis();

@@ -169,11 +169,11 @@
     if (exampleID==0)
     {
         //Frame
-        femModel->addNode(130, 583);
-        femModel->addNode(130, 973);
-        femModel->addNode(650, 973);
-        femModel->addNode(650, 583);
-        femModel->addNode(390, 973);
+        femModel->addNode(648, 648);
+        femModel->addNode(648, 216);
+        femModel->addNode(144, 216);
+        femModel->addNode(144, 648);
+        femModel->addNode(396.5, 216);
         femModel->addLine(0,1);
         femModel->addLine(2,3);
         femModel->addLine(1,4);
@@ -183,22 +183,22 @@
         femModel->addBC(2, 4);
         femModel->addBC(3, 1);
         femModel->addBC(4, 4);
-        femModel->addForce(4 ,130,0,1);
+        femModel->addForce(4 ,144,0,1);
     }
     
     if (exampleID==1)
     {
         
         //FEM assignment
-        femModel->addNode(130, 973);
-        femModel->addNode(260, 973);
-        femModel->addNode(390, 973);
-        femModel->addNode(520, 973);
-        femModel->addNode(650, 843);
-        femModel->addNode(130, 843);
-        femModel->addNode(260, 843);
-        femModel->addNode(390, 843);
-        femModel->addNode(520, 843);
+        femModel->addNode(130, 1200-973);
+        femModel->addNode(260, 1200-973);
+        femModel->addNode(390, 1200-973);
+        femModel->addNode(520, 1200-973);
+        femModel->addNode(650, 1200-843);
+        femModel->addNode(130, 1200-843);
+        femModel->addNode(260, 1200-843);
+        femModel->addNode(390, 1200-843);
+        femModel->addNode(520, 1200-843);
         femModel->addLine(0,1);
         femModel->addLine(1,2);
         femModel->addLine(2,3);
@@ -221,26 +221,26 @@
     if (exampleID == 2)
     {
         //Big frame
-        femModel->addNode(130, 518);
-        femModel->addNode(130, 648);
-        femModel->addNode(130, 778);
-        femModel->addNode(130, 908);
-        femModel->addNode(130, 1038);
-        femModel->addNode(260, 1038);
-        femModel->addNode(390, 1038);
-        femModel->addNode(520, 1038);
-        femModel->addNode(260, 908);
-        femModel->addNode(260, 778);
-        femModel->addNode(260, 648);
-        femModel->addNode(260, 518);
-        femModel->addNode(390, 908);
-        femModel->addNode(390, 778);
-        femModel->addNode(390, 648);
-        femModel->addNode(390, 518);
-        femModel->addNode(519, 901.5);
-        femModel->addNode(520, 778);
-        femModel->addNode(520, 648);
-        femModel->addNode(520, 518);
+        femModel->addNode(130, 1200-518);
+        femModel->addNode(130, 1200-648);
+        femModel->addNode(130, 1200-778);
+        femModel->addNode(130, 1200-908);
+        femModel->addNode(130, 1200-1038);
+        femModel->addNode(260, 1200-1038);
+        femModel->addNode(390, 1200-1038);
+        femModel->addNode(520, 1200-1038);
+        femModel->addNode(260, 1200-908);
+        femModel->addNode(260, 1200-778);
+        femModel->addNode(260, 1200-648);
+        femModel->addNode(260, 1200-518);
+        femModel->addNode(390, 1200-908);
+        femModel->addNode(390, 1200-778);
+        femModel->addNode(390, 1200-648);
+        femModel->addNode(390, 1200-518);
+        femModel->addNode(519, 1200-901.5);
+        femModel->addNode(520, 1200-778);
+        femModel->addNode(520, 1200-648);
+        femModel->addNode(520, 1200-518);
         femModel->addLine(0,1);
         femModel->addLine(0,10);
         femModel->addLine(1,9);
@@ -284,24 +284,24 @@
     if (exampleID==3)
     {
         //Bridge
-        femModel->addNode(65, 648);
-        femModel->addNode(715, 631.5);
-        femModel->addNode(65, 713);
-        femModel->addNode(130, 778);
-        femModel->addNode(130, 713);
-        femModel->addNode(195, 843);
-        femModel->addNode(195, 778);
-        femModel->addNode(325, 908);
-        femModel->addNode(325, 843);
-        femModel->addNode(650, 713);
-        femModel->addNode(650, 778);
-        femModel->addNode(585, 778);
-        femModel->addNode(585, 843);
-        femModel->addNode(455, 843);
-        femModel->addNode(455, 908);
-        femModel->addNode(715, 713);
-        femModel->addNode(390, 843);
-        femModel->addNode(388.5, 908);
+        femModel->addNode(65, 1200-648);
+        femModel->addNode(715, 1200-631.5);
+        femModel->addNode(65, 1200-713);
+        femModel->addNode(130, 1200-778);
+        femModel->addNode(130, 1200-713);
+        femModel->addNode(195, 1200-843);
+        femModel->addNode(195, 1200-778);
+        femModel->addNode(325, 1200-908);
+        femModel->addNode(325, 1200-843);
+        femModel->addNode(650, 1200-713);
+        femModel->addNode(650, 1200-778);
+        femModel->addNode(585, 1200-778);
+        femModel->addNode(585, 1200-843);
+        femModel->addNode(455, 1200-843);
+        femModel->addNode(455, 1200-908);
+        femModel->addNode(715, 1200-713);
+        femModel->addNode(390, 1200-843);
+        femModel->addNode(388.5, 1200-908);
         femModel->addLine(0,2);
         femModel->addLine(2,3);
         femModel->addLine(0,4);
@@ -353,15 +353,15 @@
     {
         
         //Spring
-        femModel->addNode(325, 778);
-        femModel->addNode(325, 843);
-        femModel->addNode(260, 843);
-        femModel->addNode(260, 713);
-        femModel->addNode(390, 713);
-        femModel->addNode(386, 908);
-        femModel->addNode(195, 908);
-        femModel->addNode(195, 648);
-        femModel->addNode(455, 648);
+        femModel->addNode(325, 1200-778);
+        femModel->addNode(325, 1200-843);
+        femModel->addNode(260, 1200-843);
+        femModel->addNode(260, 1200-713);
+        femModel->addNode(390, 1200-713);
+        femModel->addNode(386, 1200-908);
+        femModel->addNode(195, 1200-908);
+        femModel->addNode(195, 1200-648);
+        femModel->addNode(455, 1200-648);
         femModel->addLine(0,1);
         femModel->addLine(1,2);
         femModel->addLine(2,3);

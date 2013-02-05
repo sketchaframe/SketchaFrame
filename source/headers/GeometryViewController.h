@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "GeometryView.h"
+#import <MessageUI/MessageUI.h>
 
+#import "GeometryView.h"
 #import "CoreDataTableViewController.h"
 #import "OpenTableViewController.h"
 #import "SaveAsViewController.h"
@@ -19,9 +20,11 @@
 #import "DBManager.h"
 
 #define kUndo @"kUndo"
+#define kOpenXMLUrl @"kOpenXMLUrl"
 
-
-@interface GeometryViewController : UIViewController <UIGestureRecognizerDelegate, UIScrollViewDelegate,UIPopoverControllerDelegate, UIAlertViewDelegate>{
+@interface GeometryViewController : UIViewController <UIGestureRecognizerDelegate, UIScrollViewDelegate,UIPopoverControllerDelegate, UIAlertViewDelegate,MFMailComposeViewControllerDelegate>
+{
+    
     CFemModelPtr femModel;
     GeometryView *geometryView;
     IBOutlet UIScrollView *scroll;
@@ -73,5 +76,7 @@
 @property (assign, nonatomic) vector<CFemModelPtr> *redoModelList;
 - (IBAction)orthoButton:(id)sender;
 - (IBAction)infoButton:(id)sender;
+
+- (IBAction)openMail:(id)sender;
 
 @end

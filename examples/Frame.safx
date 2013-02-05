@@ -1,0 +1,17 @@
+<model>
+  <node x="144.000000" y="720.000000">
+  <bc nodeID="0" type="1">
+  <node x="144.000000" y="288.000000">
+  <bc nodeID="1" type="4">
+  <node x="398.000000" y="288.000000">
+  <bc nodeID="2" type="4">
+  <force nodeID="2" magnitude="144.000000" xcomp="0.000000" ycomp="1.000000">
+  <node x="648.000000" y="288.000000">
+  <bc nodeID="3" type="4">
+  <node x="648.000000" y="720.000000">
+  <bc nodeID="4" type="1">
+  <line start="0" end="1">
+  <line start="1" end="2">
+  <line start="2" end="3">
+  <line start="3" end="4">
+</model>

@@ -10,7 +10,7 @@
 
 @interface SwipeView : UIView
 {
-
+    
 }
 @property (nonatomic, assign) CGPoint firstTap;
 @property (nonatomic, assign) CGPoint lastTap;
@@ -18,7 +18,8 @@
 
 -(void)swipeLine:(CGPoint *)start:(CGPoint *)end;
 -(void)hide;
-
-+(CGPoint)getSnapPoint:(CGPoint) inPoint;
+-(void)getPointers;
+-(CGPoint)getSnapPoint:(CGPoint) inPoint;
+-(CGPoint)getSnapPoint:(CGPoint) inPoint: (bool)moveNodeIn;
 
 @end

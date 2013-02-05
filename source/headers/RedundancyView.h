@@ -19,6 +19,7 @@
     
     CGPoint lastTap;
     CGPoint firstTap;
+    CGPoint firstSnap;
     CFemModelPtr femModel;
     CFemModelPtr shareFemModel;
     CViewPortPtr worldViewport;

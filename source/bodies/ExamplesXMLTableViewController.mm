@@ -1,19 +1,18 @@
 //
-//  ExamplesTableViewController.m
+//  ExamplesXMLTableViewController.m
 //  Sketch a Frame
 //
-//  Created by Daniel Åkesson on 1/14/13.
+//  Created by Daniel Åkesson on 1/30/13.
 //  Copyright (c) 2013 Lund University. All rights reserved.
 //
 
-#import "ExamplesTableViewController.h"
+#import "ExamplesXMLTableViewController.h"
 
-@interface ExamplesTableViewController ()
+@interface ExamplesXMLTableViewController ()
 
 @end
 
-@implementation ExamplesTableViewController
-
+@implementation ExamplesXMLTableViewController
 @synthesize delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -29,6 +28,20 @@
 {
     [super viewDidLoad];
 
+    NSFileManager *filemgr;
+    
+    NSString *docsDir = [[[NSBundle mainBundle] resourcePath]
+                         stringByAppendingPathComponent:@"examples"];
+    
+    filemgr =[NSFileManager defaultManager];
+    
+    filelist=[[NSMutableArray alloc]init];
+    
+    for (int i = 0; i<[[filemgr contentsOfDirectoryAtPath:docsDir error:NULL] count]; i++)
+    {
+        [filelist addObject:[[[filemgr contentsOfDirectoryAtPath:docsDir error:NULL] objectAtIndex:i] stringByDeletingPathExtension]];
+    }
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -43,30 +56,26 @@
 }
 
 #pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 0;
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-//}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [filelist count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"ExampleList";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    cell.textLabel.text=[filelist objectAtIndex:indexPath.row];
+    
+    return cell;
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -111,9 +120,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
-    [WriteCoreData readExample:indexPath.row];
-   
+    [delegate openXML:[filelist objectAtIndex:indexPath.row]];
     [delegate openModel:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

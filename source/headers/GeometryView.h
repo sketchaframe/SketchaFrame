@@ -17,7 +17,9 @@
     SwipeView *swipeView;
     
     CGPoint lastTap; 
-    CGPoint firstTap;    
+    CGPoint firstTap;
+    CGPoint firstSnap;
+    
     CFemModelPtr femModel;
     CFemModelPtr shareFemModel;
     CViewPortPtr worldViewport;

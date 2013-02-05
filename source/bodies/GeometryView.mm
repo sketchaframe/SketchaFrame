@@ -151,116 +151,83 @@ static GeometryView *_sharedInstance;
         [self reScale];
         
         geometryUpdated = YES;
-        firstTap = [sender locationInView:self];
         panning = YES;
+        firstTap = [sender locationInView:self];
         
         playType=0;
-        double x, y;
         double lineX,lineY;
-        worldViewport->toWorld(firstTap.x, firstTap.y, x, y);
-        playID = femModel->findAction(x, y, snapDistance, playType);
+  
+        firstSnap = [swipeView getSnapPoint:firstTap];
         
-        if (playID != 9999 && playType==1)
-        {
-            double nodeCordX, nodeCordY;
-            worldViewport->toScreen(femModel->getNode(playID)->getX(), femModel->getNode(playID)->getY(), nodeCordX, nodeCordY);
-            firstTap.x = nodeCordX;
-            firstTap.y = nodeCordY;
-        }
-        
-        nodeIDglob = femModel->findNode(x, y, snapDistance);
+        playID = femModel->findAction(firstTap.x, firstTap.y, snapDistance, playType);
+        nodeIDglob = femModel->findNode(firstTap.x,firstTap.y, snapDistance);
         
         
-        if (playID == 9999 && [myGeo toolMode] == 22)
+        if (playID == 9999 && [myGeo toolMode] == 22)  //No node found and draw mode
         {
             //no node is found, check if line is found
-            int lineID = femModel->findLineExtended(x, y, snapDistance, lineX, lineY);
+            int lineID = femModel->findLineExtended(firstTap.x,firstTap.y, snapDistance, lineX, lineY);
             if (lineID<9999)
             {
                 int startOldLine = femModel->getLine(lineID)->getNode0()->getEnumerate();
                 int endOldLine = femModel->getLine(lineID)->getNode1()->getEnumerate();
-                femModel->removeLine(x, y);
-                femModel->addNode(lineX, lineY);
-                int nodeID = femModel->findNode(x, y, snapDistance);
+                femModel->removeLine(firstTap.x,firstTap.y);
+                femModel->addNode(firstSnap.x, firstSnap.y);
+                int nodeID = femModel->findNode(firstSnap.x, firstSnap.y, snapDistance);
                 femModel->addLine(startOldLine, nodeID);
                 femModel->addLine(nodeID, endOldLine);
                 
-            }
-            else if (femModel->showGrid())
-            {
-                double gridX=0,gridY=0;
-                if (femModel->foundGrid(firstTap.x,firstTap.y,0.2,gridX, gridY))
-                {
-                    
-                    if (gridX > 0)
-                        firstTap.x=gridX;
-                    if (gridY > 0)
-                        firstTap.y=gridY;
-                    
-                    worldViewport->toWorld(firstTap.x, firstTap.y, x, y);
-                    femModel->addNode(x, y);
-                } else {
-                    femModel->addNode(x, y);
-                }
-                
             } else {
-                femModel->addNode(x, y);
-            }
-            
-            //If no node or line is found, add node
-            playID = femModel->findAction(x, y, snapDistance, playType);
+                //If no node or line is found, add node
+                femModel->addNode(firstSnap.x, firstSnap.y);
+            }            
+            playID = femModel->findAction(firstTap.x, firstTap.y, snapDistance, playType);
         }
         
         //Enable adding a force in the middle of a line
         
         if (playID == 9999 && [myGeo toolMode] == 11)
         {
-            int lineID = femModel->findLineExtended(x, y, snapDistance, lineX, lineY);
+            int lineID = femModel->findLineExtended(firstTap.x,firstTap.y, snapDistance, lineX, lineY);
             if (lineID<9999)
             {
                 int startOldLine = femModel->getLine(lineID)->getNode0()->getEnumerate();
                 int endOldLine = femModel->getLine(lineID)->getNode1()->getEnumerate();
-                femModel->removeLine(x, y);
-                femModel->addNode(lineX, lineY);
-                int nodeID = femModel->findNode(x, y, snapDistance);
+                femModel->removeLine(firstTap.x,firstTap.y);
+                femModel->addNode(firstSnap.x, firstSnap.y);
+                int nodeID = femModel->findNode(firstTap.x,firstTap.y, snapDistance);
                 femModel->addLine(startOldLine, nodeID);
                 femModel->addLine(nodeID, endOldLine);
                 femModel->addBC(nodeID, 4);
-                playID = femModel->findAction(x, y, snapDistance, playType);
+                playID = femModel->findAction(firstTap.x,firstTap.y, snapDistance, playType);
             } else {
                 
             }
             
         }
-        playID = femModel->findAction(x, y, snapDistance, playType);
+        playID = femModel->findAction(firstTap.x, firstTap.y, snapDistance, playType);
         
         
     } else if (sender.state == UIGestureRecognizerStateChanged) {
         lastTap = [sender locationInView:self];
-        
+
         //To make sure cannot draw out of screen
         if (lastTap.y<10)
-        {
             lastTap.y=10;
-        }
         
-        if (lastTap.y>819)
-        {
-            lastTap.y=819;
-        }
+        if (lastTap.y>850)
+            lastTap.y=850;
         
+       
         if (femModel->orthoMode())
         {
-            if (fabs(lastTap.x-firstTap.x) > fabs(lastTap.y-firstTap.y))
-                lastTap.y = firstTap.y;
+            if (fabs(lastTap.x-firstSnap.x) > fabs(lastTap.y-firstSnap.y))
+                lastTap.y = firstSnap.y;
             else
-                lastTap.x = firstTap.x;
+                lastTap.x = firstSnap.x;
         }
         
-        double x, y;
-        worldViewport->toWorld(lastTap.x, lastTap.y, x, y);
-        
-
+        CGPoint lastSnap = [swipeView getSnapPoint:lastTap :true];
         
         if ([myGeo toolMode] == 100)
         {
@@ -269,45 +236,27 @@ static GeometryView *_sharedInstance;
             //Remove force
             int nodeType;
             int nodeID;
-            nodeID = femModel->findAction(x, y, snapDistance, nodeType);
+            nodeID = femModel->findAction(lastTap.x, lastTap.y, snapDistance, nodeType);
             if (nodeType == 2 && nodeID<9999)
                 femModel->getNode(nodeID)->removeForce(femModel->getNode(nodeID)->getForce(0));
             
-            femModel->removeNode(x, y);
-            femModel->removeLine(x, y);
+            femModel->removeNode(lastTap.x, lastTap.y);
+            femModel->removeLine(lastTap.x, lastTap.y);
             playID=9999;
         }
         
         if (playID < 9999) {
-            
-            
-            
-            double sx, sy;
-            CNodePtr node = femModel->getNode(playID);
-            worldViewport->toScreen(node, sx, sy);
+
+            CNodePtr node = femModel->getNode(playID);            
             
             switch ([myGeo toolMode]) {
                 case 11:
-                    //Move forces
-                    
-                    if (femModel->showGrid())
-                    {
-                        double gridX=0,gridY=0;
-                        if (femModel->foundGrid(lastTap.x,lastTap.y,0.2,gridX, gridY))
-                        {
-                            
-                            if (gridX > 0)
-                                lastTap.x=gridX;
-                            if (gridY > 0)
-                                lastTap.y=gridY;
-                            
-                        }
-                    }
+                    //Forces tool
                     
                     if (playType == 2) //Forces
                     {
                         geometryUpdated = NO;
-                        femModel->setForce(lastTap.x-sx, sy-lastTap.y, playID, 0);
+                        femModel->setForce(lastSnap.x-node->getX(), node->getY()-lastSnap.y, playID, 0);
                     }
                     
                     if (playType == 1)
@@ -317,38 +266,18 @@ static GeometryView *_sharedInstance;
                             femModel->addForce(playID, 10, 0,1);
                             playType=2;
                         }
-                    }
-                    
+                    }                    
                     break;
                     
                 case 23:
-                    //Move nodes or forces
-                    
-                    if (femModel->showGrid())
-                    {
-                        double gridX=0,gridY=0;
-                        if (femModel->foundGrid(lastTap.x,lastTap.y,0.2,gridX, gridY))
-                        {
-                            
-                            if (gridX > 0)
-                                lastTap.x=gridX;
-                            if (gridY > 0)
-                                lastTap.y=gridY;
-                            
-                        }
-                    }
-                    
-                    double px,py;
-                    worldViewport->toScreen(lastTap.x, lastTap.y,px,py);
-                    
-                    
+                    //Move nodes or forces                    
                     if (playType == 2 && nodeIDglob==9999) //Forces
                     {
                         geometryUpdated = NO;
-                        femModel->setForce(lastTap.x-sx, sy-lastTap.y, playID, 0);
+                        femModel->setForce(lastSnap.x-node->getX(), node->getY()-lastSnap.y, playID, 0);
                     }
                     if (nodeIDglob < 9999) //Nodes
-                        femModel->setCord(px, py, nodeIDglob);
+                        femModel->setCord(lastSnap.x, lastSnap.y, nodeIDglob);
                     break;
                     
             }
@@ -365,43 +294,42 @@ static GeometryView *_sharedInstance;
         [swipeView hide];
         geometryUpdated=YES;
         panning = NO;
+        CGPoint lastSnap = [swipeView getSnapPoint:lastTap :true];
+        
         switch ([myGeo toolMode]) {
             case 22:
-                double x1, y1, x2, y2;
                 int start, end;
                 
-                worldViewport->toWorld(firstTap.x, firstTap.y, x1, y1);
-                worldViewport->toWorld(lastTap.x, lastTap.y, x2, y2);
-                start = femModel->findNode(x1, y1, snapDistance);
-                end = femModel->findNode(x2, y2, snapDistance);
+                start = femModel->findNode(firstTap.x, firstTap.y, snapDistance);
+                end = femModel->findNode(lastTap.x,lastTap.y, snapDistance);
                 
                 if (end == 9999)
                 {
                     double lineX, lineY;
-                    int lineID = femModel->findLineExtended(x2, y2, snapDistance, lineX, lineY);
+                    int lineID = femModel->findLineExtended(lastSnap.x,lastSnap.y, snapDistance, lineX, lineY);
                     if (lineID<9999)
                     {
                         //Snapped to line, remove old line and draw two new + one connecting
                         int startOldLine = femModel->getLine(lineID)->getNode0()->getEnumerate();
                         int endOldLine = femModel->getLine(lineID)->getNode1()->getEnumerate();
                         
-                        femModel->removeOneLine(x2, y2);
+                        femModel->removeOneLine(lastTap.x,lastTap.y);
                         
                         femModel->addNode(lineX, lineY);
-                        int nodeID = femModel->findNode(x2, y2, snapDistance);
+                        int nodeID = femModel->findNode(lastTap.x, lastTap.y, snapDistance);
                         
                         femModel->addLine(startOldLine, nodeID);
                         femModel->addLine(nodeID, endOldLine);
                         
-                        end = femModel->findNode(x2, y2, snapDistance);
+                        end = femModel->findNode(lastTap.x, lastTap.y, snapDistance);
                         femModel->addLine(start, end);
                         
                         
                     } else {
                         if (end != start)
                         {
-                            femModel->addNode(x2, y2);
-                            end = femModel->findNode(x2, y2, snapDistance);
+                            femModel->addNode(lastSnap.x, lastSnap.y);
+                            end = femModel->findNode(lastTap.x, lastTap.y, snapDistance);
                         }
                     }
                 }
@@ -503,32 +431,31 @@ static GeometryView *_sharedInstance;
     if (sender.state == UIGestureRecognizerStateEnded)
     {
         lastTap = [sender locationInView:self];
-        double x, y;
-        
-        worldViewport->toWorld(lastTap.x, lastTap.y, x, y);
-        int nodeID = femModel->findNode(x, y, snapDistance);
-        
+        CGPoint lastSnap = [swipeView getSnapPoint:lastTap];
+
+        int nodeID = femModel->findNode(lastTap.x, lastTap.y, snapDistance);        
         
         //Add node if none found and snapp to lines
-        if (nodeID==9999 && [myGeo toolMode]<10)
+        if (nodeID==9999 && ([myGeo toolMode]<10 || [myGeo toolMode]==22))
         {
             double lineX,lineY;
-            int lineID = femModel->findLineExtended(x, y, snapDistance, lineX, lineY);
+            int lineID = femModel->findLineExtended(lastTap.x, lastTap.y, snapDistance, lineX, lineY);
             if (lineID<9999)
             {
                 //Snapped to line, remove old line and draw two new + one connecting
                 int startOldLine = femModel->getLine(lineID)->getNode0()->getEnumerate();
                 int endOldLine = femModel->getLine(lineID)->getNode1()->getEnumerate();
-                femModel->removeOneLine(x, y);
-                femModel->addNode(lineX, lineY);
-                nodeID = femModel->findNode(x, y, snapDistance);
+                femModel->removeOneLine(lastTap.x, lastTap.y);
+                femModel->addNode(lastSnap.x, lastSnap.y);
+                nodeID = femModel->findNode(lastTap.x, lastTap.y, snapDistance);
                 femModel->addLine(startOldLine, nodeID);
                 femModel->addLine(nodeID, endOldLine);
             } else {
-                femModel->addNode(x, y);
-                nodeID = femModel->findNode(x, y, snapDistance);
+                femModel->addNode(lastSnap.x, lastSnap.y);
+                nodeID = femModel->findNode(lastTap.x, lastTap.y, snapDistance);
             }
             
+           
         }
         
         switch ([myGeo toolMode]) {
@@ -567,14 +494,6 @@ static GeometryView *_sharedInstance;
                     femModel->addForce(nodeID, 100, 0,1);
                 break;
                 
-            case 22:
-                NSLog(@"Draw");
-                femModel->addNode(x, y);
-                femModel->enumerateDofs(1);
-                femModel->print();
-                [self setNeedsDisplay];
-                break;
-                
             case 23:
                 
                 break;
@@ -585,19 +504,21 @@ static GeometryView *_sharedInstance;
                 //Remove force
                 int nodeType;
                 int nodeID;
-                nodeID = femModel->findAction(x, y, snapDistance, nodeType);
+                nodeID = femModel->findAction(lastTap.x, lastTap.y, snapDistance, nodeType);
                 if (nodeType == 2 && nodeID<9999)
                     femModel->getNode(nodeID)->removeForce(femModel->getNode(nodeID)->getForce(0));
                 
-                femModel->removeNode(x, y);
-                femModel->removeLine(x, y);
+                femModel->removeNode(lastTap.x, lastTap.y);
+                femModel->removeLine(lastTap.x, lastTap.y);
                 
                 break;
                 
             default:
                 break;
         }
-        
+
+
+    
         if (femModel->calculate(YES, YES))
             [myGeo setFirstRelease:NO];
         
@@ -708,7 +629,7 @@ static GeometryView *_sharedInstance;
         CGContextSetLineWidth(context, 2);
         
         double drawCord=0;
-        double space=65;
+        double space=72;
         
         while(drawCord<self.frame.size.width)
         {
@@ -765,7 +686,7 @@ static GeometryView *_sharedInstance;
     
     
     int i;
-    double sx, sy, sx2, sy2;
+    double sx, sy;
     
     CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
     CGContextSetAlpha(context, 1);
@@ -848,18 +769,15 @@ static GeometryView *_sharedInstance;
         double lineLength = sqrt(pow(endX-startX, 2)+pow(endY-startY, 2));
         
         double normalX = (endX-startX)/lineLength;
-        double normalY = (endY-startY)/lineLength;
-        
-        worldViewport->toScreen(startX, startY, startX, startY);
-        worldViewport->toScreen(endX, endY, endX, endY);
+        double normalY = -(endY-startY)/lineLength;
         
         //Draw moment diagram
         if (femModel->drawMoment() && calculated && femModel->getMaxMoment() > 0 && femModel->getMaxMoment()*femModel->getMomentScale()<500  && !femModel->tensionMode()  && femModel->getMaxMoment() > 1e-7 && ![myGeo firstDraw])
         {
-            double startX2=startX+(normalY)*line->getResults()->getMoment(0)*femModel->getMomentScale();
-            double startY2=startY+(normalX)*line->getResults()->getMoment(0)*femModel->getMomentScale();
-            double endX2=startX+(normalY)*line->getResults()->getMoment(1)*femModel->getMomentScale()+(normalX)*lineLength;
-            double endY2=startY+(normalX)*line->getResults()->getMoment(1)*femModel->getMomentScale()-(normalY)*lineLength;
+            double startX2=startX-(normalY)*line->getResults()->getMoment(0)*femModel->getMomentScale();
+            double startY2=startY-(normalX)*line->getResults()->getMoment(0)*femModel->getMomentScale();
+            double endX2=startX-(normalY)*line->getResults()->getMoment(1)*femModel->getMomentScale()+(normalX)*lineLength;
+            double endY2=startY-(normalX)*line->getResults()->getMoment(1)*femModel->getMomentScale()-(normalY)*lineLength;
             
             
             CGContextSetAlpha(context, 0.2);
@@ -982,7 +900,6 @@ static GeometryView *_sharedInstance;
                 {
                     double dx = line->getResults()->getMekanismStart_x(j);
                     double dy = line->getResults()->getMekanismStart_y(j);
-                    worldViewport->toScreen(dx, dy, dx, dy);
                     
                     if (j==0)
                         CGPathMoveToPoint(mekanismStartShape, nil, dx, dy);
@@ -1009,7 +926,6 @@ static GeometryView *_sharedInstance;
                 {
                     double dx = line->getResults()->getMekanismEnd_x(j);
                     double dy = line->getResults()->getMekanismEnd_y(j);
-                    worldViewport->toScreen(dx, dy, dx, dy);
                     
                     if (j==0)
                         CGPathMoveToPoint(mekanismEndShape, nil, dx, dy);
@@ -1046,9 +962,7 @@ static GeometryView *_sharedInstance;
             {
                 double dx = line->getResults()->getDisplacements_x(j);
                 double dy = line->getResults()->getDisplacements_y(j);
-                
-                worldViewport->toScreen(dx, dy, dx, dy);
-                
+               
                 if (j==0)
                     CGContextMoveToPoint(context, dx, dy);
                 if (j!=0)
@@ -1066,7 +980,8 @@ static GeometryView *_sharedInstance;
     {
         
         CNodePtr node = femModel->getNode(i);
-        worldViewport->toScreen(node, sx, sy);
+        sx=node->getX();
+        sy=node->getY();
         
         //BC condition images
         if (femModel->getNode(i)->getBCCount() > 0)
@@ -1100,7 +1015,7 @@ static GeometryView *_sharedInstance;
         {
             double arrowNormalX=(femModel->getForceX(i,0)/sqrt(pow(femModel->getForceX(i,0),2)+pow(femModel->getForceY(i,0),2)));
             double arrowNormalY=(femModel->getForceY(i,0)/sqrt(pow(femModel->getForceX(i,0),2)+pow(femModel->getForceY(i,0),2)));
-            
+
             
             CGContextSetAlpha(context, 1);
             CGContextRef context = UIGraphicsGetCurrentContext();
