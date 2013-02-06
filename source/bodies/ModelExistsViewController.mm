@@ -7,15 +7,17 @@
 //
 
 #import "ModelExistsViewController.h"
-#import "WriteCoreData.h"
 #import "SaveAsViewController.h"
+#import "GenerateXMLData.h"
+#import "DrawImages.h"
 
 @interface ModelExistsViewController ()
 
 @end
 
 @implementation ModelExistsViewController
-@synthesize modelDatabase;
+@synthesize filePath;
+@synthesize imagePath;
 @synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -47,8 +49,14 @@
 
 
 - (IBAction)overwriteButton:(id)sender {
-    [WriteCoreData saveModelToCore:self.modelDatabase];
-    [delegate saveModel:nil]; 
+    NSData *modelXMLData = [GenerateXMLData getDataModel];
+    [modelXMLData writeToFile:filePath atomically:YES];
+    
+    //Update icon
+    NSData *iconImageData = UIImagePNGRepresentation([DrawImages drawIcon]);
+    [iconImageData writeToFile:imagePath atomically:YES];
+    
+    [delegate saveModel:nil];
 }
 
 @end

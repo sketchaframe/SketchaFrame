@@ -39,7 +39,13 @@
     
     for (int i = 0; i<[[filemgr contentsOfDirectoryAtPath:docsDir error:NULL] count]; i++)
     {
-        [filelist addObject:[[[filemgr contentsOfDirectoryAtPath:docsDir error:NULL] objectAtIndex:i] stringByDeletingPathExtension]];
+        NSString *filename = [[filemgr contentsOfDirectoryAtPath:docsDir error:NULL] objectAtIndex:i];
+        NSString *pathExtension = [filename pathExtension];
+        
+        if ([pathExtension isEqual:@"safx"])
+        {
+            [filelist addObject:[filename stringByDeletingPathExtension]];
+        }
     }
     
     // Uncomment the following line to preserve selection between presentations.
@@ -70,9 +76,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ExampleList";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.textLabel.text=[filelist objectAtIndex:indexPath.row];
+
+    NSString *docsDir = [[[NSBundle mainBundle] resourcePath]
+                         stringByAppendingPathComponent:@"examples"];
+    
+    NSString *imagePath = [[docsDir stringByAppendingPathComponent:[filelist objectAtIndex:indexPath.row]] stringByAppendingPathExtension:@"png"];
+    
+    cell.imageView.image = [UIImage imageWithContentsOfFile:imagePath];
+
     
     return cell;
 }
@@ -120,7 +135,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [delegate openXML:[filelist objectAtIndex:indexPath.row]];
+    [delegate openXMLExample:[filelist objectAtIndex:indexPath.row]];
     [delegate openModel:self];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

@@ -17,7 +17,6 @@
 		EC2AF35716B969D100414D9F /* GenerateXMLData.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC2AF35616B969D100414D9F /* GenerateXMLData.mm */; };
 		EC2AF35A16BAD91E00414D9F /* DrawImages.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC2AF35916BAD91E00414D9F /* DrawImages.mm */; };
 		EC2AF35C16BADD7700414D9F /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2AF35B16BADD7700414D9F /* blank.png */; };
-		EC2AF35F16BBDD8600414D9F /* EmailSettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC2AF35E16BBDD8600414D9F /* EmailSettingsViewController.mm */; };
 		EC2AF36116BC02FC00414D9F /* colorbar.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2AF36016BC02FC00414D9F /* colorbar.png */; };
 		EC2AF36816BFEC8400414D9F /* small_bc0.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2AF36216BFEC8400414D9F /* small_bc0.png */; };
 		EC2AF36916BFEC8400414D9F /* small_bc1.png in Resources */ = {isa = PBXBuildFile; fileRef = EC2AF36316BFEC8400414D9F /* small_bc1.png */; };
@@ -101,29 +100,20 @@
 		ECBE2BE6169DBB2A00283FD4 /* AboutViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A2D169DB23400283FD4 /* AboutViewController.mm */; };
 		ECBE2BE7169DBB2A00283FD4 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A2E169DB23400283FD4 /* AppDelegate.mm */; };
 		ECBE2BE8169DBB2A00283FD4 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A2F169DB23400283FD4 /* Base.cpp */; };
-		ECBE2BE9169DBB2A00283FD4 /* BoundaryConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A30169DB23400283FD4 /* BoundaryConditions.m */; };
 		ECBE2BEA169DBB2A00283FD4 /* ColorbarView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A31169DB23400283FD4 /* ColorbarView.mm */; };
 		ECBE2BEB169DBB2A00283FD4 /* ColorCode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A32169DB23400283FD4 /* ColorCode.cpp */; };
-		ECBE2BEC169DBB2A00283FD4 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A35169DB23400283FD4 /* CoreDataTableViewController.m */; };
-		ECBE2BED169DBB2A00283FD4 /* DBManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A36169DB23400283FD4 /* DBManager.mm */; };
 		ECBE2BEE169DBB2A00283FD4 /* Fem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A37169DB23400283FD4 /* Fem.cpp */; };
-		ECBE2BEF169DBB2A00283FD4 /* Forces.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A38169DB23400283FD4 /* Forces.m */; };
 		ECBE2BF0169DBB2A00283FD4 /* Geom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A39169DB23400283FD4 /* Geom.cpp */; };
 		ECBE2BF1169DBB2A00283FD4 /* GeometryView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3A169DB23400283FD4 /* GeometryView.mm */; };
 		ECBE2BF2169DBB2A00283FD4 /* GeometryViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3B169DB23400283FD4 /* GeometryViewController.mm */; };
 		ECBE2BF3169DBB2A00283FD4 /* HelpViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3C169DB23400283FD4 /* HelpViewController.mm */; };
-		ECBE2BF4169DBB2A00283FD4 /* Lines.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3D169DB23400283FD4 /* Lines.m */; };
 		ECBE2BF5169DBB2A00283FD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3E169DB23400283FD4 /* main.m */; };
 		ECBE2BF6169DBB2A00283FD4 /* MenuViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A3F169DB23400283FD4 /* MenuViewController.mm */; };
 		ECBE2BF7169DBB2A00283FD4 /* ModelExistsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A40169DB23400283FD4 /* ModelExistsViewController.mm */; };
-		ECBE2BF8169DBB2A00283FD4 /* Models.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A41169DB23400283FD4 /* Models.m */; };
-		ECBE2BF9169DBB2A00283FD4 /* Nodes.m in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A42169DB23400283FD4 /* Nodes.m */; };
 		ECBE2BFA169DBB2A00283FD4 /* OpenTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A43169DB23400283FD4 /* OpenTableViewController.mm */; };
-		ECBE2BFB169DBB2A00283FD4 /* OpenViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A44169DB23400283FD4 /* OpenViewController.mm */; };
 		ECBE2BFC169DBB2A00283FD4 /* RedundancyView.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A45169DB23400283FD4 /* RedundancyView.mm */; };
 		ECBE2BFD169DBB2A00283FD4 /* SaveAsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A46169DB23400283FD4 /* SaveAsViewController.mm */; };
 		ECBE2BFE169DBB2A00283FD4 /* Vec2d.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A47169DB23400283FD4 /* Vec2d.cpp */; };
-		ECBE2BFF169DBB2A00283FD4 /* WriteCoreData.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A48169DB23400283FD4 /* WriteCoreData.mm */; };
 		ECBE2C00169DBB2A00283FD4 /* calfem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A4A169DB23400283FD4 /* calfem.cpp */; };
 		ECBE2C21169DBB9B00283FD4 /* bandmat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A4D169DB23400283FD4 /* bandmat.cpp */; };
 		ECBE2C22169DBB9B00283FD4 /* cholesky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A4E169DB23400283FD4 /* cholesky.cpp */; };
@@ -151,7 +141,6 @@
 		ECBE2C39169DBB9B00283FD4 /* submat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A71169DB23400283FD4 /* submat.cpp */; };
 		ECBE2C3A169DBB9B00283FD4 /* svd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECBE2A72169DB23400283FD4 /* svd.cpp */; };
 		ECCA5AD016A6BD050080FA2E /* arrow-small-09.png in Resources */ = {isa = PBXBuildFile; fileRef = ECCA5ACF16A6BD050080FA2E /* arrow-small-09.png */; };
-		ECCA5AD716A80D540080FA2E /* ModelFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCA5AD616A80D540080FA2E /* ModelFunctions.m */; };
 		ECCA5AD916A832140080FA2E /* redo.png in Resources */ = {isa = PBXBuildFile; fileRef = ECCA5AD816A832140080FA2E /* redo.png */; };
 		ECCA6EE016B2805400B1061A /* AlgebraFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ECCA6EDE16B2805400B1061A /* AlgebraFunctions.cpp */; };
 		ECE47EBF16B7C647008B541E /* XMLParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECE47EBE16B7C647008B541E /* XMLParser.mm */; };
@@ -199,7 +188,6 @@
 		EC2AF35916BAD91E00414D9F /* DrawImages.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DrawImages.mm; sourceTree = "<group>"; };
 		EC2AF35B16BADD7700414D9F /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
 		EC2AF35D16BBDD8600414D9F /* EmailSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EmailSettingsViewController.h; path = ../bodies/EmailSettingsViewController.h; sourceTree = "<group>"; };
-		EC2AF35E16BBDD8600414D9F /* EmailSettingsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EmailSettingsViewController.mm; sourceTree = "<group>"; };
 		EC2AF36016BC02FC00414D9F /* colorbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorbar.png; sourceTree = "<group>"; };
 		EC2AF36216BFEC8400414D9F /* small_bc0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_bc0.png; sourceTree = "<group>"; };
 		EC2AF36316BFEC8400414D9F /* small_bc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small_bc1.png; sourceTree = "<group>"; };
@@ -306,29 +294,20 @@
 		ECBE2A2D169DB23400283FD4 /* AboutViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AboutViewController.mm; sourceTree = "<group>"; };
 		ECBE2A2E169DB23400283FD4 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		ECBE2A2F169DB23400283FD4 /* Base.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
-		ECBE2A30169DB23400283FD4 /* BoundaryConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundaryConditions.m; sourceTree = "<group>"; };
 		ECBE2A31169DB23400283FD4 /* ColorbarView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ColorbarView.mm; sourceTree = "<group>"; };
 		ECBE2A32169DB23400283FD4 /* ColorCode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorCode.cpp; sourceTree = "<group>"; };
-		ECBE2A35169DB23400283FD4 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
-		ECBE2A36169DB23400283FD4 /* DBManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DBManager.mm; sourceTree = "<group>"; };
 		ECBE2A37169DB23400283FD4 /* Fem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fem.cpp; sourceTree = "<group>"; };
-		ECBE2A38169DB23400283FD4 /* Forces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Forces.m; sourceTree = "<group>"; };
 		ECBE2A39169DB23400283FD4 /* Geom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Geom.cpp; sourceTree = "<group>"; };
 		ECBE2A3A169DB23400283FD4 /* GeometryView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GeometryView.mm; sourceTree = "<group>"; };
 		ECBE2A3B169DB23400283FD4 /* GeometryViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GeometryViewController.mm; sourceTree = "<group>"; };
 		ECBE2A3C169DB23400283FD4 /* HelpViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HelpViewController.mm; sourceTree = "<group>"; };
-		ECBE2A3D169DB23400283FD4 /* Lines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lines.m; sourceTree = "<group>"; };
 		ECBE2A3E169DB23400283FD4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ECBE2A3F169DB23400283FD4 /* MenuViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MenuViewController.mm; sourceTree = "<group>"; };
 		ECBE2A40169DB23400283FD4 /* ModelExistsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ModelExistsViewController.mm; sourceTree = "<group>"; };
-		ECBE2A41169DB23400283FD4 /* Models.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Models.m; sourceTree = "<group>"; };
-		ECBE2A42169DB23400283FD4 /* Nodes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nodes.m; sourceTree = "<group>"; };
 		ECBE2A43169DB23400283FD4 /* OpenTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenTableViewController.mm; sourceTree = "<group>"; };
-		ECBE2A44169DB23400283FD4 /* OpenViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenViewController.mm; sourceTree = "<group>"; };
 		ECBE2A45169DB23400283FD4 /* RedundancyView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RedundancyView.mm; sourceTree = "<group>"; };
 		ECBE2A46169DB23400283FD4 /* SaveAsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SaveAsViewController.mm; sourceTree = "<group>"; };
 		ECBE2A47169DB23400283FD4 /* Vec2d.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vec2d.cpp; sourceTree = "<group>"; };
-		ECBE2A48169DB23400283FD4 /* WriteCoreData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WriteCoreData.mm; sourceTree = "<group>"; };
 		ECBE2A4A169DB23400283FD4 /* calfem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = calfem.cpp; sourceTree = "<group>"; };
 		ECBE2A4B169DB23400283FD4 /* calfem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calfem.h; sourceTree = "<group>"; };
 		ECBE2A4D169DB23400283FD4 /* bandmat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bandmat.cpp; sourceTree = "<group>"; };
@@ -373,23 +352,16 @@
 		ECBE2A75169DB23400283FD4 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		ECBE2A76169DB23400283FD4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ECBE2A77169DB23400283FD4 /* Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base.h; sourceTree = "<group>"; };
-		ECBE2A78169DB23400283FD4 /* BoundaryConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoundaryConditions.h; sourceTree = "<group>"; };
 		ECBE2A79169DB23400283FD4 /* ColorbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorbarView.h; sourceTree = "<group>"; };
 		ECBE2A7A169DB23400283FD4 /* ColorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorCode.h; sourceTree = "<group>"; };
 		ECBE2A7B169DB23400283FD4 /* CommonDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDefs.h; sourceTree = "<group>"; };
-		ECBE2A7E169DB23400283FD4 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
-		ECBE2A7F169DB23400283FD4 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		ECBE2A80169DB23400283FD4 /* Fem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fem.h; sourceTree = "<group>"; };
-		ECBE2A81169DB23400283FD4 /* Forces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forces.h; sourceTree = "<group>"; };
 		ECBE2A82169DB23400283FD4 /* Geom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geom.h; sourceTree = "<group>"; };
 		ECBE2A83169DB23400283FD4 /* GeometryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryView.h; sourceTree = "<group>"; };
 		ECBE2A84169DB23400283FD4 /* GeometryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeometryViewController.h; sourceTree = "<group>"; };
 		ECBE2A85169DB23400283FD4 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
-		ECBE2A86169DB23400283FD4 /* Lines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lines.h; sourceTree = "<group>"; };
 		ECBE2A87169DB23400283FD4 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		ECBE2A88169DB23400283FD4 /* ModelExistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelExistsViewController.h; sourceTree = "<group>"; };
-		ECBE2A89169DB23400283FD4 /* Models.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Models.h; sourceTree = "<group>"; };
-		ECBE2A8A169DB23400283FD4 /* Nodes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nodes.h; sourceTree = "<group>"; };
 		ECBE2A8B169DB23400283FD4 /* OpenTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTableViewController.h; sourceTree = "<group>"; };
 		ECBE2A8C169DB23400283FD4 /* OpenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenViewController.h; sourceTree = "<group>"; };
 		ECBE2A8D169DB23400283FD4 /* Pointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pointer.h; sourceTree = "<group>"; };
@@ -445,7 +417,6 @@
 		ECBE2B61169DB82200283FD4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		ECCA5ACF16A6BD050080FA2E /* arrow-small-09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-small-09.png"; sourceTree = "<group>"; };
 		ECCA5AD516A80D540080FA2E /* ModelFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelFunctions.h; path = ../bodies/ModelFunctions.h; sourceTree = "<group>"; };
-		ECCA5AD616A80D540080FA2E /* ModelFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelFunctions.m; sourceTree = "<group>"; };
 		ECCA5AD816A832140080FA2E /* redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redo.png; sourceTree = "<group>"; };
 		ECCA6EDE16B2805400B1061A /* AlgebraFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlgebraFunctions.cpp; sourceTree = "<group>"; };
 		ECCA6EDF16B2805400B1061A /* AlgebraFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlgebraFunctions.h; path = ../bodies/AlgebraFunctions.h; sourceTree = "<group>"; };
@@ -626,40 +597,29 @@
 		ECBE2A2C169DB23400283FD4 /* bodies */ = {
 			isa = PBXGroup;
 			children = (
+				EC25DBC516B9179400F362C7 /* ExamplesXMLTableViewController.mm */,
+				ECBE2A43169DB23400283FD4 /* OpenTableViewController.mm */,
 				EC2AF35616B969D100414D9F /* GenerateXMLData.mm */,
-				EC2AF35E16BBDD8600414D9F /* EmailSettingsViewController.mm */,
 				ECE47EBE16B7C647008B541E /* XMLParser.mm */,
-				ECBE2A37169DB23400283FD4 /* Fem.cpp */,
 				EC2AF35916BAD91E00414D9F /* DrawImages.mm */,
-				ECCA6EDE16B2805400B1061A /* AlgebraFunctions.cpp */,
 				EC95E40416AFDDAC0066EE39 /* SwipeView.mm */,
 				ECBE2A3A169DB23400283FD4 /* GeometryView.mm */,
 				ECBE2A3B169DB23400283FD4 /* GeometryViewController.mm */,
-				EC25DBC516B9179400F362C7 /* ExamplesXMLTableViewController.mm */,
 				ECBE2A45169DB23400283FD4 /* RedundancyView.mm */,
 				ECBE2A2D169DB23400283FD4 /* AboutViewController.mm */,
 				ECBE2A2E169DB23400283FD4 /* AppDelegate.mm */,
-				ECBE2A2F169DB23400283FD4 /* Base.cpp */,
-				ECBE2A30169DB23400283FD4 /* BoundaryConditions.m */,
 				ECBE2A31169DB23400283FD4 /* ColorbarView.mm */,
-				ECBE2A32169DB23400283FD4 /* ColorCode.cpp */,
-				ECBE2A35169DB23400283FD4 /* CoreDataTableViewController.m */,
-				ECBE2A36169DB23400283FD4 /* DBManager.mm */,
-				ECBE2A38169DB23400283FD4 /* Forces.m */,
-				ECBE2A39169DB23400283FD4 /* Geom.cpp */,
-				ECCA5AD616A80D540080FA2E /* ModelFunctions.m */,
 				ECBE2A3C169DB23400283FD4 /* HelpViewController.mm */,
-				ECBE2A3D169DB23400283FD4 /* Lines.m */,
 				ECBE2A3E169DB23400283FD4 /* main.m */,
 				ECBE2A3F169DB23400283FD4 /* MenuViewController.mm */,
 				ECBE2A40169DB23400283FD4 /* ModelExistsViewController.mm */,
-				ECBE2A41169DB23400283FD4 /* Models.m */,
-				ECBE2A42169DB23400283FD4 /* Nodes.m */,
-				ECBE2A43169DB23400283FD4 /* OpenTableViewController.mm */,
-				ECBE2A44169DB23400283FD4 /* OpenViewController.mm */,
 				ECBE2A46169DB23400283FD4 /* SaveAsViewController.mm */,
+				ECBE2A37169DB23400283FD4 /* Fem.cpp */,
+				ECBE2A32169DB23400283FD4 /* ColorCode.cpp */,
+				ECBE2A39169DB23400283FD4 /* Geom.cpp */,
+				ECCA6EDE16B2805400B1061A /* AlgebraFunctions.cpp */,
+				ECBE2A2F169DB23400283FD4 /* Base.cpp */,
 				ECBE2A47169DB23400283FD4 /* Vec2d.cpp */,
-				ECBE2A48169DB23400283FD4 /* WriteCoreData.mm */,
 			);
 			path = bodies;
 			sourceTree = "<group>";
@@ -734,23 +694,16 @@
 				ECBE2A75169DB23400283FD4 /* AboutViewController.h */,
 				ECBE2A76169DB23400283FD4 /* AppDelegate.h */,
 				ECBE2A77169DB23400283FD4 /* Base.h */,
-				ECBE2A78169DB23400283FD4 /* BoundaryConditions.h */,
 				ECBE2A79169DB23400283FD4 /* ColorbarView.h */,
 				ECBE2A7A169DB23400283FD4 /* ColorCode.h */,
 				ECBE2A7B169DB23400283FD4 /* CommonDefs.h */,
-				ECBE2A7E169DB23400283FD4 /* CoreDataTableViewController.h */,
-				ECBE2A7F169DB23400283FD4 /* DBManager.h */,
 				ECBE2A80169DB23400283FD4 /* Fem.h */,
-				ECBE2A81169DB23400283FD4 /* Forces.h */,
 				ECBE2A82169DB23400283FD4 /* Geom.h */,
 				ECBE2A83169DB23400283FD4 /* GeometryView.h */,
 				ECBE2A84169DB23400283FD4 /* GeometryViewController.h */,
 				ECBE2A85169DB23400283FD4 /* HelpViewController.h */,
-				ECBE2A86169DB23400283FD4 /* Lines.h */,
 				ECBE2A87169DB23400283FD4 /* MenuViewController.h */,
 				ECBE2A88169DB23400283FD4 /* ModelExistsViewController.h */,
-				ECBE2A89169DB23400283FD4 /* Models.h */,
-				ECBE2A8A169DB23400283FD4 /* Nodes.h */,
 				ECBE2A8B169DB23400283FD4 /* OpenTableViewController.h */,
 				ECBE2A8C169DB23400283FD4 /* OpenViewController.h */,
 				ECBE2A8D169DB23400283FD4 /* Pointer.h */,
@@ -1007,38 +960,27 @@
 				ECBE2BE6169DBB2A00283FD4 /* AboutViewController.mm in Sources */,
 				ECBE2BE7169DBB2A00283FD4 /* AppDelegate.mm in Sources */,
 				ECBE2BE8169DBB2A00283FD4 /* Base.cpp in Sources */,
-				ECBE2BE9169DBB2A00283FD4 /* BoundaryConditions.m in Sources */,
 				ECBE2BEA169DBB2A00283FD4 /* ColorbarView.mm in Sources */,
 				ECBE2BEB169DBB2A00283FD4 /* ColorCode.cpp in Sources */,
-				ECBE2BEC169DBB2A00283FD4 /* CoreDataTableViewController.m in Sources */,
-				ECBE2BED169DBB2A00283FD4 /* DBManager.mm in Sources */,
 				ECBE2BEE169DBB2A00283FD4 /* Fem.cpp in Sources */,
-				ECBE2BEF169DBB2A00283FD4 /* Forces.m in Sources */,
 				ECBE2BF0169DBB2A00283FD4 /* Geom.cpp in Sources */,
 				ECBE2BF1169DBB2A00283FD4 /* GeometryView.mm in Sources */,
 				ECBE2BF2169DBB2A00283FD4 /* GeometryViewController.mm in Sources */,
 				ECBE2BF3169DBB2A00283FD4 /* HelpViewController.mm in Sources */,
-				ECBE2BF4169DBB2A00283FD4 /* Lines.m in Sources */,
 				ECBE2BF5169DBB2A00283FD4 /* main.m in Sources */,
 				ECBE2BF6169DBB2A00283FD4 /* MenuViewController.mm in Sources */,
 				ECBE2BF7169DBB2A00283FD4 /* ModelExistsViewController.mm in Sources */,
-				ECBE2BF8169DBB2A00283FD4 /* Models.m in Sources */,
-				ECBE2BF9169DBB2A00283FD4 /* Nodes.m in Sources */,
 				ECBE2BFA169DBB2A00283FD4 /* OpenTableViewController.mm in Sources */,
-				ECBE2BFB169DBB2A00283FD4 /* OpenViewController.mm in Sources */,
 				ECBE2BFC169DBB2A00283FD4 /* RedundancyView.mm in Sources */,
 				ECBE2BFD169DBB2A00283FD4 /* SaveAsViewController.mm in Sources */,
 				ECBE2BFE169DBB2A00283FD4 /* Vec2d.cpp in Sources */,
-				ECBE2BFF169DBB2A00283FD4 /* WriteCoreData.mm in Sources */,
 				ECBE2C00169DBB2A00283FD4 /* calfem.cpp in Sources */,
-				ECCA5AD716A80D540080FA2E /* ModelFunctions.m in Sources */,
 				EC95E40516AFDDAC0066EE39 /* SwipeView.mm in Sources */,
 				ECCA6EE016B2805400B1061A /* AlgebraFunctions.cpp in Sources */,
 				ECE47EBF16B7C647008B541E /* XMLParser.mm in Sources */,
 				EC25DBC616B9179400F362C7 /* ExamplesXMLTableViewController.mm in Sources */,
 				EC2AF35716B969D100414D9F /* GenerateXMLData.mm in Sources */,
 				EC2AF35A16BAD91E00414D9F /* DrawImages.mm in Sources */,
-				EC2AF35F16BBDD8600414D9F /* EmailSettingsViewController.mm in Sources */,
 				EC2AF38F16C1306100414D9F /* Appirater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

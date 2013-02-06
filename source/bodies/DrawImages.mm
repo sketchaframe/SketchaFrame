@@ -102,6 +102,70 @@
     return boundaries;
 }
 
++(NSDictionary *)iconBoundaries
+{
+    CFemModel *femModel = [[GeometryView sharedInstance] getFemModel];
+    
+    
+    double maxHeight=0;
+    double maxWidth=0;
+    double minHeight=2000;
+    double minWidth=2000;
+    
+    for (int i=0; i<femModel->nodeCount(); i++)
+    {
+        //Get max
+        if (femModel->getNode(i)->getX() > maxWidth)
+            maxWidth = femModel->getNode(i)->getX();
+        if (femModel->getNode(i)->getY() > maxHeight)
+            maxHeight = femModel->getNode(i)->getY();
+        
+        //Get mins
+        if (femModel->getNode(i)->getX() < minWidth)
+            minWidth = femModel->getNode(i)->getX();
+        if (femModel->getNode(i)->getY() < minHeight)
+            minHeight = femModel->getNode(i)->getY();
+     
+    }
+    
+    for (int i=0; i<femModel->lineCount(); i++)
+    {
+        CLinePtr line = femModel->getLine(i);
+        
+        for (int j=0; j<20;j++)
+        {
+            double xLocation = line->getResults()->getDisplacements_x(j);
+            double yLocation = line->getResults()->getDisplacements_y(j);
+            
+            if (xLocation>0 || yLocation>0)
+            {
+                //Get max
+                if (maxHeight<yLocation)
+                    maxHeight=yLocation;
+                if (maxWidth<xLocation)
+                    maxWidth=xLocation;
+                
+                //Get mins
+                if (minHeight>yLocation)
+                    minHeight=yLocation;
+                if (minWidth>xLocation)
+                    minWidth=xLocation;
+            }
+            
+        }
+    }
+    
+    minWidth-=20;
+    minHeight-=25;
+    
+    
+    NSArray *keys = [NSArray arrayWithObjects:@"minWidth", @"minHeight", @"maxWidth", @"maxHeight", nil];
+    NSArray *objects = [NSArray arrayWithObjects:[NSNumber numberWithDouble:minWidth],[NSNumber numberWithDouble:minHeight],[NSNumber numberWithDouble:maxWidth], [NSNumber numberWithDouble:maxHeight], nil];
+    NSDictionary *boundaries = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+    
+    return boundaries;
+}
+
 +(CGPoint)localC:(CGPoint) globalC
 {
     CGPoint localC;
@@ -132,6 +196,18 @@
     }
     
     return imageSize;
+}
+
+
++(CGPoint)localIconC:(CGPoint) globalIconC
+{
+    CGPoint localC;
+    NSDictionary *boundaries = [self boundaries];
+    
+    localC.x = 0.6*(globalIconC.x - [[boundaries objectForKey:@"minWidth"] doubleValue]+42);
+    localC.y = 0.6*(globalIconC.y - [[boundaries objectForKey:@"minHeight"] doubleValue]+42);
+    return localC;
+    
 }
 
 
@@ -245,6 +321,88 @@
 	UIGraphicsEndImageContext();
 	return retImage;
 }
+
++(UIImage*)drawIcon
+{
+    CFemModel *femModel = [[GeometryView sharedInstance] getFemModel];
+    
+    
+    CGSize imageSize;
+    NSDictionary *boundaries = [self iconBoundaries];
+    
+    double minWidth = [[boundaries objectForKey:@"minWidth"] doubleValue];
+    double minHeight = [[boundaries objectForKey:@"minHeight"] doubleValue];
+    double maxWidth = [[boundaries objectForKey:@"maxWidth"] doubleValue];
+    double maxHeight = [[boundaries objectForKey:@"maxHeight"] doubleValue];
+    double scale;
+    
+    imageSize.width=maxWidth-minWidth;
+    imageSize.height=maxHeight-minHeight;
+    double leftAdjust=5;
+    double topAdjust=5;
+    
+    if (imageSize.width<imageSize.height)
+    {
+        scale = 40/imageSize.height;
+        imageSize.width*=scale;
+        imageSize.height=40;
+        leftAdjust=(40-imageSize.width)/2+5;
+    } else {
+        scale = 40/imageSize.width;
+        imageSize.height*=scale;
+        imageSize.width=40;
+        topAdjust=(40-imageSize.height)/2+5;
+    }
+    
+
+    UIGraphicsBeginImageContext(CGSizeMake(40, 40));
+    
+	// get the context for CoreGraphics
+	CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextSetAllowsAntialiasing(ctx, true);
+    CGContextSetInterpolationQuality( UIGraphicsGetCurrentContext() , kCGInterpolationHigh );
+    
+    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+    CGContextSetLineJoin(UIGraphicsGetCurrentContext(), kCGLineJoinRound);
+    CGContextSetAllowsAntialiasing(UIGraphicsGetCurrentContext(), YES);
+    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), 4.5);
+    CGContextSetShouldAntialias(UIGraphicsGetCurrentContext(), YES);
+    CGContextSetMiterLimit(UIGraphicsGetCurrentContext(), 2.0);
+
+    
+    //Draw the geometry (one line)    
+    for (int i=0; i<femModel->lineCount(); i++)
+    {
+        CLinePtr line = femModel->getLine(i);
+        CGPoint start = [self localC:CGPointMake(line->getNode0()->getX(), line->getNode0()->getY())];
+        CGPoint end = [self localC:CGPointMake(line->getNode1()->getX(), line->getNode1()->getY())];
+        
+        CGContextSetLineWidth(ctx, 0.4);
+        CGContextSetAlpha(ctx, 0.3);
+        CGContextMoveToPoint(ctx, start.x*scale+leftAdjust, start.y*scale+topAdjust);
+        CGContextAddLineToPoint( ctx, end.x*scale+leftAdjust, end.y*scale+topAdjust);
+        CGContextStrokePath(ctx);
+        
+        CGContextSetLineWidth(ctx, 0.3);
+        CGContextSetAlpha(ctx, 1);
+        CGContextMoveToPoint(ctx, start.x*scale+leftAdjust, start.y*scale+topAdjust);
+        CGContextAddLineToPoint( ctx, end.x*scale+leftAdjust, end.y*scale+topAdjust);
+        CGContextStrokePath(ctx);
+    
+    }
+    
+    //Add node picture with force arrow
+    //[[self drawBC] drawAtPoint:CGPointMake(0, 0)];
+    //[[self drawForce] drawAtPoint:CGPointMake(0, 0)];
+    
+	// make image out of bitmap context
+	UIImage *retImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+    return retImage;
+
+}
+
+
 
 +(UIImage*)drawDeformations
 {

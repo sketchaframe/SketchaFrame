@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Models.h"
-
 
 @interface ModelExistsViewController : UIViewController 
 
-@property (nonatomic, strong) UIManagedDocument *modelDatabase;
+@property (nonatomic, strong) NSString *filePath;
+@property (nonatomic, strong) NSString *imagePath;
 - (IBAction)overwriteButton:(id)sender;
 @property(nonatomic,assign)id delegate;
 @end

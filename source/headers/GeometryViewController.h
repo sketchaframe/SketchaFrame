@@ -10,14 +10,10 @@
 #import <MessageUI/MessageUI.h>
 
 #import "GeometryView.h"
-#import "CoreDataTableViewController.h"
 #import "OpenTableViewController.h"
 #import "SaveAsViewController.h"
-#import "WriteCoreData.h"
-#import "Models.h"
 #import "MenuViewController.h"
 #import "HelpViewController.h"
-#import "DBManager.h"
 
 #define kUndo @"kUndo"
 #define kOpenXMLUrl @"kOpenXMLUrl"
@@ -50,8 +46,6 @@
 @property (retain, nonatomic) IBOutlet UIButton *buttonRedo;
 
 @property (assign, nonatomic) IBOutlet GeometryView *geometryView;
-@property (retain, nonatomic) UIManagedDocument *modelDatabase;
-@property (retain, nonatomic) UIManagedDocument *terminateDatabase;
 @property (assign, nonatomic) SaveAsViewController *saveAsViewController;
 @property (assign, nonatomic) UIPopoverController *saveAsPopOverController;
 @property (assign, nonatomic) UIPopoverController *openPopOverController;

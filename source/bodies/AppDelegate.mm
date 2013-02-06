@@ -7,9 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "Models.h"
-#import "WriteCoreData.h"
-#import "CoreDataTableViewController.h"
 #import "XMLParser.h"
 #import "GeometryViewController.h"
 #import "Appirater.h"

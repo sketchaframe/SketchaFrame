@@ -7,20 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Models.h"
 #import "GeometryViewController.h"
 
 @class OpenTableViewController;
 @protocol OpenTableViewControllerDelegate
+-(void)openXML:(NSString * )fileName;
 -(void)openModel:(OpenTableViewController *)sender;
 @end
 
-@interface OpenTableViewController : CoreDataTableViewController
+@interface OpenTableViewController : UITableViewController
 {
-
+    NSMutableArray *filelist;
+    UIBarButtonItem *editButton;
 }
-@property (retain, nonatomic) IBOutlet UITableView *table;
+@property (retain) NSMutableArray *filelist;
 
-@property (nonatomic, strong) UIManagedDocument *modelDatabase;
+@property (retain, nonatomic) IBOutlet UITableView *table;
 @property (nonatomic, assign) id<OpenTableViewControllerDelegate> delegate;
 @end

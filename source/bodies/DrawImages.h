@@ -12,6 +12,7 @@
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 +(NSDictionary *)boundaries;
++(NSDictionary *)iconBoundaries;
 +(CGPoint)localC:(CGPoint) globalC;
 +(CGSize)imageBoundaries;
 
@@ -22,4 +23,6 @@
 +(UIImage*)drawTensions;
 +(UIImage*)drawNormMom;
 +(UIImage*)drawRedundancy;
+
++(UIImage*)drawIcon;
 @end

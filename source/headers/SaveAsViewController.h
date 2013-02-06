@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "GeometryView.h"
-#import "CoreDataTableViewController.h"
-#import "Models.h"
+
 
 @class SaveAsViewController;
 @protocol SaveAsViewControllerDelegate
@@ -18,12 +17,14 @@
 @end
 
 @interface SaveAsViewController : UIViewController
+{
+    NSString *filePath;
+    NSString *imagePath;
+}
 
 @property (retain, nonatomic) IBOutlet UITextField *inputName;
 - (IBAction)saveAs:(id)sender;
 @property (assign, nonatomic) IBOutlet GeometryView *geometryView;
-@property (nonatomic, strong) UIManagedDocument *modelDatabase;
-@property (nonatomic, assign) Models *model;
 
 @property(nonatomic,assign)id delegate;
 

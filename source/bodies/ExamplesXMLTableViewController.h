@@ -10,7 +10,7 @@
 
 @class ExamplesXMLTableViewController;
 @protocol ExamplesXMLTableViewControllerDelegate
--(void)openXML:(NSString * )fileName;
+-(void)openXMLExample:(NSString * )fileName;
 -(void)openModel:(ExamplesXMLTableViewController *)sender;
 @end
 @interface ExamplesXMLTableViewController : UITableViewController

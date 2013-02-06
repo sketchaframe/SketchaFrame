@@ -30,8 +30,6 @@
 @synthesize button23;
 @synthesize button100;
 @synthesize geometryView=_geometryView;
-@synthesize modelDatabase=_modelDatabase;
-@synthesize terminateDatabase=_terminateDatabase;
 @synthesize saveAsViewController;
 @synthesize saveAsPopOverController;
 @synthesize openPopOverController;
@@ -226,23 +224,6 @@
     
 }
 
-- (void)userDocument:(UIManagedDocument *)document 
-{
-    if (![[NSFileManager defaultManager] fileExistsAtPath:[document.fileURL path]]) 
-    {
-        [document saveToURL:document.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
-        }]; 
-    } else if (document.documentState == UIDocumentStateClosed) {
-        [document openWithCompletionHandler:^(BOOL success) {}];
-    }
-}
-
--(void)setModelDatabase:(UIManagedDocument *)modelDatabase
-{
-    if (_modelDatabase != modelDatabase)
-        _modelDatabase = modelDatabase;
-    [self userDocument:_modelDatabase];
-}
 
 - (void)viewDidLoad
 
@@ -285,11 +266,7 @@
         }
     }
     
-    
-    //Allocate database and delegate it out to popovers
-    if (!self.modelDatabase) {
-        self.modelDatabase = [DBManager database];
-    }
+
     
     [self updateButtonStatus];
     [self.geometryView setNeedsDisplay];
@@ -512,7 +489,6 @@
         NSArray *temp = [[segue destinationViewController] childViewControllers];
         OpenTableViewController *openTableViewController = [temp objectAtIndex:0];
         openTableViewController.delegate = self;
-        openTableViewController.modelDatabase = self.modelDatabase;
         openPopOverController = [(UIStoryboardPopoverSegue*)segue popoverController];
         openPopOverController.delegate = self;
         
@@ -524,7 +500,6 @@
         NSArray *temp = [[segue destinationViewController] childViewControllers];
         saveAsViewController = [temp objectAtIndex:0];
         saveAsViewController.delegate = self;
-        saveAsViewController.modelDatabase = self.modelDatabase;
         saveAsPopOverController = [(UIStoryboardPopoverSegue*)segue popoverController];
         saveAsPopOverController.delegate = self;
     } else if ([segue.identifier isEqualToString:@"Examples"]) {
@@ -540,6 +515,7 @@
 
 -(void)openXML:(NSString *)fileName
 {
+
     NSLog(@"Clear model");
     femModel->clear();
     femModel->calculate(YES, YES);
@@ -558,13 +534,58 @@
     buttonUndo.enabled=false;
     
     
-    NSString* path = [[NSBundle mainBundle] pathForResource:[fileName stringByDeletingPathExtension] ofType:@"safx" inDirectory:@"examples"];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString *path = [[[[paths objectAtIndex:0] stringByAppendingPathComponent:@"users"] stringByAppendingPathComponent:fileName] stringByAppendingPathExtension:@"safx"];
+    
+    
 	NSURL *url = [NSURL fileURLWithPath:path];
 	NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     
 	XMLParser *theDelegate = [[XMLParser alloc] initXMLParser];
 	[xmlParser setDelegate:theDelegate];
 	[xmlParser parse];
+    
+    femModel->setName([fileName UTF8String]);
+
+}
+
+-(void)openXMLExample:(NSString *)fileName
+{
+    
+    NSLog(@"Clear model");
+    femModel->clear();
+    femModel->calculate(YES, YES);
+    [self.geometryView setNeedsDisplay];
+    [myGeo setFirstDraw:YES];
+    [myGeo setFirstRelease:YES];
+    
+    undoModelList->clear();
+    redoModelList->clear();
+    
+    //Push back empty undo model
+    CFemModelPtr undoModel = new CFemModel;
+    *undoModel = femModel;
+    
+    undoModelList->push_back(undoModel);
+    buttonUndo.enabled=false;
+    
+    
+    NSString *docsDir = [[[NSBundle mainBundle] resourcePath]
+                         stringByAppendingPathComponent:@"examples"];
+    
+    NSString *path = [[docsDir stringByAppendingPathComponent:fileName] stringByAppendingPathExtension:@"safx"];
+    
+    
+	NSURL *url = [NSURL fileURLWithPath:path];
+	NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    
+	XMLParser *theDelegate = [[XMLParser alloc] initXMLParser];
+	[xmlParser setDelegate:theDelegate];
+	[xmlParser parse];
+    
+    femModel->setName([fileName UTF8String]);
+    
 }
 
 - (IBAction)openMail:(id)sender
@@ -774,7 +795,6 @@
 }
 
 - (IBAction)examplesButton:(id)sender {
-    femModel->printCode();
     if (examplesPopOverController !=nil)
     {
         [self closePopups];
@@ -846,6 +866,11 @@
 	[xmlParser setDelegate:theDelegate];
 	[xmlParser parse];
     
+    femModel->calculate(YES, YES);
+    [myGeo setNeedsRescale:YES];
+    [myGeo setFirstRelease:NO];
+    
+    femModel->calculateRedundancy();
     
     [self.geometryView setNeedsDisplay];
 }

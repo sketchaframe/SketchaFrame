@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Models.h"
-#import "Nodes.h"
-#import "Lines.h"
-#import "Forces.h"
-#import "BoundaryConditions.h"
-#import "CoreDataTableViewController.h"
 #import "GeometryView.h"
 
 @interface OpenViewController : UIViewController
